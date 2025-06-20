@@ -681,6 +681,546 @@ const recipes = [
         },
         tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"],
         image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23e8f5e8'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='12' fill='%23666'%3Eこんにゃくサラダ%3C/text%3E%3C/svg%3E"
+    },
+    {
+        id: 26,
+        name: { ja: "しらたきのパエリア", it: "Paella di Shirataki" },
+        icon: "🥘",
+        description: { ja: "ご飯の代わりにしらたきを使った、低糖質なパエリア。", it: "Paella a basso contenuto di carboidrati con shirataki al posto del riso." },
+        type: "dinner",
+        prepTime: 20,
+        cookTime: 25,
+        servings: 2,
+        difficulty: "medium",
+        calories: 320,
+        carbs: 15,
+        protein: 25,
+        fat: 18,
+        fiber: 10,
+        sodium: 600,
+        ingredients: {
+            ja: ["しらたき 400g", "鶏もも肉 100g", "パプリカ 1/2個", "玉ねぎ 1/4個", "にんにく 1片", "オリーブオイル 大さじ1", "トマト缶 100g", "サフラン 少々", "レモン 1/4個"],
+            it: ["Shirataki 400g", "Coscia di pollo 100g", "Peperone 1/2", "Cipolla 1/4", "Aglio 1 spicchio", "Olio d'oliva 1 cucchiaio", "Pomodori in scatola 100g", "Zafferano q.b.", "Limone 1/4"]
+        },
+        instructions: {
+            ja: ["しらたきを乾煎りして水分を飛ばす。", "鶏肉と野菜を炒める。", "トマト缶とサフランを加えて煮る。", "しらたきを加えて混ぜ、蒸し焼きにする。", "レモンを添える。"],
+            it: ["Tostare gli shirataki per rimuovere l'acqua.", "Soffriggere pollo e verdure.", "Aggiungere pomodori e zafferano e cuocere.", "Aggiungere gli shirataki, mescolare e cuocere al vapore.", "Servire con limone."]
+        },
+        tags: ["diabetic-friendly", "low-carb", "high-protein"],
+        image: ""
+    },
+    {
+        id: 27,
+        name: { ja: "おからニョッキ", it: "Gnocchi di Okara" },
+        icon: "🍝",
+        description: { ja: "じゃがいもの代わりにおからを使った、ヘルシーなニョッキ。", it: "Gnocchi sani con okara al posto delle patate." },
+        type: "lunch",
+        prepTime: 25,
+        cookTime: 10,
+        servings: 2,
+        difficulty: "hard",
+        calories: 280,
+        carbs: 20,
+        protein: 15,
+        fat: 15,
+        fiber: 8,
+        sodium: 300,
+        ingredients: {
+            ja: ["おからパウダー 100g", "卵 1個", "粉チーズ 大さじ2", "塩こしょう 少々", "お好みのソース（トマトソースなど）"],
+            it: ["Okara in polvere 100g", "Uovo 1", "Parmigiano grattugiato 2 cucchiai", "Sale e pepe q.b.", "Salsa a piacere (es. pomodoro)"]
+        },
+        instructions: {
+            ja: ["おからパウダー、卵、粉チーズ、塩こしょうを混ぜて生地を作る。", "生地を棒状に伸ばし、小さく切る。", "フォークで模様をつける。", "塩を加えたお湯で茹でる。", "浮き上がってきたら取り出し、ソースと絡める。"],
+            it: ["Mescolare okara, uovo, formaggio, sale e pepe per fare l'impasto.", "Stendere l'impasto e tagliarlo a pezzetti.", "Rigare con una forchetta.", "Cuocere in acqua salata bollente.", "Quando vengono a galla, scolarli e condirli."]
+        },
+        tags: ["diabetic-friendly", "low-carb", "high-protein", "japanese-ingredients"],
+        image: ""
+    },
+    {
+        id: 28,
+        name: { ja: "高野豆腐の唐揚げ", it: "Koyadofu Fritto (Karaage)" },
+        icon: "🧊",
+        description: { ja: "鶏肉のような食感で、満足感のある高野豆腐の唐揚げ。", it: "Karaage di koyadofu con una consistenza simile al pollo." },
+        type: "dinner",
+        prepTime: 15,
+        cookTime: 10,
+        servings: 2,
+        difficulty: "medium",
+        calories: 250,
+        carbs: 10,
+        protein: 20,
+        fat: 15,
+        fiber: 5,
+        sodium: 500,
+        ingredients: {
+            ja: ["高野豆腐 4個", "醤油 大さじ2", "みりん 大さじ1", "にんにくチューブ 小さじ1", "片栗粉 大さじ3", "揚げ油 適量"],
+            it: ["Koyadofu 4 pezzi", "Salsa di soia 2 cucchiai", "Mirin 1 cucchiaio", "Aglio in tubetto 1 cucchiaino", "Fecola di patate 3 cucchiai", "Olio per friggere q.b."]
+        },
+        instructions: {
+            ja: ["高野豆腐を水で戻し、水気をしっかり絞る。", "一口大に切り、調味料に漬け込む。", "片栗粉をまぶして揚げる。", "きつね色になったら取り出す。"],
+            it: ["Reidratare il koyadofu e strizzarlo bene.", "Tagliarlo a pezzi e marinarlo.", "Infarinare con la fecola e friggere.", "Togliere quando è dorato."]
+        },
+        tags: ["diabetic-friendly", "high-protein", "japanese-ingredients"],
+        image: ""
+    },
+    {
+        id: 29,
+        name: { ja: "アボカドとエビのわさびマヨ和え", it: "Insalata di Avocado e Gamberi con Maionese al Wasabi" },
+        icon: "🥑",
+        description: { ja: "ピリッとしたわさびがアクセントの、簡単デリ風サラダ。", it: "Insalata facile stile gastronomia con un tocco di wasabi." },
+        type: "lunch",
+        prepTime: 10,
+        cookTime: 5,
+        servings: 2,
+        difficulty: "easy",
+        calories: 290,
+        carbs: 8,
+        protein: 15,
+        fat: 22,
+        fiber: 6,
+        sodium: 350,
+        ingredients: {
+            ja: ["アボカド 1個", "茹でエビ 100g", "マヨネーズ 大さじ2", "わさびチューブ 小さじ1/2", "醤油 小さじ1", "レモン汁 少々"],
+            it: ["Avocado 1", "Gamberi bolliti 100g", "Maionese 2 cucchiai", "Wasabi in tubetto 1/2 cucchiaino", "Salsa di soia 1 cucchiaino", "Succo di limone q.b."]
+        },
+        instructions: {
+            ja: ["アボカドを角切りにし、レモン汁をかける。", "エビと調味料をすべて混ぜ合わせる。"],
+            it: ["Tagliare l'avocado a cubetti e irrorarlo di limone.", "Mescolare tutti gli ingredienti con i gamberi."]
+        },
+        tags: ["diabetic-friendly", "low-carb"],
+        image: ""
+    },
+    {
+        id: 30,
+        name: { ja: "切り干し大根のペペロンチーノ", it: "Peperoncino di Daikon Essiccato" },
+        icon: "🥕",
+        description: { ja: "切り干し大根の食感が面白い、和風ペペロンチーノ。", it: "Peperoncino in stile giapponese con l'interessante consistenza del daikon essiccato." },
+        type: "lunch",
+        prepTime: 15,
+        cookTime: 10,
+        servings: 1,
+        difficulty: "easy",
+        calories: 200,
+        carbs: 15,
+        protein: 5,
+        fat: 13,
+        fiber: 7,
+        sodium: 400,
+        ingredients: {
+            ja: ["切り干し大根 30g", "にんにく 1片", "鷹の爪 1本", "オリーブオイル 大さじ1", "醤油 小さじ1/2"],
+            it: ["Daikon essiccato 30g", "Aglio 1 spicchio", "Peperoncino 1", "Olio d'oliva 1 cucchiaio", "Salsa di soia 1/2 cucchiaino"]
+        },
+        instructions: {
+            ja: ["切り干し大根を水で戻し、水気を絞る。", "にんにくと鷹の爪をオリーブオイルで炒める。", "切り干し大根を加えて炒め合わせる。", "醤油で風味をつける。"],
+            it: ["Reidratare il daikon e strizzarlo.", "Soffriggere aglio e peperoncino nell'olio.", "Aggiungere il daikon e saltare.", "Insaporire con la salsa di soia."]
+        },
+        tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"],
+        image: ""
+    },
+    {
+        id: 31,
+        name: { ja: "きのこのマリネ", it: "Funghi Marinati" },
+        icon: "🍄",
+        description: { ja: "作り置きに便利な、さっぱりとしたきのこのマリネ。", it: "Marinatura di funghi rinfrescante, comoda da preparare in anticipo." },
+        type: "snack",
+        prepTime: 10,
+        cookTime: 10,
+        servings: 4,
+        difficulty: "easy",
+        calories: 90,
+        carbs: 7,
+        protein: 3,
+        fat: 6,
+        fiber: 3,
+        sodium: 250,
+        ingredients: {
+            ja: ["しめじ 1パック", "エリンギ 1パック", "酢 大さじ3", "オリーブオイル 大さじ2", "塩 小さじ1/2", "黒胡椒 少々"],
+            it: ["Shimeji 1 confezione", "Eringi 1 confezione", "Aceto 3 cucchiai", "Olio d'oliva 2 cucchiai", "Sale 1/2 cucchiaino", "Pepe nero q.b."]
+        },
+        instructions: {
+            ja: ["きのこを食べやすくほぐし、フライパンで乾煎りする。", "ボウルに調味料を混ぜ合わせる。", "熱いうちにきのこを加えて和える。", "冷蔵庫で冷やす。"],
+            it: ["Separare i funghi e tostarli in padella.", "Mescolare i condimenti in una ciotola.", "Aggiungere i funghi caldi e mescolare.", "Raffreddare in frigorifero."]
+        },
+        tags: ["diabetic-friendly", "low-calorie"],
+        image: ""
+    },
+    {
+        id: 32,
+        name: { ja: "鶏むね肉のピカタ", it: "Piccata di Petto di Pollo" },
+        icon: "🐔",
+        description: { ja: "卵の衣でふんわりと仕上げた、鶏むね肉のピカタ。", it: "Piccata di petto di pollo tenera, avvolta in una pastella all'uovo." },
+        type: "dinner",
+        prepTime: 15,
+        cookTime: 10,
+        servings: 2,
+        difficulty: "easy",
+        calories: 300,
+        carbs: 5,
+        protein: 40,
+        fat: 13,
+        fiber: 0,
+        sodium: 400,
+        ingredients: {
+            ja: ["鶏むね肉 1枚(250g)", "卵 1個", "粉チーズ 大さじ2", "塩こしょう 少々", "オリーブオイル 大さじ1"],
+            it: ["Petto di pollo 1 (250g)", "Uovo 1", "Parmigiano grattugiato 2 cucchiai", "Sale e pepe q.b.", "Olio d'oliva 1 cucchiaio"]
+        },
+        instructions: {
+            ja: ["鶏むね肉を薄切りにし、塩こしょうを振る。", "卵と粉チーズを混ぜ合わせる。", "鶏肉に卵液を絡めて焼く。", "両面に焼き色がついたら完成。"],
+            it: ["Tagliare il pollo a fette sottili, salare e pepare.", "Mescolare uovo e formaggio.", "Passare il pollo nella pastella e cuocere.", "Cuocere fino a doratura su entrambi i lati."]
+        },
+        tags: ["diabetic-friendly", "low-carb", "high-protein"],
+        image: ""
+    },
+    {
+        id: 33,
+        name: { ja: "キャベツとツナのサラダ", it: "Insalata di Cavolo e Tonno" },
+        icon: "🥗",
+        description: { ja: "無限に食べられる、定番のツナキャベツサラダ。", it: "La classica insalata di tonno e cavolo di cui non ci si stanca mai." },
+        type: "lunch",
+        prepTime: 10,
+        cookTime: 0,
+        servings: 2,
+        difficulty: "easy",
+        calories: 180,
+        carbs: 8,
+        protein: 15,
+        fat: 10,
+        fiber: 4,
+        sodium: 300,
+        ingredients: {
+            ja: ["キャベツ 1/4個", "ツナ缶 1個", "マヨネーズ 大さじ2", "醤油 小さじ1/2", "塩こしょう 少々"],
+            it: ["Cavolo 1/4", "Tonno in scatola 1", "Maionese 2 cucchiai", "Salsa di soia 1/2 cucchiaino", "Sale e pepe q.b."]
+        },
+        instructions: {
+            ja: ["キャベツを千切りにする。", "ツナ缶の油を軽く切る。", "すべての材料を混ぜ合わせる。"],
+            it: ["Tagliare il cavolo a julienne.", "Scolare leggermente l'olio dal tonno.", "Mescolare tutti gli ingredienti."]
+        },
+        tags: ["diabetic-friendly", "low-carb"],
+        image: ""
+    },
+    {
+        id: 34,
+        name: { ja: "もやしと豚肉のレンジ蒸し", it: "Germogli di Soia e Maiale al Vapore nel Microonde" },
+        icon: "🐷",
+        description: { ja: "レンジで簡単に作れる、ヘルシーな蒸し料理。", it: "Piatto sano al vapore, facile da preparare nel microonde." },
+        type: "dinner",
+        prepTime: 5,
+        cookTime: 8,
+        servings: 2,
+        difficulty: "easy",
+        calories: 280,
+        carbs: 6,
+        protein: 25,
+        fat: 18,
+        fiber: 3,
+        sodium: 450,
+        ingredients: {
+            ja: ["もやし 1袋", "豚バラ薄切り肉 150g", "ポン酢 大さじ3", "ごま油 小さじ1", "刻みねぎ 適量"],
+            it: ["Germogli di soia 1 sacchetto", "Pancetta di maiale a fette sottili 150g", "Salsa ponzu 3 cucchiai", "Olio di sesamo 1 cucchiaino", "Cipollotto tritato q.b."]
+        },
+        instructions: {
+            ja: ["耐熱皿にもやしと豚肉を交互に重ねる。", "ふんわりとラップをし、レンジで6〜8分加熱する。", "ポン酢とごま油をかけ、ねぎを散らす。"],
+            it: ["Alternare strati di germogli e maiale in una pirofila.", "Coprire e cuocere al microonde per 6-8 minuti.", "Condire con ponzu, olio di sesamo e cipollotto."]
+        },
+        tags: ["diabetic-friendly", "low-carb", "high-protein"],
+        image: ""
+    },
+    {
+        id: 35,
+        name: { ja: "ほうれん草の白和え", it: "Spinaci con Salsa di Tofu (Shiraae)" },
+        icon: "🥬",
+        description: { ja: "豆腐を使った、優しい甘さの伝統的な和え物。", it: "Condimento tradizionale dal sapore dolce e delicato, a base di tofu." },
+        type: "snack",
+        prepTime: 15,
+        cookTime: 5,
+        servings: 2,
+        difficulty: "medium",
+        calories: 120,
+        carbs: 8,
+        protein: 10,
+        fat: 6,
+        fiber: 4,
+        sodium: 200,
+        ingredients: {
+            ja: ["ほうれん草 1/2束", "木綿豆腐 100g", "白すりごま 大さじ2", "砂糖 小さじ1", "醤油 小さじ1"],
+            it: ["Spinaci 1/2 mazzo", "Tofu sodo 100g", "Sesamo bianco macinato 2 cucchiai", "Zucchero 1 cucchiaino", "Salsa di soia 1 cucchiaino"]
+        },
+        instructions: {
+            ja: ["ほうれん草を茹でて水気を絞り、食べやすく切る。", "豆腐を水切りし、すり鉢で滑らかにする。", "調味料を加えて混ぜ、ほうれん草と和える。"],
+            it: ["Bollire gli spinaci, strizzarli e tagliarli.", "Scolare il tofu e frullarlo fino a renderlo liscio.", "Aggiungere i condimenti, mescolare e unire gli spinaci."]
+        },
+        tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"],
+        image: ""
+    },
+    {
+        id: 36,
+        name: { ja: "サバ缶のトマト煮", it: "Sgombro in Scatola in Umido al Pomodoro" },
+        icon: "🐟",
+        description: { ja: "サバ缶とトマト缶で手軽に作れる、栄養満点の煮込み料理。", it: "Piatto in umido nutriente, facile da preparare con sgombro e pomodori in scatola." },
+        type: "dinner",
+        prepTime: 5,
+        cookTime: 15,
+        servings: 2,
+        difficulty: "easy",
+        calories: 280,
+        carbs: 10,
+        protein: 22,
+        fat: 16,
+        fiber: 3,
+        sodium: 550,
+        ingredients: {
+            ja: ["サバ水煮缶 1個", "トマト缶 1/2個(200g)", "玉ねぎ 1/4個", "にんにく 1片", "オリーブオイル 大さじ1", "コンソメ 小さじ1"],
+            it: ["Sgombro in scatola al naturale 1", "Pomodori in scatola 1/2 (200g)", "Cipolla 1/4", "Aglio 1 spicchio", "Olio d'oliva 1 cucchiaio", "Dado da brodo 1 cucchiaino"]
+        },
+        instructions: {
+            ja: ["玉ねぎとにんにくをみじん切りにし、オリーブオイルで炒める。", "トマト缶とコンソメ、サバ缶を汁ごと加えて煮る。", "10分ほど煮込んだら完成。"],
+            it: ["Tritare cipolla e aglio e soffriggerli nell'olio.", "Aggiungere pomodori, dado e sgombro con il suo liquido e cuocere.", "Cuocere per circa 10 minuti."]
+        },
+        tags: ["diabetic-friendly", "high-protein"],
+        image: ""
+    },
+    {
+        id: 37,
+        name: { ja: "無限ピーマン", it: "Peperoni Infiniti" },
+        icon: "🫑",
+        description: { ja: "ピーマンが無限に食べられると話題の、簡単常備菜。", it: "Contorno facile e popolare che ti farà mangiare peperoni all'infinito." },
+        type: "snack",
+        prepTime: 5,
+        cookTime: 5,
+        servings: 2,
+        difficulty: "easy",
+        calories: 100,
+        carbs: 6,
+        protein: 8,
+        fat: 5,
+        fiber: 3,
+        sodium: 300,
+        ingredients: {
+            ja: ["ピーマン 4個", "ツナ缶 1個", "鶏ガラスープの素 小さじ1", "ごま油 小さじ1", "塩こしょう 少々"],
+            it: ["Peperoni 4", "Tonno in scatola 1", "Dado di pollo granulare 1 cucchiaino", "Olio di sesamo 1 cucchiaino", "Sale e pepe q.b."]
+        },
+        instructions: {
+            ja: ["ピーマンを細切りにする。", "耐熱容器にすべての材料を入れて混ぜる。", "ラップをしてレンジで3分加熱する。"],
+            it: ["Tagliare i peperoni a julienne.", "Mettere tutti gli ingredienti in un contenitore per microonde e mescolare.", "Coprire e cuocere al microonde per 3 minuti."]
+        },
+        tags: ["diabetic-friendly", "low-calorie"],
+        image: ""
+    },
+    {
+        id: 38,
+        name: { ja: "豚キムチ豆腐", it: "Tofu con Maiale e Kimchi" },
+        icon: "🌶️",
+        description: { ja: "発酵食品のキムチを使った、体温まる一品。", it: "Piatto che riscalda il corpo, con il kimchi, un alimento fermentato." },
+        type: "dinner",
+        prepTime: 10,
+        cookTime: 10,
+        servings: 2,
+        difficulty: "easy",
+        calories: 350,
+        carbs: 10,
+        protein: 28,
+        fat: 22,
+        fiber: 4,
+        sodium: 700,
+        ingredients: {
+            ja: ["豚バラ肉 150g", "キムチ 100g", "木綿豆腐 1/2丁(150g)", "ごま油 大さじ1", "醤油 小さじ1"],
+            it: ["Pancetta di maiale 150g", "Kimchi 100g", "Tofu sodo 1/2 (150g)", "Olio di sesamo 1 cucchiaio", "Salsa di soia 1 cucchiaino"]
+        },
+        instructions: {
+            ja: ["豆腐を水切りし、食べやすく切る。", "ごま油で豚肉を炒める。", "キムチを加えて炒め合わせる。", "豆腐を加えて軽く崩しながら炒め、醤油で味を調える。"],
+            it: ["Scolare il tofu e tagliarlo.", "Soffriggere il maiale nell'olio di sesamo.", "Aggiungere il kimchi e saltare.", "Aggiungere il tofu, sbriciolarlo leggermente e condire con salsa di soia."]
+        },
+        tags: ["diabetic-friendly", "low-carb", "high-protein"],
+        image: ""
+    },
+    {
+        id: 39,
+        name: { ja: "オクラのネバネバ和え", it: "Insalata Viscosa di Okra" },
+        icon: "🟢",
+        description: { ja: "オクラ、納豆、めかぶを使った、ネバネバ健康副菜。", it: "Contorno sano e viscoso con okra, natto e mekabu." },
+        type: "snack",
+        prepTime: 10,
+        cookTime: 2,
+        servings: 2,
+        difficulty: "easy",
+        calories: 80,
+        carbs: 8,
+        protein: 6,
+        fat: 3,
+        fiber: 5,
+        sodium: 250,
+        ingredients: {
+            ja: ["オクラ 8本", "納豆 1パック", "めかぶ 1パック", "ポン酢 大さじ1"],
+            it: ["Okra 8", "Natto 1 confezione", "Mekabu 1 confezione", "Salsa ponzu 1 cucchiaio"]
+        },
+        instructions: {
+            ja: ["オクラを塩ずりし、茹でて小口切りにする。", "すべての材料を混ぜ合わせる。"],
+            it: ["Strofinare l'okra con il sale, bollirla e tagliarla a rondelle.", "Mescolare tutti gli ingredienti."]
+        },
+        tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"],
+        image: ""
+    },
+    {
+        id: 40,
+        name: { ja: "豆苗と卵の炒め物", it: "Germogli di Pisello e Uova Saltati" },
+        icon: "🌱",
+        description: { ja: "安くて栄養価の高い豆苗を使った、彩りの良い炒め物。", it: "Piatto saltato colorato, economico e nutriente, con germogli di pisello." },
+        type: "lunch",
+        prepTime: 5,
+        cookTime: 5,
+        servings: 2,
+        difficulty: "easy",
+        calories: 180,
+        carbs: 5,
+        protein: 14,
+        fat: 11,
+        fiber: 3,
+        sodium: 350,
+        ingredients: {
+            ja: ["豆苗 1パック", "卵 2個", "鶏ガラスープの素 小さじ1", "ごま油 大さじ1"],
+            it: ["Germogli di pisello 1 confezione", "Uova 2", "Dado di pollo granulare 1 cucchiaino", "Olio di sesamo 1 cucchiaio"]
+        },
+        instructions: {
+            ja: ["豆苗を食べやすく切る。", "卵を溶きほぐす。", "ごま油で豆苗をさっと炒める。", "卵を加えて大きく混ぜ、鶏ガラスープの素で味を調える。"],
+            it: ["Tagliare i germogli di pisello.", "Sbattere le uova.", "Saltare brevemente i germogli nell'olio di sesamo.", "Aggiungere le uova, mescolare grossolanamente e condire con il dado."]
+        },
+        tags: ["diabetic-friendly", "low-carb", "high-protein"],
+        image: ""
+    },
+    {
+        id: 41,
+        name: { ja: "わかめスープ", it: "Zuppa di Wakame" },
+        icon: "🥣",
+        description: { ja: "シンプルで美味しい、韓国風のわかめスープ。", it: "Zuppa di wakame semplice e deliziosa in stile coreano." },
+        type: "breakfast",
+        prepTime: 5,
+        cookTime: 10,
+        servings: 2,
+        difficulty: "easy",
+        calories: 60,
+        carbs: 4,
+        protein: 3,
+        fat: 4,
+        fiber: 2,
+        sodium: 500,
+        ingredients: {
+            ja: ["乾燥わかめ 5g", "牛肉（切り落とし） 50g", "ごま油 小さじ1", "醤油 大さじ1/2", "にんにくチューブ 小さじ1/2", "水 400ml"],
+            it: ["Wakame essiccata 5g", "Manzo a fette sottili 50g", "Olio di sesamo 1 cucchiaino", "Salsa di soia 1/2 cucchiaio", "Aglio in tubetto 1/2 cucchiaino", "Acqua 400ml"]
+        },
+        instructions: {
+            ja: ["わかめを水で戻す。", "鍋にごま油を熱し、牛肉を炒める。", "水とわかめ、調味料を加えて煮る。"],
+            it: ["Reidratare la wakame.", "Scaldare l'olio di sesamo in una pentola e soffriggere il manzo.", "Aggiungere acqua, wakame e condimenti e cuocere."]
+        },
+        tags: ["diabetic-friendly", "low-calorie"],
+        image: ""
+    },
+    {
+        id: 42,
+        name: { ja: "カニカマ玉", it: "Frittata con Surimi (Kanikama-tama)" },
+        icon: "🦀",
+        description: { ja: "カニカマを使った、彩り豊かで簡単な卵料理。", it: "Piatto di uova facile e colorato con surimi." },
+        type: "dinner",
+        prepTime: 10,
+        cookTime: 10,
+        servings: 2,
+        difficulty: "easy",
+        calories: 220,
+        carbs: 8,
+        protein: 18,
+        fat: 13,
+        fiber: 1,
+        sodium: 600,
+        ingredients: {
+            ja: ["カニカマ 6本", "卵 3個", "グリーンピース 大さじ2", "鶏ガラスープの素 小さじ1", "醤油 小さじ1", "水 100ml", "片栗粉 小さじ1"],
+            it: ["Surimi 6 bastoncini", "Uova 3", "Piselli 2 cucchiai", "Dado di pollo granulare 1 cucchiaino", "Salsa di soia 1 cucchiaino", "Acqua 100ml", "Fecola di patate 1 cucchiaino"]
+        },
+        instructions: {
+            ja: ["卵を溶きほぐし、ほぐしたカニカマとグリーンピースを混ぜる。", "フライパンで半熟状に焼いて皿に盛る。", "鍋にあんの材料をすべて入れて火にかけ、とろみがついたら卵の上にかける。"],
+            it: ["Sbattere le uova e mescolare con surimi sfilacciato e piselli.", "Cuocere in padella fino a cottura desiderata e trasferire su un piatto.", "Mettere tutti gli ingredienti per la salsa in una pentola, scaldare e addensare, quindi versare sulle uova."]
+        },
+        tags: ["diabetic-friendly", "high-protein"],
+        image: ""
+    },
+    {
+        id: 43,
+        name: { ja: "油揚げのピザ", it: "Pizza di Tofu Fritto (Aburaage)" },
+        icon: "🍕",
+        description: { ja: "パン生地の代わりに油揚げを使った、低糖質な和風ピザ。", it: "Pizza in stile giapponese a basso contenuto di carboidrati, con tofu fritto al posto dell'impasto." },
+        type: "snack",
+        prepTime: 5,
+        cookTime: 7,
+        servings: 1,
+        difficulty: "easy",
+        calories: 200,
+        carbs: 5,
+        protein: 12,
+        fat: 15,
+        fiber: 2,
+        sodium: 400,
+        ingredients: {
+            ja: ["油揚げ 1枚", "ピザソース 大さじ1", "ピーマン 1/4個", "玉ねぎ 1/8個", "とろけるチーズ 20g"],
+            it: ["Aburaage (tofu fritto) 1", "Salsa per pizza 1 cucchiaio", "Peperone 1/4", "Cipolla 1/8", "Formaggio filante 20g"]
+        },
+        instructions: {
+            ja: ["油揚げを開いて、ピザソースを塗る。", "薄切りにした野菜とチーズを乗せる。", "トースターでチーズが溶けるまで焼く。"],
+            it: ["Aprire l'aburaage e spalmare la salsa.", "Guarnire con verdure a fette e formaggio.", "Infornare nel tostapane finché il formaggio non si scioglie."]
+        },
+        tags: ["diabetic-friendly", "low-carb", "high-protein", "japanese-ingredients"],
+        image: ""
+    },
+    {
+        id: 44,
+        name: { ja: "きのこと豆腐のあんかけ", it: "Tofu con Salsa Addensata di Funghi" },
+        icon: "🍲",
+        description: { ja: "きのこの旨味たっぷりのあんが、豆腐に絡む優しい味わいの一品。", it: "Piatto dal sapore delicato con una salsa densa ai funghi che avvolge il tofu." },
+        type: "dinner",
+        prepTime: 10,
+        cookTime: 15,
+        servings: 2,
+        difficulty: "easy",
+        calories: 150,
+        carbs: 10,
+        protein: 12,
+        fat: 7,
+        fiber: 4,
+        sodium: 500,
+        ingredients: {
+            ja: ["木綿豆腐 1丁", "しめじ 1/2パック", "えのき 1/2袋", "だし汁 200ml", "醤油 大さじ1.5", "みりん 大さじ1", "片栗粉 小さじ1"],
+            it: ["Tofu sodo 1", "Shimeji 1/2 confezione", "Enoki 1/2 confezione", "Brodo dashi 200ml", "Salsa di soia 1.5 cucchiai", "Mirin 1 cucchiaio", "Fecola di patate 1 cucchiaino"]
+        },
+        instructions: {
+            ja: ["豆腐を水切りし、食べやすく切る。", "きのこをほぐす。", "鍋にだし汁と調味料、きのこを入れて煮る。", "水溶き片栗粉でとろみをつける。", "豆腐にかける。"],
+            it: ["Scolare il tofu e tagliarlo.", "Separare i funghi.", "Cuocere in una pentola brodo, condimenti e funghi.", "Addensare con la fecola sciolta in acqua.", "Versare sul tofu."]
+        },
+        tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"],
+        image: ""
+    },
+    {
+        id: 45,
+        name: { ja: "切り昆布の煮物", it: "Stufato di Kombu a Strisce (Kiri Kombu)" },
+        icon: "🌿",
+        description: { ja: "食物繊維とミネラルが豊富な、日本の家庭的な煮物。", it: "Stufato casalingo giapponese, ricco di fibre e minerali." },
+        type: "snack",
+        prepTime: 10,
+        cookTime: 15,
+        servings: 4,
+        difficulty: "easy",
+        calories: 70,
+        carbs: 12,
+        protein: 3,
+        fat: 1,
+        fiber: 6,
+        sodium: 450,
+        ingredients: {
+            ja: ["切り昆布 50g", "人参 1/4本", "油揚げ 1/2枚", "だし汁 300ml", "醤油 大さじ2", "みりん 大さじ1"],
+            it: ["Kiri Kombu (kombu a strisce) 50g", "Carota 1/4", "Aburaage (tofu fritto) 1/2", "Brodo dashi 300ml", "Salsa di soia 2 cucchiai", "Mirin 1 cucchiaio"]
+        },
+        instructions: {
+            ja: ["切り昆布をさっと洗う。", "人参と油揚げを細切りにする。", "鍋にすべての材料を入れて、煮汁が少なくなるまで煮る。"],
+            it: ["Lavare brevemente il kombu.", "Tagliare carota e aburaage a julienne.", "Mettere tutti gli ingredienti in una pentola e cuocere finché il liquido non si riduce."]
+        },
+        tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"],
+        image: ""
     }
 ];
 
