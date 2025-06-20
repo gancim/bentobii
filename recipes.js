@@ -22,8 +22,24 @@ const recipes = [
             it: ["Tofu silken 300g", "Uova 2", "Cipollotti 2", "Zenzero 1 pezzo", "Salsa di soia 1 cucchiaio", "Olio di sesamo 1 cucchiaino", "Sale e pepe q.b."]
         },
         instructions: {
-            ja: ["豆腐を水切りし、手でほぐす", "ねぎを小口切り、しょうがをみじん切りにする", "フライパンにごま油を熱し、しょうがを炒める", "豆腐を加えて炒める", "溶き卵を加えて混ぜ合わせる", "醤油と塩こしょうで味を調える"],
-            it: ["Scolare il tofu e sbriciolarlo a mano", "Tagliare i cipollotti e tritare lo zenzero", "Scaldare l'olio di sesamo in padella e soffriggere lo zenzero", "Aggiungere il tofu e cuocere", "Versare le uova sbattute e mescolare", "Condire con salsa di soia, sale e pepe"]
+            ja: [
+                "豆腐をキッチンペーパーで包み、重しをのせて30分水切りする",
+                "ねぎを小口切り、しょうがをみじん切りにする",
+                "フライパンを中火で熱し、ごま油を入れる",
+                "しょうがを香りが出るまで炒める（30秒）",
+                "豆腐を手でほぐしながら加え、2分炒める",
+                "溶き卵を加えて、豆腐と混ぜ合わせながら炒める",
+                "醤油と塩こしょうで味を調え、卵が固まったら完成"
+            ],
+            it: [
+                "Avvolgere il tofu in carta da cucina e mettere un peso per 30 minuti per scolarlo",
+                "Tagliare i cipollotti e tritare finemente lo zenzero",
+                "Scaldare una padella a fuoco medio e aggiungere l'olio di sesamo",
+                "Soffriggere lo zenzero fino a quando sprigiona aroma (30 secondi)",
+                "Aggiungere il tofu sbriciolato a mano e cuocere per 2 minuti",
+                "Versare le uova sbattute e mescolare con il tofu",
+                "Condire con salsa di soia, sale e pepe, cuocere fino a quando le uova sono solidificate"
+            ]
         },
         tags: ["diabetic-friendly", "high-protein", "low-carb", "japanese-ingredients"],
         image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23f0f0f0'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='16' fill='%23666'%3E豆腐スクランブル%3C/text%3E%3C/svg%3E"
@@ -49,8 +65,22 @@ const recipes = [
             it: ["Shirataki 100g", "Wakame 5g", "Tofu 50g", "Cipollotto 1", "Miso 1 cucchiaio", "Brodo dashi 300ml"]
         },
         instructions: {
-            ja: ["こんにゃく麺を水洗いする", "だし汁を温める", "味噌を溶かす", "豆腐とわかめを加える", "最後にねぎを散らす"],
-            it: ["Sciacquare gli shirataki", "Scaldare il brodo dashi", "Sciogliere il miso", "Aggiungere tofu e wakame", "Guarnire con cipollotto"]
+            ja: [
+                "こんにゃく麺をザルに入れ、流水で2分間よく洗い、ぬめりを取る",
+                "鍋にだし汁300mlを入れ、中火で温める",
+                "だし汁が温まったら、味噌を溶かし入れる（沸騰させない）",
+                "豆腐を一口大に切り、わかめと一緒に加える",
+                "弱火で2分煮て、最後にねぎを散らす",
+                "温かいうちにいただく"
+            ],
+            it: [
+                "Mettere gli shirataki in un colino e sciacquarli sotto acqua corrente per 2 minuti per rimuovere la viscosità",
+                "Scaldare 300ml di brodo dashi in una pentola a fuoco medio",
+                "Quando il brodo è caldo, sciogliere il miso (non far bollire)",
+                "Tagliare il tofu a pezzi e aggiungere con il wakame",
+                "Cuocere a fuoco basso per 2 minuti e guarnire con cipollotto",
+                "Servire caldo"
+            ]
         },
         tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"],
         image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23e8f4f8'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='14' fill='%23666'%3E味噌汁%3C/text%3E%3C/svg%3E"
@@ -76,8 +106,22 @@ const recipes = [
             it: ["Avocado 1/2", "Natto 1 confezione", "Riso integrale cotto 50g", "Nori 1 foglio", "Salsa di soia 1 cucchiaino", "Wasabi q.b."]
         },
         instructions: {
-            ja: ["アボカドを角切りにする", "納豆をよく混ぜる", "玄米を器に盛る", "アボカドと納豆をのせる", "のりを手でちぎってのせる", "醤油とわさびを添える"],
-            it: ["Tagliare l'avocado a cubetti", "Mescolare bene il natto", "Mettere il riso nella ciotola", "Aggiungere avocado e natto", "Spezzettare il nori sopra", "Servire con salsa di soia e wasabi"]
+            ja: [
+                "アボカドを縦半分に切り、皮と種を除いて1cm角のサイコロ状に切る",
+                "納豆をパックから取り出し、付属のタレとからしを加えてよく混ぜる（粘りが出るまで）",
+                "玄米を茶碗に盛りつける（温かいもの）",
+                "アボカドと納豆を玄米の上にきれいに並べる",
+                "のりを手で細かくちぎって、具材の上に散らす",
+                "醤油とわさびを小皿に取り分けて、好みでかけて食べる"
+            ],
+            it: [
+                "Tagliare l'avocado a metà, rimuovere buccia e nocciolo, tagliare a cubetti di 1cm",
+                "Prendere il natto dalla confezione, aggiungere la salsa e la senape inclusi e mescolare bene fino a formare filamenti",
+                "Mettere il riso integrale caldo in una ciotola",
+                "Disporre ordinatamente avocado e natto sul riso",
+                "Spezzettare il nori a mano e spargerlo sopra gli ingredienti",
+                "Servire salsa di soia e wasabi a parte per condire a piacere"
+            ]
         },
         tags: ["diabetic-friendly", "high-protein", "japanese-ingredients"],
         image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23f5f5dc'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='14' fill='%23666'%3E納豆丼%3C/text%3E%3C/svg%3E"
@@ -105,8 +149,24 @@ const recipes = [
             it: ["Petto di pollo 200g", "Lattuga 4 foglie", "Cetriolo 1", "Pomodoro 1", "Carota 1/2", "Cipolla 1/4", "Ponzu 2 cucchiai", "Olio di sesamo 1 cucchiaino"]
         },
         instructions: {
-            ja: ["鶏胸肉を茹でて冷ます", "野菜を食べやすい大きさに切る", "鶏肉を手で裂く", "すべての材料を混ぜる", "ポン酢とごま油で和える"],
-            it: ["Bollire il petto di pollo e farlo raffreddare", "Tagliare le verdure", "Sfilacciare il pollo", "Mescolare tutti gli ingredienti", "Condire con ponzu e olio di sesamo"]
+            ja: [
+                "鶏胸肉に塩こしょうをふり、10分置く",
+                "鍋に水を沸かし、鶏胸肉を入れて中火で20分茹でる",
+                "茹で上がった鶏肉を冷水で冷やし、手で細かく裂く",
+                "レタスは一口大、きゅうりは薄切り、トマトはくし切りにする",
+                "人参と玉ねぎは細切りにする",
+                "すべての材料を大きめのボウルに入れて混ぜる",
+                "ポン酢とごま油を加えて、軽く和える"
+            ],
+            it: [
+                "Salare e pepare il petto di pollo e lasciare 10 minuti",
+                "Portare l'acqua a ebollizione, aggiungere il pollo e cuocere a fuoco medio per 20 minuti",
+                "Raffreddare il pollo in acqua fredda e sfilacciarlo a mano",
+                "Tagliare la lattuga a pezzi, il cetriolo a fette sottili, il pomodoro a spicchi",
+                "Tagliare carota e cipolla a julienne",
+                "Mescolare tutti gli ingredienti in una ciotola grande",
+                "Aggiungere ponzu e olio di sesamo e mescolare leggermente"
+            ]
         },
         tags: ["diabetic-friendly", "high-protein", "low-calorie"],
         image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23e8f5e8'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='14' fill='%23666'%3Eサラダ%3C/text%3E%3C/svg%3E"
@@ -132,8 +192,24 @@ const recipes = [
             it: ["Shiitake 6", "Enoki 1 confezione", "Shimeji 1 confezione", "Aglio 1 spicchio", "Salsa di soia 1 cucchiaio", "Mirin 1 cucchiaino", "Olio d'oliva 1 cucchiaio"]
         },
         instructions: {
-            ja: ["きのこを食べやすい大きさに切る", "にんにくをみじん切りにする", "フライパンでにんにくを炒める", "きのこを加えて炒める", "醤油とみりんで味付けする"],
-            it: ["Tagliare i funghi", "Tritare l'aglio", "Soffriggere l'aglio in padella", "Aggiungere i funghi e saltare", "Condire con salsa di soia e mirin"]
+            ja: [
+                "しいたけは石づきを除いて薄切り、えのきは根元を切り落としてほぐす",
+                "しめじは根元を切り落としてほぐす",
+                "にんにくをみじん切りにする",
+                "フライパンを中火で熱し、オリーブオイルを入れる",
+                "にんにくを香りが出るまで炒める（30秒）",
+                "きのこを加えて、水分が出てくるまで3分炒める",
+                "醤油とみりんを加えて、さらに2分炒めて味をなじませる"
+            ],
+            it: [
+                "Rimuovere il gambo degli shiitake e tagliarli a fette sottili, tagliare la base degli enoki e separarli",
+                "Tagliare la base degli shimeji e separarli",
+                "Tritare finemente l'aglio",
+                "Scaldare una padella a fuoco medio e aggiungere l'olio d'oliva",
+                "Soffriggere l'aglio fino a quando sprigiona aroma (30 secondi)",
+                "Aggiungere i funghi e cuocere per 3 minuti fino a quando rilasciano acqua",
+                "Aggiungere salsa di soia e mirin e cuocere altri 2 minuti per insaporire"
+            ]
         },
         tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"],
         image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23f0e6d2'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='14' fill='%23666'%3Eきのこ炒め%3C/text%3E%3C/svg%3E"
@@ -160,8 +236,24 @@ const recipes = [
             it: ["Pesce bianco 200g", "Zenzero 1 pezzo", "Cipollotti 2", "Salsa di soia 1 cucchiaio", "Sake 1 cucchiaio", "Olio di sesamo 1 cucchiaino"]
         },
         instructions: {
-            ja: ["魚に塩をふって10分置く", "生姜とねぎを細切りにする", "魚の上に野菜をのせる", "蒸し器で15分蒸す", "醤油、酒、ごま油を混ぜてかける"],
-            it: ["Salare il pesce e lasciare 10 minuti", "Tagliare zenzero e cipollotti a julienne", "Mettere le verdure sul pesce", "Cuocere a vapore per 15 minuti", "Mescolare salsa di soia, sake e olio, versare sopra"]
+            ja: [
+                "白身魚に塩をふり、10分間置いて水分を出す",
+                "生姜とねぎを細切り（千切り）にする",
+                "蒸し器の水を沸かす",
+                "魚の上に生姜とねぎをきれいに並べる",
+                "蒸し器に入れ、中火で15分蒸す",
+                "竹串で刺して、身がほぐれるようになったら火を止める",
+                "醤油、酒、ごま油を混ぜたタレをかけて完成"
+            ],
+            it: [
+                "Salare il pesce bianco e lasciare 10 minuti per far uscire l'acqua",
+                "Tagliare zenzero e cipollotti a julienne",
+                "Portare l'acqua del cestello a ebollizione",
+                "Disporre ordinatamente zenzero e cipollotti sul pesce",
+                "Mettere nel cestello e cuocere a vapore a fuoco medio per 15 minuti",
+                "Controllare con uno stuzzicadenti, quando la carne si sfalda spegnere il fuoco",
+                "Versare sopra la salsa mescolata di salsa di soia, sake e olio di sesamo"
+            ]
         },
         tags: ["diabetic-friendly", "low-fat", "high-protein"],
         image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23e6f3ff'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='14' fill='%23666'%3E蒸し魚%3C/text%3E%3C/svg%3E"
@@ -187,8 +279,24 @@ const recipes = [
             it: ["Daikon 300g", "Calamari 150g", "Brodo dashi 400ml", "Salsa di soia 2 cucchiai", "Mirin 1 cucchiaio", "Zucchero 1 cucchiaino"]
         },
         instructions: {
-            ja: ["大根を厚めに切る", "イカを食べやすく切る", "だし汁で大根を煮る", "イカを加えて煮る", "調味料で味を調える"],
-            it: ["Tagliare il daikon a fette spesse", "Tagliare i calamari", "Cuocere il daikon nel brodo dashi", "Aggiungere i calamari", "Condire con i condimenti"]
+            ja: [
+                "大根を2cm厚さの半月切りにする",
+                "イカを食べやすい大きさに切る（輪切りまたは細切り）",
+                "鍋にだし汁400mlを入れ、中火で沸かす",
+                "大根を入れて、弱火で15分煮る",
+                "イカを加えて、さらに10分煮る",
+                "醤油、みりん、砂糖を加えて、味を調える",
+                "煮汁が少なくなるまで煮詰めて完成"
+            ],
+            it: [
+                "Tagliare il daikon a fette semicircolari di 2cm di spessore",
+                "Tagliare i calamari a pezzi (anelli o strisce)",
+                "Portare 400ml di brodo dashi a ebollizione a fuoco medio",
+                "Aggiungere il daikon e cuocere a fuoco basso per 15 minuti",
+                "Aggiungere i calamari e cuocere altri 10 minuti",
+                "Aggiungere salsa di soia, mirin e zucchero per insaporire",
+                "Far ridurre il liquido fino a quando si addensa"
+            ]
         },
         tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"],
         image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23f8f8f8'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='14' fill='%23666'%3E大根煮物%3C/text%3E%3C/svg%3E"
@@ -216,8 +324,22 @@ const recipes = [
             it: ["Tofu sodo 300g", "Cipolla 1/2", "Uovo 1", "Pangrattato 2 cucchiai", "Salsa di soia 1 cucchiaio", "Sale e pepe q.b.", "Olio d'oliva 1 cucchiaio"]
         },
         instructions: {
-            ja: ["豆腐をよく水切りしてつぶす", "玉ねぎをみじん切りにして炒める", "すべての材料を混ぜる", "形を整えて焼く", "両面をこんがり焼く"],
-            it: ["Scolare bene il tofu e schiacciarlo", "Tritare la cipolla e rosolarla", "Mescolare tutti gli ingredienti", "Formare gli hamburger", "Cuocere su entrambi i lati"]
+            ja: [
+                "豆腐をよく水切りしてつぶす（重しをのせて30分）",
+                "玉ねぎをみじん切りにして、フライパンで透明になるまで炒める",
+                "豆腐、玉ねぎ、卵、パン粉、醤油、塩こしょうを混ぜる",
+                "小判型に成形する（厚さ1.5cm）",
+                "フライパンにオリーブオイルを熱し、中火で片面5分焼く",
+                "裏返して5分焼き、両面こんがりしたら完成"
+            ],
+            it: [
+                "Scolare bene il tofu e schiacciarlo (mettere un peso per 30 minuti)",
+                "Tritare la cipolla e rosolarla in padella fino a renderla trasparente",
+                "Mescolare tofu, cipolla, uovo, pangrattato, salsa di soia, sale e pepe",
+                "Formare hamburger ovali (spessore 1.5cm)",
+                "Scaldare l'olio d'oliva in padella e cuocere a fuoco medio 5 minuti per lato",
+                "Girare e cuocere altri 5 minuti fino a doratura"
+            ]
         },
         tags: ["diabetic-friendly", "high-protein", "low-calorie"],
         image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23f5deb3'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='12' fill='%23666'%3E豆腐ハンバーグ%3C/text%3E%3C/svg%3E"
@@ -243,8 +365,24 @@ const recipes = [
             it: ["Cavolo 100g", "Carota 50g", "Germogli di soia 50g", "Tofu 50g", "Miso 2 cucchiai", "Brodo dashi 400ml"]
         },
         instructions: {
-            ja: ["野菜を食べやすく切る", "だし汁を沸かす", "硬い野菜から順に入れる", "豆腐を加える", "味噌を溶かし入れる"],
-            it: ["Tagliare le verdure", "Portare a ebollizione il brodo dashi", "Aggiungere le verdure più dure per prime", "Aggiungere il tofu", "Sciogliere il miso"]
+            ja: [
+                "キャベツは一口大、人参は薄切り、もやしは洗っておく",
+                "鍋にだし汁400mlを入れ、中火で沸かす",
+                "人参を入れて3分煮る",
+                "キャベツを加えて2分煮る",
+                "もやしと豆腐を加えて1分煮る",
+                "火を弱めて味噌を溶かし入れる（沸騰させない）",
+                "味噌が溶けたら火を止めて完成"
+            ],
+            it: [
+                "Tagliare il cavolo a pezzi, la carota a fette sottili, sciacquare i germogli",
+                "Portare 400ml di brodo dashi a ebollizione a fuoco medio",
+                "Aggiungere la carota e cuocere per 3 minuti",
+                "Aggiungere il cavolo e cuocere per 2 minuti",
+                "Aggiungere germogli e tofu e cuocere per 1 minuto",
+                "Abbassare il fuoco e sciogliere il miso (non far bollire)",
+                "Spegnere il fuoco quando il miso è sciolto"
+            ]
         },
         tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"],
         image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23e8f4f8'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='12' fill='%23666'%3E野菜味噌汁%3C/text%3E%3C/svg%3E"
@@ -270,8 +408,24 @@ const recipes = [
             it: ["Konjac 200g", "Salsa di soia 2 cucchiai", "Mirin 1 cucchiaio", "Zucchero 1 cucchiaino", "Olio di sesamo 1 cucchiaino", "Shichimi q.b."]
         },
         instructions: {
-            ja: ["こんにゃくに格子状に切り込みを入れる", "熱湯で下茹でする", "フライパンで焼く", "調味料を加えて煮詰める", "七味唐辛子をふる"],
-            it: ["Fare incisioni a griglia sul konjac", "Sbollentare in acqua bollente", "Cuocere in padella", "Aggiungere i condimenti e far ridurre", "Spolverare con shichimi"]
+            ja: [
+                "こんにゃくに格子状の切り込みを入れる（表面に1cm間隔で十字に切れ目）",
+                "鍋に水を沸かし、こんにゃくを2分間下茹でする",
+                "ザルに上げて水気を切る",
+                "フライパンを中火で熱し、ごま油を入れる",
+                "こんにゃくを片面3分ずつ焼く",
+                "醤油、みりん、砂糖を加えて、煮汁が少なくなるまで煮詰める",
+                "七味唐辛子をふって完成"
+            ],
+            it: [
+                "Fare incisioni a griglia sul konjac (tagli incrociati ogni 1cm sulla superficie)",
+                "Portare l'acqua a ebollizione e sbollentare il konjac per 2 minuti",
+                "Scolare in un colino",
+                "Scaldare una padella a fuoco medio e aggiungere l'olio di sesamo",
+                "Cuocere il konjac 3 minuti per lato",
+                "Aggiungere salsa di soia, mirin e zucchero e far ridurre il liquido",
+                "Spolverare con shichimi e servire"
+            ]
         },
         tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"],
         image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23f0f0f0'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='12' fill='%23666'%3Eこんにゃく%3C/text%3E%3C/svg%3E"
@@ -298,8 +452,22 @@ const recipes = [
             it: ["Cetriolo 1", "Kombu salato 5g", "Olio di sesamo q.b."]
         },
         instructions: {
-            ja: ["きゅうりを薄切りにする", "塩をふって10分置く", "水気を絞る", "塩昆布とごま油で和える"],
-            it: ["Tagliare il cetriolo a fette sottili", "Salare e lasciare 10 minuti", "Strizzare l'acqua", "Condire con kombu salato e olio di sesamo"]
+            ja: [
+                "きゅうりを薄切りにする（2mm厚さ）",
+                "きゅうりに塩をふり、10分間置いて水分を出す",
+                "きゅうりを手で軽く絞って水気を切る",
+                "塩昆布を細かく刻む",
+                "きゅうりと塩昆布を混ぜ合わせる",
+                "ごま油を数滴加えて、軽く和える"
+            ],
+            it: [
+                "Tagliare il cetriolo a fette sottili (2mm di spessore)",
+                "Salare il cetriolo e lasciare 10 minuti per far uscire l'acqua",
+                "Strizzare leggermente il cetriolo con le mani per rimuovere l'acqua",
+                "Tritare finemente il kombu salato",
+                "Mescolare cetriolo e kombu salato",
+                "Aggiungere alcune gocce di olio di sesamo e mescolare leggermente"
+            ]
         },
         tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"],
         image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23e8f5e8'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='12' fill='%23666'%3Eきゅうり%3C/text%3E%3C/svg%3E"
@@ -325,8 +493,22 @@ const recipes = [
             it: ["Edamame 200g", "Sale 1 cucchiaio", "Acqua q.b."]
         },
         instructions: {
-            ja: ["枝豆を水洗いする", "鍋に水と塩を入れて沸かす", "枝豆を入れて8分茹でる", "冷水で冷やして完成"],
-            it: ["Sciacquare gli edamame", "Portare a ebollizione acqua e sale", "Cuocere gli edamame per 8 minuti", "Raffreddare in acqua fredda"]
+            ja: [
+                "枝豆を流水でよく洗い、汚れを落とす",
+                "鍋に水を入れ、塩大さじ1を加えて沸かす",
+                "沸騰したら枝豆を入れ、中火で8分間茹でる",
+                "茹で上がったらザルに上げ、冷水で冷やす",
+                "水気を切って、温かいうちに食べる",
+                "塩をふって好みの味に調える"
+            ],
+            it: [
+                "Sciacquare bene gli edamame sotto acqua corrente per rimuovere lo sporco",
+                "Portare l'acqua a ebollizione in una pentola e aggiungere 1 cucchiaio di sale",
+                "Quando bolle, aggiungere gli edamame e cuocere a fuoco medio per 8 minuti",
+                "Scolare in un colino e raffreddare in acqua fredda",
+                "Scolare l'acqua e servire caldo",
+                "Salare a piacere"
+            ]
         },
         tags: ["diabetic-friendly", "high-protein", "japanese-ingredients"],
         image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23e8f5e8'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='12' fill='%23666'%3E枝豆%3C/text%3E%3C/svg%3E"
@@ -379,8 +561,20 @@ const recipes = [
             it: ["Tofu silken 150g", "Semi di sesamo bianchi 2 cucchiai", "Salsa di soia 1 cucchiaino", "Mirin 1 cucchiaino", "Zucchero 1 cucchiaino"]
         },
         instructions: {
-            ja: ["豆腐を水切りする", "ごまをすりつぶす", "調味料と混ぜる", "豆腐と和える"],
-            it: ["Scolare il tofu", "Tritare i semi di sesamo", "Mescolare con i condimenti", "Condire il tofu"]
+            ja: [
+                "豆腐をキッチンペーパーで包み、10分間重しをのせて水切りする",
+                "白ごまをすり鉢ですりつぶす（またはフードプロセッサーで細かくする）",
+                "すりごまに醤油、みりん、砂糖を加えてよく混ぜる",
+                "豆腐を一口大に切り、ボウルに入れる",
+                "ごまダレを加えて、全体をやさしく和える"
+            ],
+            it: [
+                "Avvolgere il tofu in carta da cucina e mettere un peso per 10 minuti per scolarlo",
+                "Tritare i semi di sesamo in un mortaio o con un mixer",
+                "Mescolare i semi di sesamo tritati con salsa di soia, mirin e zucchero",
+                "Tagliare il tofu a pezzi e metterlo in una ciotola",
+                "Aggiungere la salsa di sesamo e mescolare delicatamente"
+            ]
         },
         tags: ["diabetic-friendly", "high-protein", "low-calorie"],
         image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23f5f5dc'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='12' fill='%23666'%3E胡麻豆腐%3C/text%3E%3C/svg%3E"
@@ -406,8 +600,24 @@ const recipes = [
             it: ["Nori 2 fogli", "Riso integrale 100g", "Cetriolo 1", "Avocado 1/4", "Salsa di soia 1 cucchiaino"]
         },
         instructions: {
-            ja: ["玄米を炊く", "きゅうりとアボカドを細切りにする", "のりにご飯を広げる", "具材をのせて巻く", "食べやすい大きさに切る"],
-            it: ["Cuocere il riso integrale", "Tagliare cetriolo e avocado a julienne", "Stendere il riso sul nori", "Aggiungere gli ingredienti e arrotolare", "Tagliare a pezzi"]
+            ja: [
+                "玄米を炊飯器で炊き、粗熱を取る",
+                "きゅうりとアボカドを細切り（5mm幅の棒状）にする",
+                "巻きすの上にのりを置き、のりの上にご飯を薄く広げる（端1cm残す）",
+                "ご飯の中央にきゅうりとアボカドを並べる",
+                "手前から巻きすごと巻き、軽く押さえて形を整える",
+                "包丁で食べやすい大きさに切る（濡らした包丁を使うと切りやすい）",
+                "醤油を添えていただく"
+            ],
+            it: [
+                "Cuocere il riso integrale nella cuociriso e lasciar raffreddare",
+                "Tagliare cetriolo e avocado a bastoncini di 5mm di spessore",
+                "Mettere il foglio di nori su una stuoia da sushi e stendere il riso lasciando 1cm libero su un bordo",
+                "Disporre cetriolo e avocado al centro del riso",
+                "Arrotolare il tutto aiutandosi con la stuoia, premendo leggermente per dare forma",
+                "Tagliare a pezzi con un coltello bagnato per evitare che si attacchi",
+                "Servire con salsa di soia"
+            ]
         },
         tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"],
         image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23f0e68c'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='12' fill='%23666'%3E海苔巻き%3C/text%3E%3C/svg%3E"
@@ -433,8 +643,24 @@ const recipes = [
             it: ["Filetto di pollo 200g", "Zenzero 1 pezzo", "Cipollotti 2", "Salsa di soia 1 cucchiaio", "Sake 1 cucchiaio", "Olio di sesamo 1 cucchiaino"]
         },
         instructions: {
-            ja: ["鶏ささみに塩をふる", "生姜とねぎを細切りにする", "蒸し器で15分蒸す", "調味料を混ぜてかける"],
-            it: ["Salare il filetto di pollo", "Tagliare zenzero e cipollotti", "Cuocere a vapore per 15 minuti", "Condire con la salsa"]
+            ja: [
+                "鶏ささみに塩をふり、10分間置いて水分を出す",
+                "生姜とねぎを細切り（千切り）にする",
+                "蒸し器の水を沸かす",
+                "鶏ささみの上に生姜とねぎをきれいに並べる",
+                "蒸し器に入れ、中火で15分蒸す",
+                "竹串で刺して、身がほぐれるようになったら火を止める",
+                "醤油、酒、ごま油を混ぜたタレをかけて完成"
+            ],
+            it: [
+                "Salare il filetto di pollo e lasciare 10 minuti per far uscire l'acqua",
+                "Tagliare zenzero e cipollotti a julienne",
+                "Portare l'acqua del cestello a ebollizione",
+                "Disporre ordinatamente zenzero e cipollotti sul pollo",
+                "Mettere nel cestello e cuocere a vapore a fuoco medio per 15 minuti",
+                "Controllare con uno stuzzicadenti, quando la carne si sfalda spegnere il fuoco",
+                "Versare sopra la salsa mescolata di salsa di soia, sake e olio di sesamo"
+            ]
         },
         tags: ["diabetic-friendly", "high-protein", "low-fat"],
         image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23f0e6d2'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='10' fill='%23666'%3E鶏ささみ蒸し%3C/text%3E%3C/svg%3E"
@@ -460,8 +686,22 @@ const recipes = [
             it: ["Sgombro 2", "Sale q.b.", "Limone 1/2", "Daikon grattugiato q.b."]
         },
         instructions: {
-            ja: ["鯖に塩をふる", "グリルで12分焼く", "レモンと大根おろしを添える"],
-            it: ["Salare lo sgombro", "Grigliare per 12 minuti", "Servire con limone e daikon grattugiato"]
+            ja: [
+                "鯖の表面に塩をふり、10分間置いて水分を出す",
+                "グリルパンを中火で熱する",
+                "鯖を片面6分ずつ焼く（皮目から焼く）",
+                "竹串で刺して、身がほぐれるようになったら完成",
+                "レモンをくし切り、大根をおろす",
+                "鯖にレモンと大根おろしを添えて完成"
+            ],
+            it: [
+                "Salare la superficie dello sgombro e lasciare 10 minuti per far uscire l'acqua",
+                "Scaldare la griglia a fuoco medio",
+                "Cuocere lo sgombro 6 minuti per lato (iniziare dalla parte della pelle)",
+                "Controllare con uno stuzzicadenti, quando la carne si sfalda è pronto",
+                "Tagliare il limone a spicchi e grattugiare il daikon",
+                "Servire lo sgombro con limone e daikon grattugiato"
+            ]
         },
         tags: ["diabetic-friendly", "high-protein", "japanese-ingredients"],
         image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23e6f3ff'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='12' fill='%23666'%3E鯖焼き%3C/text%3E%3C/svg%3E"
@@ -487,8 +727,22 @@ const recipes = [
             it: ["Salmone 2 fette", "Miso 2 cucchiai", "Mirin 1 cucchiaio", "Sake 1 cucchiaio", "Zucchero 1 cucchiaino"]
         },
         instructions: {
-            ja: ["味噌、みりん、酒、砂糖を混ぜる", "鮭に塗って30分置く", "グリルで15分焼く"],
-            it: ["Mescolare miso, mirin, sake e zucchero", "Spalmare sul salmone e lasciare 30 minuti", "Grigliare per 15 minuti"]
+            ja: [
+                "味噌、みりん、酒、砂糖をボウルに入れてよく混ぜる",
+                "鮭の両面に味噌ダレを塗り、30分間置いて味をなじませる",
+                "グリルパンを中火で熱する",
+                "鮭を片面7-8分ずつ焼く（皮目から焼く）",
+                "竹串で刺して、身がほぐれるようになったら完成",
+                "温かいうちにいただく"
+            ],
+            it: [
+                "Mescolare bene miso, mirin, sake e zucchero in una ciotola",
+                "Spalmare la salsa di miso su entrambi i lati del salmone e lasciare 30 minuti per insaporire",
+                "Scaldare la griglia a fuoco medio",
+                "Cuocere il salmone 7-8 minuti per lato (iniziare dalla parte della pelle)",
+                "Controllare con uno stuzzicadenti, quando la carne si sfalda è pronto",
+                "Servire caldo"
+            ]
         },
         tags: ["diabetic-friendly", "high-protein", "japanese-ingredients"],
         image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23ffb6c1'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='12' fill='%23666'%3E鮭味噌焼き%3C/text%3E%3C/svg%3E"
@@ -514,8 +768,24 @@ const recipes = [
             it: ["Filetto di maiale 200g", "Zenzero 2 pezzi", "Salsa di soia 2 cucchiai", "Mirin 1 cucchiaio", "Sake 1 cucchiaio", "Olio di sesamo 1 cucchiaio"]
         },
         instructions: {
-            ja: ["豚肉を薄切りにする", "生姜をすりおろす", "調味料を混ぜる", "フライパンで焼く", "生姜を加えて炒める"],
-            it: ["Tagliare il maiale a fette sottili", "Grattugiare lo zenzero", "Mescolare i condimenti", "Cuocere in padella", "Aggiungere lo zenzero"]
+            ja: [
+                "豚ヒレ肉を薄切り（3mm厚さ）にする",
+                "生姜をすりおろす",
+                "醤油、みりん、酒、ごま油をボウルに入れて混ぜる",
+                "豚肉を調味料に30分間漬け込む",
+                "フライパンを中火で熱し、ごま油を入れる",
+                "豚肉を片面2分ずつ焼く",
+                "すりおろした生姜を加えて、さらに1分炒めて完成"
+            ],
+            it: [
+                "Tagliare il filetto di maiale a fette sottili (3mm di spessore)",
+                "Grattugiare lo zenzero",
+                "Mescolare salsa di soia, mirin, sake e olio di sesamo in una ciotola",
+                "Marinare il maiale nei condimenti per 30 minuti",
+                "Scaldare una padella a fuoco medio e aggiungere l'olio di sesamo",
+                "Cuocere il maiale 2 minuti per lato",
+                "Aggiungere lo zenzero grattugiato e cuocere altri 1 minuto"
+            ]
         },
         tags: ["diabetic-friendly", "high-protein", "japanese-ingredients"],
         image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23f0e6d2'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='10' fill='%23666'%3E豚生姜焼き%3C/text%3E%3C/svg%3E"
@@ -541,8 +811,24 @@ const recipes = [
             it: ["Uova 4", "Brodo dashi 2 cucchiai", "Salsa di soia 1 cucchiaino", "Zucchero 1 cucchiaino", "Sale q.b."]
         },
         instructions: {
-            ja: ["卵を溶く", "調味料を加える", "フライパンで焼く", "巻きながら焼く"],
-            it: ["Sbattere le uova", "Aggiungere i condimenti", "Cuocere in padella", "Arrotolare mentre si cuoce"]
+            ja: [
+                "卵をボウルに割り入れ、だし汁、醤油、砂糖、塩を加えてよく混ぜる",
+                "フライパンを中火で熱し、薄く油を塗る",
+                "卵液の1/3を流し入れ、半熟になったら手前から巻く",
+                "巻いた卵を奥に寄せ、残りの卵液の1/2を流し入れる",
+                "半熟になったら、巻いた卵ごと手前から巻く",
+                "最後の卵液を流し入れ、同様に巻いて完成",
+                "粗熱を取ってから食べやすい大きさに切る"
+            ],
+            it: [
+                "Rompere le uova in una ciotola e aggiungere brodo dashi, salsa di soia, zucchero e sale, mescolare bene",
+                "Scaldare una padella a fuoco medio e ungere leggermente con olio",
+                "Versare 1/3 del composto di uova e arrotolare quando è semi-cotto",
+                "Spostare l'uovo arrotolato verso il retro e versare metà del composto rimanente",
+                "Arrotolare di nuovo quando è semi-cotto",
+                "Versare l'ultima parte del composto e arrotolare allo stesso modo",
+                "Lasciar raffreddare e tagliare a pezzi"
+            ]
         },
         tags: ["diabetic-friendly", "high-protein", "japanese-ingredients"],
         image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23fffacd'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='12' fill='%23666'%3E卵焼き%3C/text%3E%3C/svg%3E"
@@ -568,8 +854,20 @@ const recipes = [
             it: ["Riso integrale cotto 100g", "Natto 1 confezione", "Cipollotto 1", "Salsa di soia 1 cucchiaino", "Wasabi q.b."]
         },
         instructions: {
-            ja: ["納豆をよく混ぜる", "玄米を器に盛る", "納豆をのせる", "ねぎを散らす", "醤油とわさびを添える"],
-            it: ["Mescolare bene il natto", "Mettere il riso nella ciotola", "Aggiungere il natto", "Guarnire con cipollotto", "Servire con salsa di soia e wasabi"]
+            ja: [
+                "納豆をパックから取り出し、付属のタレとからしを加えてよく混ぜる（粘りが出るまで）",
+                "玄米を茶碗に温かいうちに盛りつける",
+                "納豆を玄米の上にきれいに並べる",
+                "ねぎを小口切りにして散らす",
+                "醤油とわさびを小皿に取り分けて、好みでかけて食べる"
+            ],
+            it: [
+                "Prendere il natto dalla confezione, aggiungere la salsa e la senape inclusi e mescolare bene fino a formare filamenti",
+                "Mettere il riso integrale caldo in una ciotola",
+                "Disporre ordinatamente il natto sul riso",
+                "Tagliare il cipollotto e spargerlo sopra",
+                "Servire salsa di soia e wasabi a parte per condire a piacere"
+            ]
         },
         tags: ["diabetic-friendly", "high-protein", "japanese-ingredients"],
         image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23f5f5dc'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='12' fill='%23666'%3E納豆ご飯%3C/text%3E%3C/svg%3E"
@@ -595,8 +893,22 @@ const recipes = [
             it: ["Riso 100g", "Acqua 600ml", "Sale q.b.", "Umeboshi 1"]
         },
         instructions: {
-            ja: ["米を洗う", "鍋に米と水を入れる", "弱火で20分煮る", "塩で味を調える", "梅干しを添える"],
-            it: ["Lavare il riso", "Mettere riso e acqua in pentola", "Cuocere a fuoco basso per 20 minuti", "Condire con sale", "Servire con umeboshi"]
+            ja: [
+                "米を流水で3回洗い、水気を切る",
+                "鍋に米と水600mlを入れる",
+                "中火で沸かし、沸騰したら弱火にする",
+                "蓋をして20分間煮る（時々かき混ぜる）",
+                "塩で味を調える",
+                "梅干しを添えて温かいうちにいただく"
+            ],
+            it: [
+                "Lavare il riso 3 volte sotto acqua corrente e scolare",
+                "Mettere riso e 600ml di acqua in una pentola",
+                "Portare a ebollizione a fuoco medio, poi abbassare il fuoco",
+                "Coprire e cuocere per 20 minuti (mescolare di tanto in tanto)",
+                "Condire con sale",
+                "Servire caldo con umeboshi"
+            ]
         },
         tags: ["diabetic-friendly", "low-fat", "japanese-ingredients"],
         image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23f5f5dc'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='12' fill='%23666'%3Eおかゆ%3C/text%3E%3C/svg%3E"
@@ -622,8 +934,24 @@ const recipes = [
             it: ["Cavolo 200g", "Carota 100g", "Cipolla 1", "Funghi 100g", "Brodo dashi 800ml", "Salsa di soia 1 cucchiaio", "Sale q.b."]
         },
         instructions: {
-            ja: ["野菜を食べやすく切る", "だし汁を沸かす", "硬い野菜から順に入れる", "きのこを加える", "調味料で味を調える"],
-            it: ["Tagliare le verdure", "Portare a ebollizione il brodo dashi", "Aggiungere le verdure più dure per prime", "Aggiungere i funghi", "Condire a piacere"]
+            ja: [
+                "キャベツは一口大、人参は薄切り、玉ねぎはくし切り、きのこはほぐす",
+                "鍋にだし汁800mlを入れ、中火で沸かす",
+                "玉ねぎを入れて5分煮る",
+                "人参を加えて3分煮る",
+                "キャベツときのこを加えて2分煮る",
+                "醤油と塩で味を調える",
+                "温かいうちにいただく"
+            ],
+            it: [
+                "Tagliare il cavolo a pezzi, la carota a fette sottili, la cipolla a spicchi, separare i funghi",
+                "Portare 800ml di brodo dashi a ebollizione a fuoco medio",
+                "Aggiungere la cipolla e cuocere per 5 minuti",
+                "Aggiungere la carota e cuocere per 3 minuti",
+                "Aggiungere cavolo e funghi e cuocere per 2 minuti",
+                "Condire con salsa di soia e sale",
+                "Servire caldo"
+            ]
         },
         tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"],
         image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23e8f4f8'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='12' fill='%23666'%3E野菜スープ%3C/text%3E%3C/svg%3E"
@@ -649,8 +977,22 @@ const recipes = [
             it: ["Tofu 100g", "Wakame 5g", "Cipollotto 1", "Miso 2 cucchiai", "Brodo dashi 400ml"]
         },
         instructions: {
-            ja: ["だし汁を温める", "豆腐を切る", "味噌を溶かす", "豆腐とわかめを加える", "ねぎを散らす"],
-            it: ["Scaldare il brodo dashi", "Tagliare il tofu", "Sciogliere il miso", "Aggiungere tofu e wakame", "Guarnire con cipollotto"]
+            ja: [
+                "鍋にだし汁400mlを入れ、中火で温める",
+                "豆腐を一口大に切る",
+                "だし汁が温まったら、味噌を溶かし入れる（沸騰させない）",
+                "豆腐とわかめを加える",
+                "弱火で2分煮て、最後にねぎを散らす",
+                "温かいうちにいただく"
+            ],
+            it: [
+                "Scaldare 400ml di brodo dashi in una pentola a fuoco medio",
+                "Tagliare il tofu a pezzi",
+                "Quando il brodo è caldo, sciogliere il miso (non far bollire)",
+                "Aggiungere tofu e wakame",
+                "Cuocere a fuoco basso per 2 minuti e guarnire con cipollotto",
+                "Servire caldo"
+            ]
         },
         tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"],
         image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23e8f4f8'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='12' fill='%23666'%3E味噌汁%3C/text%3E%3C/svg%3E"
@@ -676,8 +1018,22 @@ const recipes = [
             it: ["Konjac 200g", "Cetriolo 1", "Carota 1/2", "Ponzu 2 cucchiai", "Olio di sesamo 1 cucchiaino"]
         },
         instructions: {
-            ja: ["こんにゃくを水洗いして切る", "野菜を細切りにする", "すべてを混ぜる", "ポン酢とごま油で和える"],
-            it: ["Sciacquare e tagliare il konjac", "Tagliare le verdure a julienne", "Mescolare tutto", "Condire con ponzu e olio di sesamo"]
+            ja: [
+                "こんにゃくをザルに入れ、流水で2分間よく洗い、ぬめりを取る",
+                "こんにゃくを食べやすい大きさに切る",
+                "きゅうりと人参を細切り（千切り）にする",
+                "すべての材料をボウルに入れて混ぜる",
+                "ポン酢とごま油を加えて、軽く和える",
+                "冷蔵庫で30分冷やしてからいただく"
+            ],
+            it: [
+                "Mettere il konjac in un colino e sciacquarlo sotto acqua corrente per 2 minuti per rimuovere la viscosità",
+                "Tagliare il konjac a pezzi",
+                "Tagliare cetriolo e carota a julienne",
+                "Mescolare tutti gli ingredienti in una ciotola",
+                "Aggiungere ponzu e olio di sesamo e mescolare leggermente",
+                "Raffreddare in frigorifero per 30 minuti prima di servire"
+            ]
         },
         tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"],
         image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23e8f5e8'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='12' fill='%23666'%3Eこんにゃくサラダ%3C/text%3E%3C/svg%3E"
@@ -703,8 +1059,26 @@ const recipes = [
             it: ["Shirataki 400g", "Coscia di pollo 100g", "Peperone 1/2", "Cipolla 1/4", "Aglio 1 spicchio", "Olio d'oliva 1 cucchiaio", "Pomodori in scatola 100g", "Zafferano q.b.", "Limone 1/4"]
         },
         instructions: {
-            ja: ["しらたきを乾煎りして水分を飛ばす。", "鶏肉と野菜を炒める。", "トマト缶とサフランを加えて煮る。", "しらたきを加えて混ぜ、蒸し焼きにする。", "レモンを添える。"],
-            it: ["Tostare gli shirataki per rimuovere l'acqua.", "Soffriggere pollo e verdure.", "Aggiungere pomodori e zafferano e cuocere.", "Aggiungere gli shirataki, mescolare e cuocere al vapore.", "Servire con limone."]
+            ja: [
+                "しらたきをザルに入れ、流水で2分間洗い、ぬめりを取る",
+                "フライパンを中火で熱し、しらたきを乾煎りして水分を飛ばす（5分）",
+                "鶏肉を一口大に切り、玉ねぎとにんにくをみじん切りにする",
+                "パプリカを細切りにする",
+                "オリーブオイルで鶏肉を炒め、玉ねぎとにんにくを加える",
+                "パプリカ、トマト缶、サフランを加えて5分煮る",
+                "しらたきを加えて混ぜ、蓋をして10分蒸し焼きにする",
+                "レモンを添えて完成"
+            ],
+            it: [
+                "Mettere gli shirataki in un colino e sciacquarli sotto acqua corrente per 2 minuti per rimuovere la viscosità",
+                "Scaldare una padella a fuoco medio e tostare gli shirataki per rimuovere l'acqua (5 minuti)",
+                "Tagliare il pollo a pezzi, tritare cipolla e aglio",
+                "Tagliare il peperone a julienne",
+                "Soffriggere il pollo nell'olio d'oliva, aggiungere cipolla e aglio",
+                "Aggiungere peperone, pomodori e zafferano e cuocere per 5 minuti",
+                "Aggiungere gli shirataki, mescolare, coprire e cuocere al vapore per 10 minuti",
+                "Servire con limone"
+            ]
         },
         tags: ["diabetic-friendly", "low-carb", "high-protein"],
         image: ""
@@ -730,8 +1104,22 @@ const recipes = [
             it: ["Okara in polvere 100g", "Uovo 1", "Parmigiano grattugiato 2 cucchiai", "Sale e pepe q.b.", "Salsa a piacere (es. pomodoro)"]
         },
         instructions: {
-            ja: ["おからパウダー、卵、粉チーズ、塩こしょうを混ぜて生地を作る。", "生地を棒状に伸ばし、小さく切る。", "フォークで模様をつける。", "塩を加えたお湯で茹でる。", "浮き上がってきたら取り出し、ソースと絡める。"],
-            it: ["Mescolare okara, uovo, formaggio, sale e pepe per fare l'impasto.", "Stendere l'impasto e tagliarlo a pezzetti.", "Rigare con una forchetta.", "Cuocere in acqua salata bollente.", "Quando vengono a galla, scolarli e condirli."]
+            ja: [
+                "おからパウダー、卵、粉チーズ、塩こしょうをボウルに入れてよく混ぜる",
+                "生地を棒状に伸ばし、2cm幅に切る",
+                "フォークの背で模様をつける（表面に軽く押し付ける）",
+                "鍋に水を沸かし、塩を加える",
+                "ニョッキを入れて、浮き上がってきたら2分茹でる",
+                "ザルに上げて水気を切り、お好みのソースと絡める"
+            ],
+            it: [
+                "Mescolare bene okara, uovo, formaggio, sale e pepe in una ciotola",
+                "Stendere l'impasto e tagliarlo a pezzi di 2cm di larghezza",
+                "Rigare con il dorso di una forchetta (premere leggermente sulla superficie)",
+                "Portare l'acqua a ebollizione in una pentola e aggiungere sale",
+                "Aggiungere gli gnocchi e cuocere per 2 minuti dopo che vengono a galla",
+                "Scolare in un colino e condire con la salsa preferita"
+            ]
         },
         tags: ["diabetic-friendly", "low-carb", "high-protein", "japanese-ingredients"],
         image: ""
@@ -757,8 +1145,26 @@ const recipes = [
             it: ["Koyadofu 4 pezzi", "Salsa di soia 2 cucchiai", "Mirin 1 cucchiaio", "Aglio in tubetto 1 cucchiaino", "Fecola di patate 3 cucchiai", "Olio per friggere q.b."]
         },
         instructions: {
-            ja: ["高野豆腐を水で戻し、水気をしっかり絞る。", "一口大に切り、調味料に漬け込む。", "片栗粉をまぶして揚げる。", "きつね色になったら取り出す。"],
-            it: ["Reidratare il koyadofu e strizzarlo bene.", "Tagliarlo a pezzi e marinarlo.", "Infarinare con la fecola e friggere.", "Togliere quando è dorato."]
+            ja: [
+                "高野豆腐をたっぷりの水に10分浸して戻す",
+                "両手でやさしく押して水気をしっかり絞る",
+                "一口大に切る",
+                "ボウルに醤油、みりん、にんにくを混ぜ、豆腐を10分漬ける",
+                "キッチンペーパーで軽く水気を取る",
+                "片栗粉を全体にまぶす",
+                "フライパンに油を1cmほど入れて中火で熱し、豆腐を両面3分ずつ揚げ焼きする",
+                "きつね色になったら取り出し、油を切って完成"
+            ],
+            it: [
+                "Immergere il koyadofu in abbondante acqua per 10 minuti per reidratarlo",
+                "Strizzare delicatamente con le mani per eliminare l'acqua",
+                "Tagliare a pezzi",
+                "Mescolare salsa di soia, mirin e aglio in una ciotola e marinare il tofu per 10 minuti",
+                "Tamponare leggermente con carta da cucina per asciugare",
+                "Infarinare con fecola di patate su tutta la superficie",
+                "Scaldare 1cm di olio in padella a fuoco medio e friggere il tofu 3 minuti per lato",
+                "Quando è dorato, scolare su carta assorbente e servire"
+            ]
         },
         tags: ["diabetic-friendly", "high-protein", "japanese-ingredients"],
         image: ""
@@ -784,8 +1190,20 @@ const recipes = [
             it: ["Avocado 1", "Gamberi bolliti 100g", "Maionese 2 cucchiai", "Wasabi in tubetto 1/2 cucchiaino", "Salsa di soia 1 cucchiaino", "Succo di limone q.b."]
         },
         instructions: {
-            ja: ["アボカドを角切りにし、レモン汁をかける。", "エビと調味料をすべて混ぜ合わせる。"],
-            it: ["Tagliare l'avocado a cubetti e irrorarlo di limone.", "Mescolare tutti gli ingredienti con i gamberi."]
+            ja: [
+                "アボカドは縦半分に切り、種と皮を除いて1.5cm角に切る",
+                "切ったアボカドにレモン汁をかけて変色を防ぐ",
+                "ボウルにマヨネーズ、わさび、醤油を入れてよく混ぜる",
+                "茹でエビとアボカドを加え、全体をやさしく和える",
+                "器に盛り付けて完成"
+            ],
+            it: [
+                "Tagliare l'avocado a metà, eliminare il nocciolo e la buccia, poi tagliare a cubetti di 1,5cm",
+                "Irrorare l'avocado con succo di limone per evitare che annerisca",
+                "Mescolare maionese, wasabi e salsa di soia in una ciotola",
+                "Aggiungere gamberi bolliti e avocado, mescolare delicatamente il tutto",
+                "Impiattare e servire"
+            ]
         },
         tags: ["diabetic-friendly", "low-carb"],
         image: ""
@@ -811,8 +1229,22 @@ const recipes = [
             it: ["Daikon essiccato 30g", "Aglio 1 spicchio", "Peperoncino 1", "Olio d'oliva 1 cucchiaio", "Salsa di soia 1/2 cucchiaino"]
         },
         instructions: {
-            ja: ["切り干し大根を水で戻し、水気を絞る。", "にんにくと鷹の爪をオリーブオイルで炒める。", "切り干し大根を加えて炒め合わせる。", "醤油で風味をつける。"],
-            it: ["Reidratare il daikon e strizzarlo.", "Soffriggere aglio e peperoncino nell'olio.", "Aggiungere il daikon e saltare.", "Insaporire con la salsa di soia."]
+            ja: [
+                "切り干し大根をたっぷりの水に5分浸して戻し、水気をしっかり絞る",
+                "にんにくは薄切り、鷹の爪は種を除いて輪切りにする",
+                "フライパンにオリーブオイルを入れ、にんにくと鷹の爪を弱火で香りが出るまで炒める",
+                "切り干し大根を加えて中火で2分炒める",
+                "醤油を回しかけて全体を混ぜ、火を止める",
+                "器に盛り付けて完成"
+            ],
+            it: [
+                "Mettere il daikon essiccato in abbondante acqua per 5 minuti per reidratarlo, poi strizzare bene",
+                "Tagliare l'aglio a fettine sottili, il peperoncino a rondelle eliminando i semi",
+                "Scaldare l'olio d'oliva in padella, soffriggere aglio e peperoncino a fuoco basso finché sono profumati",
+                "Aggiungere il daikon e saltare a fuoco medio per 2 minuti",
+                "Aggiungere la salsa di soia, mescolare bene e spegnere il fuoco",
+                "Impiattare e servire"
+            ]
         },
         tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"],
         image: ""
@@ -838,8 +1270,20 @@ const recipes = [
             it: ["Shimeji 1 confezione", "Eringi 1 confezione", "Aceto 3 cucchiai", "Olio d'oliva 2 cucchiai", "Sale 1/2 cucchiaino", "Pepe nero q.b."]
         },
         instructions: {
-            ja: ["きのこを食べやすくほぐし、フライパンで乾煎りする。", "ボウルに調味料を混ぜ合わせる。", "熱いうちにきのこを加えて和える。", "冷蔵庫で冷やす。"],
-            it: ["Separare i funghi e tostarli in padella.", "Mescolare i condimenti in una ciotola.", "Aggiungere i funghi caldi e mescolare.", "Raffreddare in frigorifero."]
+            ja: [
+                "しめじとエリンギは石づきを取り、食べやすい大きさにほぐす・切る",
+                "フライパンを中火で熱し、きのこを入れて水分が飛ぶまで5分乾煎りする",
+                "ボウルに酢、オリーブオイル、塩、黒胡椒を入れてよく混ぜる",
+                "熱いうちにきのこをボウルに加え、全体を和える",
+                "粗熱が取れたら冷蔵庫で30分以上冷やして完成"
+            ],
+            it: [
+                "Eliminare la base dei funghi e tagliarli a pezzi",
+                "Scaldare una padella a fuoco medio e tostare i funghi per 5 minuti finché perdono l'acqua",
+                "Mescolare aceto, olio d'oliva, sale e pepe in una ciotola",
+                "Aggiungere i funghi caldi nella ciotola e mescolare bene",
+                "Lasciar raffreddare, poi mettere in frigorifero per almeno 30 minuti prima di servire"
+            ]
         },
         tags: ["diabetic-friendly", "low-calorie"],
         image: ""
@@ -865,8 +1309,20 @@ const recipes = [
             it: ["Petto di pollo 1 (250g)", "Uovo 1", "Parmigiano grattugiato 2 cucchiai", "Sale e pepe q.b.", "Olio d'oliva 1 cucchiaio"]
         },
         instructions: {
-            ja: ["鶏むね肉を薄切りにし、塩こしょうを振る。", "卵と粉チーズを混ぜ合わせる。", "鶏肉に卵液を絡めて焼く。", "両面に焼き色がついたら完成。"],
-            it: ["Tagliare il pollo a fette sottili, salare e pepare.", "Mescolare uovo e formaggio.", "Passare il pollo nella pastella e cuocere.", "Cuocere fino a doratura su entrambi i lati."]
+            ja: [
+                "鶏むね肉は1cm厚さのそぎ切りにし、両面に塩こしょうをふる",
+                "ボウルに卵を割り入れ、粉チーズを加えてよく混ぜる",
+                "鶏肉を卵液にくぐらせる",
+                "フライパンにオリーブオイルを中火で熱し、鶏肉を並べる",
+                "両面を2分ずつ焼き、焼き色がついたら完成"
+            ],
+            it: [
+                "Tagliare il petto di pollo a fette di 1cm di spessore e salare e pepare su entrambi i lati",
+                "Sbattere l'uovo in una ciotola e aggiungere il parmigiano, mescolare bene",
+                "Passare il pollo nella pastella di uovo e formaggio",
+                "Scaldare l'olio d'oliva in padella a fuoco medio e disporre il pollo",
+                "Cuocere 2 minuti per lato finché è dorato"
+            ]
         },
         tags: ["diabetic-friendly", "low-carb", "high-protein"],
         image: ""
@@ -892,8 +1348,20 @@ const recipes = [
             it: ["Cavolo 1/4", "Tonno in scatola 1", "Maionese 2 cucchiai", "Salsa di soia 1/2 cucchiaino", "Sale e pepe q.b."]
         },
         instructions: {
-            ja: ["キャベツを千切りにする。", "ツナ缶の油を軽く切る。", "すべての材料を混ぜ合わせる。"],
-            it: ["Tagliare il cavolo a julienne.", "Scolare leggermente l'olio dal tonno.", "Mescolare tutti gli ingredienti."]
+            ja: [
+                "キャベツは芯を除き、千切りにする",
+                "沸騰したお湯でキャベツを30秒茹で、ザルに上げて冷ます（生でも可）",
+                "ツナ缶の油を軽く切る",
+                "ボウルにキャベツ、ツナ、マヨネーズ、醤油、塩こしょうを入れてよく混ぜる",
+                "器に盛り付けて完成"
+            ],
+            it: [
+                "Eliminare il torsolo dal cavolo e tagliarlo a julienne",
+                "Sbollentare il cavolo in acqua bollente per 30 secondi, scolare e raffreddare (opzionale, si può usare anche crudo)",
+                "Scolare leggermente l'olio dal tonno in scatola",
+                "Mettere cavolo, tonno, maionese, salsa di soia, sale e pepe in una ciotola e mescolare bene",
+                "Impiattare e servire"
+            ]
         },
         tags: ["diabetic-friendly", "low-carb"],
         image: ""
@@ -919,8 +1387,22 @@ const recipes = [
             it: ["Germogli di soia 1 sacchetto", "Pancetta di maiale a fette sottili 150g", "Salsa ponzu 3 cucchiai", "Olio di sesamo 1 cucchiaino", "Cipollotto tritato q.b."]
         },
         instructions: {
-            ja: ["耐熱皿にもやしと豚肉を交互に重ねる。", "ふんわりとラップをし、レンジで6〜8分加熱する。", "ポン酢とごま油をかけ、ねぎを散らす。"],
-            it: ["Alternare strati di germogli e maiale in una pirofila.", "Coprire e cuocere al microonde per 6-8 minuti.", "Condire con ponzu, olio di sesamo e cipollotto."]
+            ja: [
+                "もやしは洗って水気を切る",
+                "耐熱皿にもやしを広げ、その上に豚肉を重ならないように並べる",
+                "塩こしょうを全体にふる",
+                "ラップをふんわりかけ、電子レンジ600Wで5分加熱する",
+                "加熱後、ラップを外して水分を捨てる",
+                "ポン酢やごま油をかけて完成"
+            ],
+            it: [
+                "Lavare i germogli di soia e scolarli",
+                "Disporre i germogli su un piatto adatto al microonde e adagiare sopra le fette di maiale senza sovrapporle",
+                "Salare e pepare su tutta la superficie",
+                "Coprire con pellicola e cuocere in microonde a 600W per 5 minuti",
+                "Togliere la pellicola e scolare l'acqua in eccesso",
+                "Condire con ponzu o olio di sesamo e servire"
+            ]
         },
         tags: ["diabetic-friendly", "low-carb", "high-protein"],
         image: ""
@@ -946,8 +1428,26 @@ const recipes = [
             it: ["Spinaci 1/2 mazzo", "Tofu sodo 100g", "Sesamo bianco macinato 2 cucchiai", "Zucchero 1 cucchiaino", "Salsa di soia 1 cucchiaino"]
         },
         instructions: {
-            ja: ["ほうれん草を茹でて水気を絞り、食べやすく切る。", "豆腐を水切りし、すり鉢で滑らかにする。", "調味料を加えて混ぜ、ほうれん草と和える。"],
-            it: ["Bollire gli spinaci, strizzarli e tagliarli.", "Scolare il tofu e frullarlo fino a renderlo liscio.", "Aggiungere i condimenti, mescolare e unire gli spinaci."]
+            ja: [
+                "ほうれん草は根元を切り落とし、沸騰したお湯で1分茹でる",
+                "冷水にさらして色止めし、水気をしっかり絞る",
+                "ほうれん草を3cm長さに切る",
+                "豆腐はキッチンペーパーで包み、重しをのせて10分水切りする",
+                "すり鉢に豆腐を入れ、滑らかになるまでよくすりつぶす",
+                "白すりごま、砂糖、醤油を加えて混ぜる",
+                "ほうれん草を加えて和える",
+                "器に盛り付けて完成"
+            ],
+            it: [
+                "Eliminare le radici degli spinaci e sbollentarli in acqua bollente per 1 minuto",
+                "Raffreddare in acqua fredda per mantenere il colore e strizzare bene",
+                "Tagliare gli spinaci a pezzi di 3cm",
+                "Avvolgere il tofu in carta da cucina e pressare con un peso per 10 minuti per scolare",
+                "Mettere il tofu in un mortaio e pestarlo fino a renderlo liscio",
+                "Aggiungere sesamo macinato, zucchero e salsa di soia e mescolare",
+                "Unire gli spinaci e mescolare bene",
+                "Impiattare e servire"
+            ]
         },
         tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"],
         image: ""
@@ -973,8 +1473,17 @@ const recipes = [
             it: ["Sgombro in scatola al naturale 1", "Pomodori in scatola 1/2 (200g)", "Cipolla 1/4", "Aglio 1 spicchio", "Olio d'oliva 1 cucchiaio", "Dado da brodo 1 cucchiaino"]
         },
         instructions: {
-            ja: ["玉ねぎとにんにくをみじん切りにし、オリーブオイルで炒める。", "トマト缶とコンソメ、サバ缶を汁ごと加えて煮る。", "10分ほど煮込んだら完成。"],
-            it: ["Tritare cipolla e aglio e soffriggerli nell'olio.", "Aggiungere pomodori, dado e sgombro con il suo liquido e cuocere.", "Cuocere per circa 10 minuti."]
+            ja: [
+                "玉ねぎはみじん切り、にんにくは薄切りにする",
+                "フライパンにオリーブオイルを中火で熱し、玉ねぎとにんにくを炒める",
+                "玉ねぎが透き通ってきたら、トマト缶を加える",
+                "コンソメを加えて混ぜる",
+                "サバ缶を汁ごと加え、中火で10分煮込む",
+                "汁が少しとろみがついたら完成",
+                "温かいうちにいただく"
+            ],
+            it: [
+                "Tritare cipolla e aglio e soffriggerli nell'olio.", "Aggiungere pomodori, dado e sgombro con il suo liquido e cuocere.", "Cuocere per circa 10 minuti."]
         },
         tags: ["diabetic-friendly", "high-protein"],
         image: ""
@@ -1000,8 +1509,22 @@ const recipes = [
             it: ["Peperoni 4", "Tonno in scatola 1", "Dado di pollo granulare 1 cucchiaino", "Olio di sesamo 1 cucchiaino", "Sale e pepe q.b."]
         },
         instructions: {
-            ja: ["ピーマンを細切りにする。", "耐熱容器にすべての材料を入れて混ぜる。", "ラップをしてレンジで3分加熱する。"],
-            it: ["Tagliare i peperoni a julienne.", "Mettere tutti gli ingredienti in un contenitore per microonde e mescolare.", "Coprire e cuocere al microonde per 3 minuti."]
+            ja: [
+                "ピーマンは縦半分に切り、種とワタを除く",
+                "ピーマンを細切り（千切り）にする",
+                "耐熱容器にピーマン、ツナ、鶏ガラスープの素、ごま油、塩こしょうを入れる",
+                "全体をよく混ぜる",
+                "ラップをふんわりかけ、電子レンジ600Wで3分加熱する",
+                "粗熱が取れたらいただく"
+            ],
+            it: [
+                "Tagliare i peperoni a metà e eliminare semi e filamenti",
+                "Tagliare i peperoni a julienne",
+                "Mettere peperoni, tonno, dado di pollo, olio di sesamo, sale e pepe in un contenitore per microonde",
+                "Mescolare bene tutto",
+                "Coprire con pellicola e cuocere in microonde a 600W per 3 minuti",
+                "Lasciar raffreddare prima di servire"
+            ]
         },
         tags: ["diabetic-friendly", "low-calorie"],
         image: ""
@@ -1027,16 +1550,32 @@ const recipes = [
             it: ["Pancetta di maiale 150g", "Kimchi 100g", "Tofu sodo 1/2 (150g)", "Olio di sesamo 1 cucchiaio", "Salsa di soia 1 cucchiaino"]
         },
         instructions: {
-            ja: ["豆腐を水切りし、食べやすく切る。", "ごま油で豚肉を炒める。", "キムチを加えて炒め合わせる。", "豆腐を加えて軽く崩しながら炒め、醤油で味を調える。"],
-            it: ["Scolare il tofu e tagliarlo.", "Soffriggere il maiale nell'olio di sesamo.", "Aggiungere il kimchi e saltare.", "Aggiungere il tofu, sbriciolarlo leggermente e condire con salsa di soia."]
+            ja: [
+                "豆腐はキッチンペーパーで包み、重しをのせて10分水切りする",
+                "豆腐を一口大に切る",
+                "フライパンにごま油を中火で熱し、豚肉を炒める",
+                "豚肉の色が変わったら、キムチを加えて2分炒める",
+                "豆腐を加え、やさしく崩しながら炒める",
+                "醤油を加えて味を調える",
+                "温かいうちにいただく"
+            ],
+            it: [
+                "Avvolgere il tofu in carta da cucina e pressare con un peso per 10 minuti per scolare",
+                "Tagliare il tofu a pezzi",
+                "Scaldare l'olio di sesamo in padella a fuoco medio e soffriggere il maiale",
+                "Quando il maiale cambia colore, aggiungere il kimchi e cuocere per 2 minuti",
+                "Aggiungere il tofu e sbriciolarlo leggermente mentre si cuoce",
+                "Aggiungere la salsa di soia per insaporire",
+                "Servire caldo"
+            ]
         },
         tags: ["diabetic-friendly", "low-carb", "high-protein"],
         image: ""
     },
     {
         id: 39,
-        name: { ja: "オクラのネバネバ和え", it: "Insalata Viscosa di Okra" },
-        icon: "🟢",
+        name: { ja: "オクラのネバネバ和え", it: "Insalata di Avocado e Gamberi con Maionese al Wasabi" },
+        icon: "🥑",
         description: { ja: "オクラ、納豆、めかぶを使った、ネバネバ健康副菜。", it: "Contorno sano e viscoso con okra, natto e mekabu." },
         type: "snack",
         prepTime: 10,
@@ -1054,8 +1593,26 @@ const recipes = [
             it: ["Okra 8", "Natto 1 confezione", "Mekabu 1 confezione", "Salsa ponzu 1 cucchiaio"]
         },
         instructions: {
-            ja: ["オクラを塩ずりし、茹でて小口切りにする。", "すべての材料を混ぜ合わせる。"],
-            it: ["Strofinare l'okra con il sale, bollirla e tagliarla a rondelle.", "Mescolare tutti gli ingredienti."]
+            ja: [
+                "オクラは塩をふって表面の産毛を取る（塩ずり）",
+                "沸騰したお湯でオクラを2分茹でる",
+                "冷水にさらして色止めし、水気を切る",
+                "オクラを小口切り（5mm幅）にする",
+                "納豆をパックから取り出し、付属のタレを加えてよく混ぜる",
+                "めかぶをほぐす",
+                "ボウルにオクラ、納豆、めかぶ、ポン酢を入れて和える",
+                "器に盛り付けて完成"
+            ],
+            it: [
+                "Strofinare l'okra con sale per rimuovere la peluria superficiale",
+                "Sbollentare l'okra in acqua bollente per 2 minuti",
+                "Raffreddare in acqua fredda per mantenere il colore e scolare",
+                "Tagliare l'okra a rondelle di 5mm di spessore",
+                "Prendere il natto dalla confezione, aggiungere la salsa inclusa e mescolare bene",
+                "Separare il mekabu",
+                "Mettere okra, natto, mekabu e ponzu in una ciotola e mescolare",
+                "Impiattare e servire"
+            ]
         },
         tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"],
         image: ""
@@ -1081,8 +1638,24 @@ const recipes = [
             it: ["Germogli di pisello 1 confezione", "Uova 2", "Dado di pollo granulare 1 cucchiaino", "Olio di sesamo 1 cucchiaio"]
         },
         instructions: {
-            ja: ["豆苗を食べやすく切る。", "卵を溶きほぐす。", "ごま油で豆苗をさっと炒める。", "卵を加えて大きく混ぜ、鶏ガラスープの素で味を調える。"],
-            it: ["Tagliare i germogli di pisello.", "Sbattere le uova.", "Saltare brevemente i germogli nell'olio di sesamo.", "Aggiungere le uova, mescolare grossolanamente e condire con il dado."]
+            ja: [
+                "豆苗は根元を切り落とし、食べやすい長さに切る",
+                "卵をボウルに割り入れ、軽く溶きほぐす",
+                "フライパンにごま油を中火で熱する",
+                "豆苗を入れて1分炒める",
+                "溶き卵を加え、大きく混ぜながら炒める",
+                "鶏ガラスープの素を加えて味を調える",
+                "卵が半熟になったら火を止めて完成"
+            ],
+            it: [
+                "Eliminare la base dei germogli di pisello e tagliarli a pezzi",
+                "Rompere le uova in una ciotola e sbatterle leggermente",
+                "Scaldare l'olio di sesamo in padella a fuoco medio",
+                "Aggiungere i germogli e cuocere per 1 minuto",
+                "Aggiungere le uova e mescolare grossolanamente mentre si cuocono",
+                "Aggiungere il dado di pollo per insaporire",
+                "Quando le uova sono semi-cotte, spegnere il fuoco"
+            ]
         },
         tags: ["diabetic-friendly", "low-carb", "high-protein"],
         image: ""
@@ -1108,8 +1681,24 @@ const recipes = [
             it: ["Wakame essiccata 5g", "Manzo a fette sottili 50g", "Olio di sesamo 1 cucchiaino", "Salsa di soia 1/2 cucchiaio", "Aglio in tubetto 1/2 cucchiaino", "Acqua 400ml"]
         },
         instructions: {
-            ja: ["わかめを水で戻す。", "鍋にごま油を熱し、牛肉を炒める。", "水とわかめ、調味料を加えて煮る。"],
-            it: ["Reidratare la wakame.", "Scaldare l'olio di sesamo in una pentola e soffriggere il manzo.", "Aggiungere acqua, wakame e condimenti e cuocere."]
+            ja: [
+                "乾燥わかめを水で戻し、水気を切る",
+                "牛肉は一口大に切る",
+                "鍋に水400mlを入れ、中火で沸かす",
+                "牛肉を入れて3分煮る",
+                "わかめを加えて2分煮る",
+                "ごま油、醤油、にんにくを加えて味を調える",
+                "温かいうちにいただく"
+            ],
+            it: [
+                "Reidratare la wakame essiccata in acqua e scolare",
+                "Tagliare il manzo a pezzi",
+                "Portare 400ml di acqua a ebollizione a fuoco medio",
+                "Aggiungere il manzo e cuocere per 3 minuti",
+                "Aggiungere la wakame e cuocere per 2 minuti",
+                "Aggiungere olio di sesamo, salsa di soia e aglio per insaporire",
+                "Servire caldo"
+            ]
         },
         tags: ["diabetic-friendly", "low-calorie"],
         image: ""
@@ -1135,8 +1724,26 @@ const recipes = [
             it: ["Surimi 6 bastoncini", "Uova 3", "Piselli 2 cucchiai", "Dado di pollo granulare 1 cucchiaino", "Salsa di soia 1 cucchiaino", "Acqua 100ml", "Fecola di patate 1 cucchiaino"]
         },
         instructions: {
-            ja: ["卵を溶きほぐし、ほぐしたカニカマとグリーンピースを混ぜる。", "フライパンで半熟状に焼いて皿に盛る。", "鍋にあんの材料をすべて入れて火にかけ、とろみがついたら卵の上にかける。"],
-            it: ["Sbattere le uova e mescolare con surimi sfilacciato e piselli.", "Cuocere in padella fino a cottura desiderata e trasferire su un piatto.", "Mettere tutti gli ingredienti per la salsa in una pentola, scaldare e addensare, quindi versare sulle uova."]
+            ja: [
+                "カニカマは手でほぐす",
+                "卵をボウルに割り入れ、カニカマ、グリーンピース、鶏ガラスープの素、醤油を加えてよく混ぜる",
+                "フライパンに油を薄く塗り、中火で熱する",
+                "卵液を流し入れ、蓋をして3分蒸し焼きにする",
+                "片面が焼けたら裏返し、さらに2分焼く",
+                "皿に盛り付ける",
+                "鍋に水100ml、醤油、鶏ガラスープの素を入れ、沸騰したら水溶き片栗粉でとろみをつける",
+                "卵の上にあんをかけて完成"
+            ],
+            it: [
+                "Sfilacciare il surimi con le mani",
+                "Rompere le uova in una ciotola, aggiungere surimi, piselli, dado di pollo e salsa di soia e mescolare bene",
+                "Ungere leggermente una padella con olio e scaldare a fuoco medio",
+                "Versare il composto di uova, coprire e cuocere al vapore per 3 minuti",
+                "Quando un lato è cotto, girare e cuocere altri 2 minuti",
+                "Trasferire su un piatto",
+                "Mettere 100ml di acqua, salsa di soia e dado di pollo in una pentola, portare a ebollizione e addensare con fecola sciolta in acqua",
+                "Versare la salsa sulle uova e servire"
+            ]
         },
         tags: ["diabetic-friendly", "high-protein"],
         image: ""
@@ -1162,8 +1769,24 @@ const recipes = [
             it: ["Aburaage (tofu fritto) 1", "Salsa per pizza 1 cucchiaio", "Peperone 1/4", "Cipolla 1/8", "Formaggio filante 20g"]
         },
         instructions: {
-            ja: ["油揚げを開いて、ピザソースを塗る。", "薄切りにした野菜とチーズを乗せる。", "トースターでチーズが溶けるまで焼く。"],
-            it: ["Aprire l'aburaage e spalmare la salsa.", "Guarnire con verdure a fette e formaggio.", "Infornare nel tostapane finché il formaggio non si scioglie."]
+            ja: [
+                "油揚げは縦半分に切り、開いて袋状にする",
+                "油揚げの内側にピザソースを薄く塗る",
+                "ピーマンと玉ねぎは薄切りにする",
+                "油揚げの上に野菜をきれいに並べる",
+                "とろけるチーズを野菜の上に散らす",
+                "トースターでチーズが溶けて少し焦げ目がつくまで焼く（約5分）",
+                "食べやすい大きさに切って完成"
+            ],
+            it: [
+                "Tagliare l'aburaage a metà e aprirlo per formare una tasca",
+                "Spalmare leggermente la salsa per pizza all'interno dell'aburaage",
+                "Tagliare peperone e cipolla a fette sottili",
+                "Disporre ordinatamente le verdure sull'aburaage",
+                "Spargere il formaggio filante sopra le verdure",
+                "Cuocere nel tostapane finché il formaggio si scioglie e si forma una leggera crosticina (circa 5 minuti)",
+                "Tagliare a pezzi e servire"
+            ]
         },
         tags: ["diabetic-friendly", "low-carb", "high-protein", "japanese-ingredients"],
         image: ""
@@ -1189,8 +1812,26 @@ const recipes = [
             it: ["Tofu sodo 1", "Shimeji 1/2 confezione", "Enoki 1/2 confezione", "Brodo dashi 200ml", "Salsa di soia 1.5 cucchiai", "Mirin 1 cucchiaio", "Fecola di patate 1 cucchiaino"]
         },
         instructions: {
-            ja: ["豆腐を水切りし、食べやすく切る。", "きのこをほぐす。", "鍋にだし汁と調味料、きのこを入れて煮る。", "水溶き片栗粉でとろみをつける。", "豆腐にかける。"],
-            it: ["Scolare il tofu e tagliarlo.", "Separare i funghi.", "Cuocere in una pentola brodo, condimenti e funghi.", "Addensare con la fecola sciolta in acqua.", "Versare sul tofu."]
+            ja: [
+                "豆腐はキッチンペーパーで包み、重しをのせて10分水切りする",
+                "豆腐を一口大に切る",
+                "しめじとえのきは石づきを取り、ほぐす",
+                "鍋にだし汁200mlを入れ、中火で沸かす",
+                "きのこを加えて3分煮る",
+                "醤油、みりんを加えて2分煮る",
+                "水溶き片栗粉を加えてとろみをつける",
+                "豆腐の上にあんをかけて完成"
+            ],
+            it: [
+                "Avvolgere il tofu in carta da cucina e pressare con un peso per 10 minuti per scolare",
+                "Tagliare il tofu a pezzi",
+                "Eliminare la base dei funghi e separarli",
+                "Portare 200ml di brodo dashi a ebollizione a fuoco medio",
+                "Aggiungere i funghi e cuocere per 3 minuti",
+                "Aggiungere salsa di soia e mirin e cuocere per 2 minuti",
+                "Aggiungere fecola sciolta in acqua per addensare",
+                "Versare la salsa sul tofu e servire"
+            ]
         },
         tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"],
         image: ""
@@ -1216,8 +1857,26 @@ const recipes = [
             it: ["Kiri Kombu (kombu a strisce) 50g", "Carota 1/4", "Aburaage (tofu fritto) 1/2", "Brodo dashi 300ml", "Salsa di soia 2 cucchiai", "Mirin 1 cucchiaio"]
         },
         instructions: {
-            ja: ["切り昆布をさっと洗う。", "人参と油揚げを細切りにする。", "鍋にすべての材料を入れて、煮汁が少なくなるまで煮る。"],
-            it: ["Lavare brevemente il kombu.", "Tagliare carota e aburaage a julienne.", "Mettere tutti gli ingredienti in una pentola e cuocere finché il liquido non si riduce."]
+            ja: [
+                "切り昆布は水でさっと洗い、水気を切る",
+                "人参は細切り（千切り）にする",
+                "油揚げは細切りにする",
+                "鍋にだし汁300mlを入れ、中火で沸かす",
+                "切り昆布を入れて5分煮る",
+                "人参と油揚げを加えて3分煮る",
+                "醤油、みりんを加えて2分煮る",
+                "汁が少なくなるまで煮込んで完成"
+            ],
+            it: [
+                "Lavare brevemente il kombu in acqua e scolare",
+                "Tagliare la carota a julienne",
+                "Tagliare l'aburaage a julienne",
+                "Portare 300ml di brodo dashi a ebollizione a fuoco medio",
+                "Aggiungere il kombu e cuocere per 5 minuti",
+                "Aggiungere carota e aburaage e cuocere per 3 minuti",
+                "Aggiungere salsa di soia e mirin e cuocere per 2 minuti",
+                "Cuocere finché il liquido si riduce e servire"
+            ]
         },
         tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"],
         image: ""
@@ -1282,8 +1941,20 @@ function generateRecipes() {
                 it: [`${veg.it} 200g`, "Sale q.b.", "Ponzu 1 cucchiaio"]
             },
             instructions: {
-                ja: [`${veg.ja}を食べやすく切る`, "蒸し器で10分蒸す", "ポン酢をかけて完成"],
-                it: [`Tagliare ${veg.it}`, "Cuocere a vapore per 10 minuti", "Servire con ponzu"]
+                ja: [
+                    `${veg.ja}を食べやすい大きさに切る（一口大）`,
+                    "蒸し器の水を沸かす",
+                    `${veg.ja}を蒸し器に入れ、中火で10分蒸す`,
+                    "竹串で刺して柔らかくなったら火を止める",
+                    "ポン酢をかけて温かいうちに食べる"
+                ],
+                it: [
+                    `Tagliare ${veg.it} a pezzi di una bocconata`,
+                    "Portare l'acqua del cestello a ebollizione",
+                    `Mettere ${veg.it} nel cestello e cuocere a vapore per 10 minuti a fuoco medio`,
+                    "Controllare la cottura con uno stuzzicadenti",
+                    "Servire caldo con ponzu"
+                ]
             },
             tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"],
             image: `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23e8f5e8'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='12' fill='%23666'%3E${veg.ja}%3C/text%3E%3C/svg%3E`
@@ -1294,9 +1965,9 @@ function generateRecipes() {
     proteins.forEach((protein, index) => {
         const mealTypes = ["breakfast", "lunch", "dinner"];
         const cookingMethods = [
-            {ja: "グリル", it: "Grigliato", time: 15},
-            {ja: "蒸し", it: "Al vapore", time: 20},
-            {ja: "煮込み", it: "Brasato", time: 25}
+            {ja: "グリル", it: "Grigliato", time: 15, ja_instructions: ["醤油、みりん、生姜で下味をつける", "グリルパンを中火で熱する", "片面7-8分焼く", "裏返して7-8分焼く", "火が通ったら完成"], it_instructions: ["Marinare con salsa di soia, mirin e zenzero", "Scaldare la griglia a fuoco medio", "Cuocere 7-8 minuti per lato", "Girare e cuocere altri 7-8 minuti", "Servire quando ben cotto"]},
+            {ja: "蒸し", it: "Al vapore", time: 20, ja_instructions: ["醤油、みりん、生姜で下味をつける", "蒸し器の水を沸かす", "中火で20分蒸す", "竹串で刺して火が通ったら完成"], it_instructions: ["Marinare con salsa di soia, mirin e zenzero", "Portare l'acqua del cestello a ebollizione", "Cuocere a vapore per 20 minuti a fuoco medio", "Controllare la cottura con uno stuzzicadenti"]},
+            {ja: "煮込み", it: "Brasato", time: 25, ja_instructions: ["醤油、みりん、生姜で下味をつける", "鍋にだし汁300mlを入れて沸かす", "弱火で25分煮込む", "煮汁が少なくなったら完成"], it_instructions: ["Marinare con salsa di soia, mirin e zenzero", "Portare 300ml di brodo dashi a ebollizione", "Cuocere a fuoco basso per 25 minuti", "Servire quando il liquido si è ridotto"]}
         ];
         
         cookingMethods.forEach((method, methodIndex) => {
@@ -1328,16 +1999,8 @@ function generateRecipes() {
                     it: [`${protein.it} 150g`, "Salsa di soia 1 cucchiaio", "Mirin 1 cucchiaino", "Zenzero 1 pezzo"]
                 },
                 instructions: {
-                    ja: [
-                        `${protein.ja}に下味をつける`,
-                        `${method.ja}で調理する`,
-                        "味を調えて完成"
-                    ],
-                    it: [
-                        `Marinare ${protein.it}`,
-                        `Cuocere ${method.it.toLowerCase()}`,
-                        "Aggiustare di sapore"
-                    ]
+                    ja: method.ja_instructions,
+                    it: method.it_instructions
                 },
                 tags: ["diabetic-friendly", "high-protein", "japanese-ingredients"],
                 image: `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23f0e6d2'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='10' fill='%23666'%3E${protein.ja}${method.ja}%3C/text%3E%3C/svg%3E`
@@ -1370,8 +2033,22 @@ const additionalRecipes = [
             it: ["Okara 100g", "Cetriolo 1", "Carota 1/2", "Prosciutto 3 fette", "Maionese 2 cucchiai", "Aceto 1 cucchiaino", "Sale e pepe q.b."]
         },
         instructions: {
-            ja: ["野菜を細かく切る", "ハムを細切りにする", "すべてを混ぜ合わせる", "調味料で味を調える"],
-            it: ["Tagliare finemente le verdure", "Tagliare il prosciutto a striscioline", "Mescolare tutto", "Condire a piacere"]
+            ja: [
+                "きゅうりは薄切り、人参は細切り（千切り）にする",
+                "ハムは細切りにする",
+                "おからをボウルに入れる",
+                "野菜とハムを加えて混ぜる",
+                "マヨネーズ、酢、塩こしょうを加えて和える",
+                "冷蔵庫で30分冷やしてからいただく"
+            ],
+            it: [
+                "Tagliare il cetriolo a fette sottili, la carota a julienne",
+                "Tagliare il prosciutto a striscioline",
+                "Mettere l'okara in una ciotola",
+                "Aggiungere verdure e prosciutto e mescolare",
+                "Aggiungere maionese, aceto, sale e pepe e mescolare",
+                "Raffreddare in frigorifero per 30 minuti prima di servire"
+            ]
         },
         tags: ["diabetic-friendly", "high-protein", "low-carb"],
         image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23f5f5dc'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='12' fill='%23666'%3Eおからサラダ%3C/text%3E%3C/svg%3E"
