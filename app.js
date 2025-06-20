@@ -1,6 +1,6 @@
 class RecipeApp {
     constructor() {
-        this.recipes = window.recipesDatabase || [];
+        this.recipes = window.recipes || [];
         this.filteredRecipes = this.recipes;
         this.favorites = JSON.parse(localStorage.getItem('favorites')) || [];
         this.currentFilter = 'all';

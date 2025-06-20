@@ -1382,4 +1382,4 @@ const additionalRecipes = [
 const allRecipes = generateRecipes();
 
 // Final combined recipes database
-window.recipesDatabase = [...allRecipes, ...additionalRecipes].slice(0, 120); 
+window.recipes = [...allRecipes, ...additionalRecipes]; 
