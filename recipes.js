@@ -1880,6 +1880,1152 @@ const recipes = [
         },
         tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"],
         image: ""
+    },
+    {
+        id: 201,
+        name: { ja: "鶏むね肉と大根の煮物", it: "Stufato di Pollo e Daikon" },
+        description: { ja: "鶏むね肉と大根を使ったヘルシーな煮物", it: "Stufato sano con pollo e daikon" },
+        type: "dinner",
+        prepTime: 10,
+        cookTime: 25,
+        servings: 2,
+        difficulty: "easy",
+        calories: 180,
+        carbs: 10,
+        protein: 24,
+        fat: 4,
+        fiber: 3,
+        sodium: 500,
+        ingredients: {
+            ja: ["鶏むね肉 150g", "大根 200g", "だし汁 300ml", "醤油 大さじ1", "みりん 大さじ1", "生姜 1片"],
+            it: ["Petto di pollo 150g", "Daikon 200g", "Brodo dashi 300ml", "Salsa di soia 1 cucchiaio", "Mirin 1 cucchiaio", "Zenzero 1 pezzo"]
+        },
+        instructions: {
+            ja: [
+                "鶏むね肉は一口大に切る",
+                "大根は皮をむいて1cm厚さの半月切りにする",
+                "鍋にだし汁を入れて中火で沸かす",
+                "大根を加えて10分煮る",
+                "鶏肉と生姜を加えてさらに10分煮る",
+                "醤油とみりんを加えて5分煮る",
+                "器に盛り付けて完成"
+            ],
+            it: [
+                "Tagliare il petto di pollo a pezzi",
+                "Sbucciare il daikon e tagliarlo a mezzaluna di 1cm di spessore",
+                "Portare il brodo dashi a ebollizione a fuoco medio",
+                "Aggiungere il daikon e cuocere per 10 minuti",
+                "Aggiungere pollo e zenzero e cuocere altri 10 minuti",
+                "Aggiungere salsa di soia e mirin e cuocere per 5 minuti",
+                "Impiattare e servire"
+            ]
+        },
+        tags: ["diabetic-friendly", "low-fat", "high-protein", "japanese-ingredients"]
+    },
+    {
+        id: 202,
+        name: { ja: "小松菜としらすのおひたし", it: "Komatsuna e Shirasu in Brodo" },
+        description: { ja: "小松菜としらすを使った簡単副菜", it: "Contorno semplice con komatsuna e shirasu" },
+        type: "snack",
+        prepTime: 5,
+        cookTime: 3,
+        servings: 2,
+        difficulty: "easy",
+        calories: 60,
+        carbs: 3,
+        protein: 6,
+        fat: 2,
+        fiber: 2,
+        sodium: 300,
+        ingredients: {
+            ja: ["小松菜 1束", "しらす 30g", "だし汁 100ml", "醤油 小さじ1"],
+            it: ["Komatsuna 1 mazzo", "Shirasu 30g", "Brodo dashi 100ml", "Salsa di soia 1 cucchiaino"]
+        },
+        instructions: {
+            ja: [
+                "小松菜は4cm長さに切る",
+                "沸騰したお湯で1分茹でて水気を切る",
+                "器に小松菜としらすを盛り付ける",
+                "だし汁と醤油をかけて完成"
+            ],
+            it: [
+                "Tagliare il komatsuna a pezzi di 4cm",
+                "Sbollentare per 1 minuto e scolare",
+                "Disporre komatsuna e shirasu in una ciotola",
+                "Versare brodo dashi e salsa di soia sopra e servire"
+            ]
+        },
+        tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"]
+    },
+    {
+        id: 203,
+        name: { ja: "なすの味噌炒め", it: "Melanzane Saltate al Miso" },
+        description: { ja: "なすを味噌で炒めたご飯に合う一品", it: "Melanzane saltate al miso, perfette con il riso" },
+        type: "lunch",
+        prepTime: 10,
+        cookTime: 8,
+        servings: 2,
+        difficulty: "easy",
+        calories: 110,
+        carbs: 10,
+        protein: 3,
+        fat: 7,
+        fiber: 4,
+        sodium: 420,
+        ingredients: {
+            ja: ["なす 2本", "味噌 大さじ1", "みりん 大さじ1", "ごま油 小さじ1", "ねぎ 1本"],
+            it: ["Melanzane 2", "Miso 1 cucchiaio", "Mirin 1 cucchiaio", "Olio di sesamo 1 cucchiaino", "Cipollotto 1"]
+        },
+        instructions: {
+            ja: [
+                "なすは乱切りにし、水に5分さらしてアクを抜く",
+                "フライパンにごま油を熱し、なすを中火で3分炒める",
+                "味噌とみりんを加えてさらに3分炒める",
+                "器に盛り、ねぎを散らして完成"
+            ],
+            it: [
+                "Tagliare le melanzane a pezzi irregolari e metterle in acqua per 5 minuti",
+                "Scaldare l'olio di sesamo in padella e saltare le melanzane a fuoco medio per 3 minuti",
+                "Aggiungere miso e mirin e cuocere altri 3 minuti",
+                "Impiattare e guarnire con cipollotto"
+            ]
+        },
+        tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"]
+    },
+    {
+        id: 204,
+        name: { ja: "鮭ときのこのホイル焼き", it: "Salmone e Funghi al Cartoccio" },
+        description: { ja: "鮭ときのこをホイルで包んで焼いた一品", it: "Salmone e funghi cotti al cartoccio" },
+        type: "dinner",
+        prepTime: 10,
+        cookTime: 15,
+        servings: 2,
+        difficulty: "easy",
+        calories: 210,
+        carbs: 6,
+        protein: 22,
+        fat: 11,
+        fiber: 3,
+        sodium: 380,
+        ingredients: {
+            ja: ["鮭 2切れ", "しめじ 1/2パック", "えのき 1/2袋", "玉ねぎ 1/4個", "酒 大さじ1", "醤油 小さじ2"],
+            it: ["Salmone 2 tranci", "Shimeji 1/2 confezione", "Enoki 1/2 confezione", "Cipolla 1/4", "Sake 1 cucchiaio", "Salsa di soia 2 cucchiaini"]
+        },
+        instructions: {
+            ja: [
+                "鮭は軽く塩をふる",
+                "玉ねぎは薄切り、きのこはほぐす",
+                "アルミホイルに鮭、玉ねぎ、きのこをのせ、酒と醤油をかけて包む",
+                "オーブントースターで15分焼く",
+                "器に盛り付けて完成"
+            ],
+            it: [
+                "Salare leggermente il salmone",
+                "Tagliare la cipolla a fette sottili, separare i funghi",
+                "Disporre salmone, cipolla e funghi su un foglio di alluminio, versare sake e salsa di soia e chiudere il cartoccio",
+                "Cuocere in forno tostapane per 15 minuti",
+                "Impiattare e servire"
+            ]
+        },
+        tags: ["diabetic-friendly", "high-protein", "japanese-ingredients"]
+    },
+    {
+        id: 205,
+        name: { ja: "豆腐とトマトのサラダ", it: "Insalata di Tofu e Pomodoro" },
+        description: { ja: "豆腐とトマトを使ったさっぱりサラダ", it: "Insalata fresca con tofu e pomodoro" },
+        type: "lunch",
+        prepTime: 5,
+        cookTime: 0,
+        servings: 2,
+        difficulty: "easy",
+        calories: 90,
+        carbs: 6,
+        protein: 7,
+        fat: 4,
+        fiber: 2,
+        sodium: 180,
+        ingredients: {
+            ja: ["絹ごし豆腐 150g", "トマト 1個", "大葉 2枚", "オリーブオイル 小さじ1", "塩こしょう 少々"],
+            it: ["Tofu silken 150g", "Pomodoro 1", "Shiso 2 foglie", "Olio d'oliva 1 cucchiaino", "Sale e pepe q.b."]
+        },
+        instructions: {
+            ja: [
+                "豆腐はキッチンペーパーで包み、10分水切りする",
+                "トマトは一口大に切る",
+                "大葉は千切りにする",
+                "ボウルに豆腐、トマト、大葉を入れ、オリーブオイルと塩こしょうで和える",
+                "器に盛り付けて完成"
+            ],
+            it: [
+                "Avvolgere il tofu in carta da cucina e scolarlo per 10 minuti",
+                "Tagliare il pomodoro a pezzi",
+                "Tagliare lo shiso a julienne",
+                "Mettere tofu, pomodoro e shiso in una ciotola, condire con olio e sale e mescolare",
+                "Impiattare e servire"
+            ]
+        },
+        tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"]
+    },
+    {
+        id: 206,
+        name: { ja: "ささみときゅうりの梅和え", it: "Pollo e Cetriolo con Ume" },
+        description: { ja: "ささみときゅうりを梅肉で和えたさっぱり副菜", it: "Contorno fresco con pollo e cetriolo all'ume" },
+        type: "snack",
+        prepTime: 10,
+        cookTime: 5,
+        servings: 2,
+        difficulty: "easy",
+        calories: 80,
+        carbs: 4,
+        protein: 12,
+        fat: 2,
+        fiber: 1,
+        sodium: 320,
+        ingredients: {
+            ja: ["鶏ささみ 2本", "きゅうり 1本", "梅干し 1個", "醤油 小さじ1"],
+            it: ["Filetto di pollo 2", "Cetriolo 1", "Umeboshi 1", "Salsa di soia 1 cucchiaino"]
+        },
+        instructions: {
+            ja: [
+                "ささみは茹でて手で裂く",
+                "きゅうりは細切りにする",
+                "梅干しは種を除いて包丁で叩く",
+                "ボウルにすべての材料を入れて和える",
+                "器に盛り付けて完成"
+            ],
+            it: [
+                "Bollire il pollo e sfilacciarlo a mano",
+                "Tagliare il cetriolo a julienne",
+                "Eliminare il nocciolo dall'umeboshi e tritarlo",
+                "Mettere tutti gli ingredienti in una ciotola e mescolare",
+                "Impiattare e servire"
+            ]
+        },
+        tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"]
+    },
+    {
+        id: 207,
+        name: { ja: "ひじきと大豆の煮物", it: "Stufato di Hijiki e Soia" },
+        description: { ja: "ひじきと大豆を使った食物繊維豊富な煮物", it: "Stufato ricco di fibre con hijiki e soia" },
+        type: "dinner",
+        prepTime: 10,
+        cookTime: 20,
+        servings: 3,
+        difficulty: "easy",
+        calories: 120,
+        carbs: 14,
+        protein: 8,
+        fat: 3,
+        fiber: 7,
+        sodium: 400,
+        ingredients: {
+            ja: ["乾燥ひじき 10g", "大豆水煮 100g", "人参 1/3本", "だし汁 200ml", "醤油 大さじ1", "みりん 大さじ1"],
+            it: ["Hijiki secco 10g", "Soia lessata 100g", "Carota 1/3", "Brodo dashi 200ml", "Salsa di soia 1 cucchiaio", "Mirin 1 cucchiaio"]
+        },
+        instructions: {
+            ja: [
+                "ひじきは水で戻して水気を切る",
+                "人参は細切りにする",
+                "鍋にだし汁を入れて沸かし、ひじきと人参を加えて5分煮る",
+                "大豆、醤油、みりんを加えて15分煮る",
+                "器に盛り付けて完成"
+            ],
+            it: [
+                "Reidratare l'hijiki in acqua e scolare",
+                "Tagliare la carota a julienne",
+                "Portare il brodo dashi a ebollizione, aggiungere hijiki e carota e cuocere per 5 minuti",
+                "Aggiungere la soia, salsa di soia e mirin e cuocere per 15 minuti",
+                "Impiattare e servire"
+            ]
+        },
+        tags: ["diabetic-friendly", "high-fiber", "japanese-ingredients"]
+    },
+    {
+        id: 208,
+        name: { ja: "ブロッコリーのごま和え", it: "Broccoli al Sesamo" },
+        description: { ja: "ブロッコリーをすりごまで和えた副菜", it: "Contorno di broccoli con sesamo macinato" },
+        type: "snack",
+        prepTime: 5,
+        cookTime: 3,
+        servings: 2,
+        difficulty: "easy",
+        calories: 60,
+        carbs: 5,
+        protein: 4,
+        fat: 3,
+        fiber: 3,
+        sodium: 180,
+        ingredients: {
+            ja: ["ブロッコリー 100g", "白すりごま 大さじ1", "醤油 小さじ1", "砂糖 小さじ1/2"],
+            it: ["Broccoli 100g", "Sesamo bianco macinato 1 cucchiaio", "Salsa di soia 1 cucchiaino", "Zucchero 1/2 cucchiaino"]
+        },
+        instructions: {
+            ja: [
+                "ブロッコリーは小房に分け、沸騰したお湯で2分茹でる",
+                "水気を切ってボウルに入れる",
+                "白すりごま、醤油、砂糖を加えて和える",
+                "器に盛り付けて完成"
+            ],
+            it: [
+                "Dividere i broccoli in cimette e sbollentarli per 2 minuti",
+                "Scolare e mettere in una ciotola",
+                "Aggiungere sesamo, salsa di soia e zucchero e mescolare",
+                "Impiattare e servire"
+            ]
+        },
+        tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"]
+    },
+    {
+        id: 209,
+        name: { ja: "たたききゅうりの梅和え", it: "Cetriolo Schiacciato all'Ume" },
+        description: { ja: "きゅうりを梅肉で和えたさっぱり副菜", it: "Contorno fresco di cetriolo e umeboshi" },
+        type: "snack",
+        prepTime: 5,
+        cookTime: 0,
+        servings: 2,
+        difficulty: "easy",
+        calories: 30,
+        carbs: 4,
+        protein: 1,
+        fat: 0,
+        fiber: 1,
+        sodium: 200,
+        ingredients: {
+            ja: ["きゅうり 1本", "梅干し 1個", "醤油 小さじ1/2"],
+            it: ["Cetriolo 1", "Umeboshi 1", "Salsa di soia 1/2 cucchiaino"]
+        },
+        instructions: {
+            ja: [
+                "きゅうりは麺棒などで軽くたたいて割る",
+                "一口大に手でちぎる",
+                "梅干しは種を除いて包丁で叩く",
+                "ボウルにすべての材料を入れて和える",
+                "器に盛り付けて完成"
+            ],
+            it: [
+                "Schiacciare il cetriolo con un mattarello",
+                "Spezzettare a mano in pezzi di una bocconata",
+                "Eliminare il nocciolo dall'umeboshi e tritarlo",
+                "Mettere tutti gli ingredienti in una ciotola e mescolare",
+                "Impiattare e servire"
+            ]
+        },
+        tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"]
+    },
+    {
+        id: 210,
+        name: { ja: "しらたきの明太子和え", it: "Shirataki con Mentaiko" },
+        description: { ja: "しらたきを明太子で和えた低糖質副菜", it: "Contorno a basso contenuto di carboidrati con shirataki e mentaiko" },
+        type: "snack",
+        prepTime: 5,
+        cookTime: 2,
+        servings: 2,
+        difficulty: "easy",
+        calories: 40,
+        carbs: 2,
+        protein: 3,
+        fat: 1,
+        fiber: 2,
+        sodium: 300,
+        ingredients: {
+            ja: ["しらたき 100g", "明太子 20g", "醤油 小さじ1/2"],
+            it: ["Shirataki 100g", "Mentaiko 20g", "Salsa di soia 1/2 cucchiaino"]
+        },
+        instructions: {
+            ja: [
+                "しらたきをザルに入れ、流水で2分間洗う",
+                "熱湯で1分茹でて水気を切る",
+                "明太子は薄皮を除いてほぐす",
+                "ボウルにしらたき、明太子、醤油を入れて和える",
+                "器に盛り付けて完成"
+            ],
+            it: [
+                "Sciacquare gli shirataki sotto acqua corrente per 2 minuti",
+                "Sbollentare per 1 minuto e scolare",
+                "Rimuovere la pellicina dal mentaiko e sgranarlo",
+                "Mettere shirataki, mentaiko e salsa di soia in una ciotola e mescolare",
+                "Impiattare e servire"
+            ]
+        },
+        tags: ["diabetic-friendly", "low-carb", "japanese-ingredients"]
+    },
+    {
+        id: 211,
+        name: { ja: "白菜と豚肉の蒸し物", it: "Cavolo Cinese e Maiale al Vapore" },
+        description: { ja: "白菜と豚肉を蒸したヘルシーな一品", it: "Piatto sano al vapore con cavolo cinese e maiale" },
+        type: "dinner",
+        prepTime: 10,
+        cookTime: 15,
+        servings: 2,
+        difficulty: "easy",
+        calories: 160,
+        carbs: 8,
+        protein: 18,
+        fat: 6,
+        fiber: 3,
+        sodium: 450,
+        ingredients: {
+            ja: ["白菜 1/4個", "豚バラ薄切り肉 100g", "酒 大さじ1", "醤油 大さじ1", "生姜 1片"],
+            it: ["Cavolo cinese 1/4", "Pancetta di maiale a fette sottili 100g", "Sake 1 cucchiaio", "Salsa di soia 1 cucchiaio", "Zenzero 1 pezzo"]
+        },
+        instructions: {
+            ja: [
+                "白菜は4cm長さに切る",
+                "豚肉は一口大に切る",
+                "蒸し器の水を沸かす",
+                "白菜と豚肉を交互に重ねて蒸し器に入れる",
+                "酒、醤油、生姜をかける",
+                "中火で15分蒸す",
+                "器に盛り付けて完成"
+            ],
+            it: [
+                "Tagliare il cavolo cinese a pezzi di 4cm",
+                "Tagliare il maiale a pezzi",
+                "Portare l'acqua del cestello a ebollizione",
+                "Alternare strati di cavolo e maiale nel cestello",
+                "Versare sake, salsa di soia e zenzero sopra",
+                "Cuocere a vapore a fuoco medio per 15 minuti",
+                "Impiattare e servire"
+            ]
+        },
+        tags: ["diabetic-friendly", "low-fat", "high-protein", "japanese-ingredients"]
+    },
+    {
+        id: 212,
+        name: { ja: "かぼちゃの煮物", it: "Zucca in Umido" },
+        description: { ja: "かぼちゃを甘く煮た伝統的な副菜", it: "Contorno tradizionale di zucca dolce" },
+        type: "snack",
+        prepTime: 10,
+        cookTime: 20,
+        servings: 3,
+        difficulty: "easy",
+        calories: 80,
+        carbs: 12,
+        protein: 2,
+        fat: 2,
+        fiber: 3,
+        sodium: 200,
+        ingredients: {
+            ja: ["かぼちゃ 300g", "だし汁 200ml", "醤油 大さじ1", "みりん 大さじ1", "砂糖 小さじ1"],
+            it: ["Zucca 300g", "Brodo dashi 200ml", "Salsa di soia 1 cucchiaio", "Mirin 1 cucchiaio", "Zucchero 1 cucchiaino"]
+        },
+        instructions: {
+            ja: [
+                "かぼちゃは皮をむいて一口大に切る",
+                "鍋にだし汁を入れて沸かす",
+                "かぼちゃを加えて10分煮る",
+                "醤油、みりん、砂糖を加えて10分煮る",
+                "器に盛り付けて完成"
+            ],
+            it: [
+                "Sbucciare la zucca e tagliarla a pezzi",
+                "Portare il brodo dashi a ebollizione",
+                "Aggiungere la zucca e cuocere per 10 minuti",
+                "Aggiungere salsa di soia, mirin e zucchero e cuocere per 10 minuti",
+                "Impiattare e servire"
+            ]
+        },
+        tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"]
+    },
+    {
+        id: 213,
+        name: { ja: "鶏ささみの梅しそ巻き", it: "Involtini di Pollo con Ume e Shiso" },
+        description: { ja: "鶏ささみを梅としそで巻いたさっぱり一品", it: "Involtini di pollo freschi con ume e shiso" },
+        type: "dinner",
+        prepTime: 15,
+        cookTime: 10,
+        servings: 2,
+        difficulty: "medium",
+        calories: 140,
+        carbs: 2,
+        protein: 24,
+        fat: 3,
+        fiber: 1,
+        sodium: 380,
+        ingredients: {
+            ja: ["鶏ささみ 2本", "梅干し 2個", "大葉 4枚", "酒 大さじ1", "醤油 小さじ1"],
+            it: ["Filetto di pollo 2", "Umeboshi 2", "Shiso 4 foglie", "Sake 1 cucchiaio", "Salsa di soia 1 cucchiaino"]
+        },
+        instructions: {
+            ja: [
+                "ささみは縦に切り開いて薄くする",
+                "梅干しは種を除いて包丁で叩く",
+                "ささみに梅肉を塗り、大葉をのせて巻く",
+                "酒と醤油をかけて10分置く",
+                "蒸し器で10分蒸す",
+                "器に盛り付けて完成"
+            ],
+            it: [
+                "Aprire i filetti di pollo e appiattirli",
+                "Eliminare i noccioli dall'umeboshi e tritarli",
+                "Spalmare la polpa di ume sul pollo, adagiare lo shiso e arrotolare",
+                "Versare sake e salsa di soia e lasciare 10 minuti",
+                "Cuocere a vapore per 10 minuti",
+                "Impiattare e servire"
+            ]
+        },
+        tags: ["diabetic-friendly", "low-carb", "high-protein", "japanese-ingredients"]
+    },
+    {
+        id: 214,
+        name: { ja: "もやしとツナの和え物", it: "Germogli di Soia e Tonno" },
+        description: { ja: "もやしとツナを使った簡単副菜", it: "Contorno semplice con germogli di soia e tonno" },
+        type: "snack",
+        prepTime: 5,
+        cookTime: 2,
+        servings: 2,
+        difficulty: "easy",
+        calories: 70,
+        carbs: 4,
+        protein: 8,
+        fat: 2,
+        fiber: 2,
+        sodium: 280,
+        ingredients: {
+            ja: ["もやし 200g", "ツナ缶 1個", "ポン酢 大さじ1", "ごま油 小さじ1"],
+            it: ["Germogli di soia 200g", "Tonno in scatola 1", "Ponzu 1 cucchiaio", "Olio di sesamo 1 cucchiaino"]
+        },
+        instructions: {
+            ja: [
+                "もやしは洗って水気を切る",
+                "沸騰したお湯で30秒茹でて水気を切る",
+                "ツナ缶の油を軽く切る",
+                "ボウルにもやし、ツナ、ポン酢、ごま油を入れて和える",
+                "器に盛り付けて完成"
+            ],
+            it: [
+                "Lavare i germogli di soia e scolarli",
+                "Sbollentare per 30 secondi e scolare",
+                "Scolare leggermente l'olio dal tonno",
+                "Mettere germogli, tonno, ponzu e olio di sesamo in una ciotola e mescolare",
+                "Impiattare e servire"
+            ]
+        },
+        tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"]
+    },
+    {
+        id: 215,
+        name: { ja: "豆腐の味噌焼き", it: "Tofu alla Griglia al Miso" },
+        description: { ja: "豆腐を味噌で焼いた香ばしい一品", it: "Tofu alla griglia aromatico al miso" },
+        type: "dinner",
+        prepTime: 10,
+        cookTime: 8,
+        servings: 2,
+        difficulty: "easy",
+        calories: 120,
+        carbs: 6,
+        protein: 10,
+        fat: 6,
+        fiber: 2,
+        sodium: 420,
+        ingredients: {
+            ja: ["木綿豆腐 1丁", "味噌 大さじ1", "みりん 大さじ1", "ごま油 小さじ1"],
+            it: ["Tofu sodo 1", "Miso 1 cucchiaio", "Mirin 1 cucchiaio", "Olio di sesamo 1 cucchiaino"]
+        },
+        instructions: {
+            ja: [
+                "豆腐はキッチンペーパーで包み、重しをのせて30分水切りする",
+                "豆腐を2cm厚さに切る",
+                "味噌とみりんを混ぜる",
+                "豆腐に味噌ダレを塗る",
+                "フライパンにごま油を熱し、豆腐を片面4分ずつ焼く",
+                "器に盛り付けて完成"
+            ],
+            it: [
+                "Avvolgere il tofu in carta da cucina e pressare con un peso per 30 minuti",
+                "Tagliare il tofu a fette di 2cm di spessore",
+                "Mescolare miso e mirin",
+                "Spalmare la salsa di miso sul tofu",
+                "Scaldare l'olio di sesamo in padella e cuocere il tofu 4 minuti per lato",
+                "Impiattare e servire"
+            ]
+        },
+        tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"]
+    },
+    {
+        id: 216,
+        name: { ja: "キャベツと鶏肉のスープ", it: "Zuppa di Cavolo e Pollo" },
+        description: { ja: "キャベツと鶏肉を使ったヘルシーなスープ", it: "Zuppa sana con cavolo e pollo" },
+        type: "lunch",
+        prepTime: 10,
+        cookTime: 20,
+        servings: 3,
+        difficulty: "easy",
+        calories: 100,
+        carbs: 8,
+        protein: 12,
+        fat: 3,
+        fiber: 3,
+        sodium: 350,
+        ingredients: {
+            ja: ["キャベツ 1/4個", "鶏むね肉 100g", "だし汁 600ml", "醤油 大さじ1", "塩 少々"],
+            it: ["Cavolo 1/4", "Petto di pollo 100g", "Brodo dashi 600ml", "Salsa di soia 1 cucchiaio", "Sale q.b."]
+        },
+        instructions: {
+            ja: [
+                "キャベツは一口大に切る",
+                "鶏肉は一口大に切る",
+                "鍋にだし汁を入れて沸かす",
+                "鶏肉を加えて10分煮る",
+                "キャベツを加えて10分煮る",
+                "醤油と塩で味を調える",
+                "器に盛り付けて完成"
+            ],
+            it: [
+                "Tagliare il cavolo a pezzi",
+                "Tagliare il pollo a pezzi",
+                "Portare il brodo dashi a ebollizione",
+                "Aggiungere il pollo e cuocere per 10 minuti",
+                "Aggiungere il cavolo e cuocere per 10 minuti",
+                "Condire con salsa di soia e sale",
+                "Impiattare e servire"
+            ]
+        },
+        tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"]
+    },
+    {
+        id: 217,
+        name: { ja: "なすとピーマンの炒め物", it: "Melanzane e Peperoni Saltati" },
+        description: { ja: "なすとピーマンを炒めた彩りの良い副菜", it: "Contorno colorato di melanzane e peperoni saltati" },
+        type: "lunch",
+        prepTime: 10,
+        cookTime: 8,
+        servings: 2,
+        difficulty: "easy",
+        calories: 90,
+        carbs: 8,
+        protein: 2,
+        fat: 5,
+        fiber: 3,
+        sodium: 280,
+        ingredients: {
+            ja: ["なす 1本", "ピーマン 2個", "にんにく 1片", "醤油 大さじ1", "ごま油 小さじ1"],
+            it: ["Melanzana 1", "Peperoni 2", "Aglio 1 spicchio", "Salsa di soia 1 cucchiaio", "Olio di sesamo 1 cucchiaino"]
+        },
+        instructions: {
+            ja: [
+                "なすは乱切り、ピーマンは細切りにする",
+                "なすは水に5分さらしてアクを抜く",
+                "にんにくはみじん切りにする",
+                "フライパンにごま油を熱し、にんにくを香りが出るまで炒める",
+                "なすとピーマンを加えて5分炒める",
+                "醤油を加えて3分炒める",
+                "器に盛り付けて完成"
+            ],
+            it: [
+                "Tagliare la melanzana a pezzi irregolari, i peperoni a julienne",
+                "Mettere la melanzana in acqua per 5 minuti",
+                "Tritare l'aglio",
+                "Scaldare l'olio di sesamo in padella e soffriggere l'aglio fino a quando sprigiona aroma",
+                "Aggiungere melanzana e peperoni e cuocere per 5 minuti",
+                "Aggiungere la salsa di soia e cuocere per 3 minuti",
+                "Impiattare e servire"
+            ]
+        },
+        tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"]
+    },
+    {
+        id: 218,
+        name: { ja: "しらたきのキムチ炒め", it: "Shirataki Saltati al Kimchi" },
+        description: { ja: "しらたきをキムチで炒めた低糖質副菜", it: "Contorno a basso contenuto di carboidrati con shirataki e kimchi" },
+        type: "dinner",
+        prepTime: 5,
+        cookTime: 5,
+        servings: 2,
+        difficulty: "easy",
+        calories: 50,
+        carbs: 3,
+        protein: 2,
+        fat: 2,
+        fiber: 2,
+        sodium: 400,
+        ingredients: {
+            ja: ["しらたき 200g", "キムチ 50g", "ごま油 小さじ1", "醤油 小さじ1"],
+            it: ["Shirataki 200g", "Kimchi 50g", "Olio di sesamo 1 cucchiaino", "Salsa di soia 1 cucchiaino"]
+        },
+        instructions: {
+            ja: [
+                "しらたきをザルに入れ、流水で2分間洗う",
+                "フライパンにごま油を熱し、しらたきを2分炒める",
+                "キムチを加えて2分炒める",
+                "醤油を加えて1分炒める",
+                "器に盛り付けて完成"
+            ],
+            it: [
+                "Sciacquare gli shirataki sotto acqua corrente per 2 minuti",
+                "Scaldare l'olio di sesamo in padella e saltare gli shirataki per 2 minuti",
+                "Aggiungere il kimchi e cuocere per 2 minuti",
+                "Aggiungere la salsa di soia e cuocere per 1 minuto",
+                "Impiattare e servire"
+            ]
+        },
+        tags: ["diabetic-friendly", "low-carb", "japanese-ingredients"]
+    },
+    {
+        id: 219,
+        name: { ja: "豆腐とわかめの味噌汁", it: "Zuppa di Miso con Tofu e Wakame" },
+        description: { ja: "豆腐とわかめを使った定番の味噌汁", it: "Zuppa di miso classica con tofu e wakame" },
+        type: "breakfast",
+        prepTime: 5,
+        cookTime: 8,
+        servings: 2,
+        difficulty: "easy",
+        calories: 85,
+        carbs: 6,
+        protein: 8,
+        fat: 3,
+        fiber: 2,
+        sodium: 680,
+        ingredients: {
+            ja: ["豆腐 100g", "わかめ 5g", "ねぎ 1本", "味噌 大さじ2", "だし汁 400ml"],
+            it: ["Tofu 100g", "Wakame 5g", "Cipollotto 1", "Miso 2 cucchiai", "Brodo dashi 400ml"]
+        },
+        instructions: {
+            ja: [
+                "豆腐は一口大に切る",
+                "鍋にだし汁を入れて中火で温める",
+                "だし汁が温まったら、味噌を溶かし入れる",
+                "豆腐とわかめを加える",
+                "弱火で2分煮て、ねぎを散らす",
+                "温かいうちにいただく"
+            ],
+            it: [
+                "Tagliare il tofu a pezzi",
+                "Scaldare il brodo dashi in una pentola a fuoco medio",
+                "Quando il brodo è caldo, sciogliere il miso",
+                "Aggiungere tofu e wakame",
+                "Cuocere a fuoco basso per 2 minuti e guarnire con cipollotto",
+                "Servire caldo"
+            ]
+        },
+        tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"]
+    },
+    {
+        id: 220,
+        name: { ja: "鶏ささみの梅しそ和え", it: "Pollo con Ume e Shiso" },
+        description: { ja: "鶏ささみを梅としそで和えたさっぱり副菜", it: "Contorno fresco di pollo con ume e shiso" },
+        type: "snack",
+        prepTime: 10,
+        cookTime: 5,
+        servings: 2,
+        difficulty: "easy",
+        calories: 100,
+        carbs: 2,
+        protein: 18,
+        fat: 2,
+        fiber: 1,
+        sodium: 320,
+        ingredients: {
+            ja: ["鶏ささみ 2本", "梅干し 1個", "大葉 2枚", "醤油 小さじ1"],
+            it: ["Filetto di pollo 2", "Umeboshi 1", "Shiso 2 foglie", "Salsa di soia 1 cucchiaino"]
+        },
+        instructions: {
+            ja: [
+                "ささみは茹でて手で裂く",
+                "梅干しは種を除いて包丁で叩く",
+                "大葉は千切りにする",
+                "ボウルにささみ、梅肉、大葉、醤油を入れて和える",
+                "器に盛り付けて完成"
+            ],
+            it: [
+                "Bollire il pollo e sfilacciarlo a mano",
+                "Eliminare il nocciolo dall'umeboshi e tritarlo",
+                "Tagliare lo shiso a julienne",
+                "Mettere pollo, polpa di ume, shiso e salsa di soia in una ciotola e mescolare",
+                "Impiattare e servire"
+            ]
+        },
+        tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"]
+    },
+    {
+        id: 221,
+        name: { ja: "ブロッコリーと鶏肉の蒸し物", it: "Broccoli e Pollo al Vapore" },
+        description: { ja: "ブロッコリーと鶏肉を蒸したヘルシーな一品", it: "Piatto sano al vapore con broccoli e pollo" },
+        type: "dinner",
+        prepTime: 10,
+        cookTime: 12,
+        servings: 2,
+        difficulty: "easy",
+        calories: 130,
+        carbs: 6,
+        protein: 20,
+        fat: 3,
+        fiber: 4,
+        sodium: 380,
+        ingredients: {
+            ja: ["ブロッコリー 1/2個", "鶏むね肉 100g", "酒 大さじ1", "醤油 大さじ1", "塩 少々"],
+            it: ["Broccoli 1/2", "Petto di pollo 100g", "Sake 1 cucchiaio", "Salsa di soia 1 cucchiaio", "Sale q.b."]
+        },
+        instructions: {
+            ja: [
+                "ブロッコリーは小房に分ける",
+                "鶏肉は一口大に切る",
+                "蒸し器の水を沸かす",
+                "鶏肉を蒸し器に入れて8分蒸す",
+                "ブロッコリーを加えて4分蒸す",
+                "酒、醤油、塩をかける",
+                "器に盛り付けて完成"
+            ],
+            it: [
+                "Dividere i broccoli in cimette",
+                "Tagliare il pollo a pezzi",
+                "Portare l'acqua del cestello a ebollizione",
+                "Mettere il pollo nel cestello e cuocere per 8 minuti",
+                "Aggiungere i broccoli e cuocere per 4 minuti",
+                "Versare sake, salsa di soia e sale sopra",
+                "Impiattare e servire"
+            ]
+        },
+        tags: ["diabetic-friendly", "low-fat", "high-protein", "japanese-ingredients"]
+    },
+    {
+        id: 222,
+        name: { ja: "大根とツナのサラダ", it: "Insalata di Daikon e Tonno" },
+        description: { ja: "大根とツナを使ったさっぱりサラダ", it: "Insalata fresca con daikon e tonno" },
+        type: "snack",
+        prepTime: 10,
+        cookTime: 0,
+        servings: 2,
+        difficulty: "easy",
+        calories: 60,
+        carbs: 4,
+        protein: 8,
+        fat: 1,
+        fiber: 2,
+        sodium: 320,
+        ingredients: {
+            ja: ["大根 200g", "ツナ缶 1個", "ポン酢 大さじ1", "ごま 小さじ1"],
+            it: ["Daikon 200g", "Tonno in scatola 1", "Ponzu 1 cucchiaio", "Semi di sesamo 1 cucchiaino"]
+        },
+        instructions: {
+            ja: [
+                "大根は千切りにする",
+                "大根に塩をふって5分置き、水気を絞る",
+                "ツナ缶の油を軽く切る",
+                "ボウルに大根、ツナ、ポン酢を入れて和える",
+                "ごまを散らして器に盛り付ける"
+            ],
+            it: [
+                "Tagliare il daikon a julienne",
+                "Salare il daikon e lasciare 5 minuti, poi strizzare",
+                "Scolare leggermente l'olio dal tonno",
+                "Mettere daikon, tonno e ponzu in una ciotola e mescolare",
+                "Cospargere con semi di sesamo e impiattare"
+            ]
+        },
+        tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"]
+    },
+    {
+        id: 223,
+        name: { ja: "しめじと豆腐の味噌汁", it: "Zuppa di Miso con Shimeji e Tofu" },
+        description: { ja: "しめじと豆腐を使った具沢山の味噌汁", it: "Zuppa di miso ricca con shimeji e tofu" },
+        type: "breakfast",
+        prepTime: 8,
+        cookTime: 10,
+        servings: 2,
+        difficulty: "easy",
+        calories: 95,
+        carbs: 7,
+        protein: 9,
+        fat: 3,
+        fiber: 2,
+        sodium: 650,
+        ingredients: {
+            ja: ["しめじ 50g", "豆腐 100g", "ねぎ 1本", "味噌 大さじ2", "だし汁 400ml"],
+            it: ["Shimeji 50g", "Tofu 100g", "Cipollotto 1", "Miso 2 cucchiai", "Brodo dashi 400ml"]
+        },
+        instructions: {
+            ja: [
+                "しめじは石づきを取ってほぐす",
+                "豆腐は一口大に切る",
+                "ねぎは小口切りにする",
+                "鍋にだし汁を入れて中火で温める",
+                "しめじを加えて5分煮る",
+                "味噌を溶かし入れて豆腐を加える",
+                "弱火で2分煮て、ねぎを散らす"
+            ],
+            it: [
+                "Rimuovere la base degli shimeji e separarli",
+                "Tagliare il tofu a pezzi",
+                "Tagliare il cipollotto a rondelle",
+                "Scaldare il brodo dashi in una pentola a fuoco medio",
+                "Aggiungere gli shimeji e cuocere per 5 minuti",
+                "Sciogliere il miso e aggiungere il tofu",
+                "Cuocere a fuoco basso per 2 minuti e guarnire con cipollotto"
+            ]
+        },
+        tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"]
+    },
+    {
+        id: 224,
+        name: { ja: "鶏ささみの梅しそ焼き", it: "Pollo alla Griglia con Ume e Shiso" },
+        description: { ja: "鶏ささみを梅としそで焼いた香ばしい一品", it: "Pollo alla griglia aromatico con ume e shiso" },
+        type: "dinner",
+        prepTime: 15,
+        cookTime: 8,
+        servings: 2,
+        difficulty: "medium",
+        calories: 120,
+        carbs: 2,
+        protein: 22,
+        fat: 2,
+        fiber: 1,
+        sodium: 350,
+        ingredients: {
+            ja: ["鶏ささみ 2本", "梅干し 1個", "大葉 2枚", "酒 大さじ1", "醤油 小さじ1"],
+            it: ["Filetto di pollo 2", "Umeboshi 1", "Shiso 2 foglie", "Sake 1 cucchiaio", "Salsa di soia 1 cucchiaino"]
+        },
+        instructions: {
+            ja: [
+                "ささみは縦に切り開いて薄くする",
+                "梅干しは種を除いて包丁で叩く",
+                "ささみに梅肉を塗り、大葉をのせる",
+                "酒と醤油をかけて10分置く",
+                "フライパンに油を熱し、ささみを片面4分ずつ焼く",
+                "器に盛り付けて完成"
+            ],
+            it: [
+                "Aprire i filetti di pollo e appiattirli",
+                "Eliminare il nocciolo dall'umeboshi e tritarlo",
+                "Spalmare la polpa di ume sul pollo e adagiare lo shiso",
+                "Versare sake e salsa di soia e lasciare 10 minuti",
+                "Scaldare l'olio in padella e cuocere il pollo 4 minuti per lato",
+                "Impiattare e servire"
+            ]
+        },
+        tags: ["diabetic-friendly", "low-carb", "high-protein", "japanese-ingredients"]
+    },
+    {
+        id: 225,
+        name: { ja: "キャベツとツナの和え物", it: "Cavolo e Tonno" },
+        description: { ja: "キャベツとツナを使った簡単副菜", it: "Contorno semplice con cavolo e tonno" },
+        type: "snack",
+        prepTime: 8,
+        cookTime: 2,
+        servings: 2,
+        difficulty: "easy",
+        calories: 65,
+        carbs: 5,
+        protein: 8,
+        fat: 1,
+        fiber: 2,
+        sodium: 300,
+        ingredients: {
+            ja: ["キャベツ 200g", "ツナ缶 1個", "ポン酢 大さじ1", "ごま油 小さじ1"],
+            it: ["Cavolo 200g", "Tonno in scatola 1", "Ponzu 1 cucchiaio", "Olio di sesamo 1 cucchiaino"]
+        },
+        instructions: {
+            ja: [
+                "キャベツは細切りにする",
+                "沸騰したお湯で30秒茹でて水気を切る",
+                "ツナ缶の油を軽く切る",
+                "ボウルにキャベツ、ツナ、ポン酢、ごま油を入れて和える",
+                "器に盛り付けて完成"
+            ],
+            it: [
+                "Tagliare il cavolo a julienne",
+                "Sbollentare per 30 secondi e scolare",
+                "Scolare leggermente l'olio dal tonno",
+                "Mettere cavolo, tonno, ponzu e olio di sesamo in una ciotola e mescolare",
+                "Impiattare e servire"
+            ]
+        },
+        tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"]
+    },
+    {
+        id: 226,
+        name: { ja: "豆腐とわかめのサラダ", it: "Insalata di Tofu e Wakame" },
+        description: { ja: "豆腐とわかめを使ったヘルシーなサラダ", it: "Insalata sana con tofu e wakame" },
+        type: "snack",
+        prepTime: 10,
+        cookTime: 0,
+        servings: 2,
+        difficulty: "easy",
+        calories: 80,
+        carbs: 4,
+        protein: 8,
+        fat: 3,
+        fiber: 2,
+        sodium: 280,
+        ingredients: {
+            ja: ["豆腐 150g", "わかめ 10g", "きゅうり 1/2本", "ポン酢 大さじ1", "ごま 小さじ1"],
+            it: ["Tofu 150g", "Wakame 10g", "Cetriolo 1/2", "Ponzu 1 cucchiaio", "Semi di sesamo 1 cucchiaino"]
+        },
+        instructions: {
+            ja: [
+                "豆腐は一口大に切る",
+                "わかめは水で戻して水気を切る",
+                "きゅうりは薄切りにする",
+                "ボウルに豆腐、わかめ、きゅうり、ポン酢を入れて和える",
+                "ごまを散らして器に盛り付ける"
+            ],
+            it: [
+                "Tagliare il tofu a pezzi",
+                "Reidratare il wakame in acqua e scolare",
+                "Tagliare il cetriolo a fette sottili",
+                "Mettere tofu, wakame, cetriolo e ponzu in una ciotola e mescolare",
+                "Cospargere con semi di sesamo e impiattare"
+            ]
+        },
+        tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"]
+    },
+    {
+        id: 227,
+        name: { ja: "鶏肉と野菜の蒸し物", it: "Pollo e Verdure al Vapore" },
+        description: { ja: "鶏肉と野菜を蒸したヘルシーな一品", it: "Piatto sano al vapore con pollo e verdure" },
+        type: "dinner",
+        prepTime: 12,
+        cookTime: 15,
+        servings: 2,
+        difficulty: "easy",
+        calories: 140,
+        carbs: 8,
+        protein: 20,
+        fat: 3,
+        fiber: 4,
+        sodium: 400,
+        ingredients: {
+            ja: ["鶏むね肉 100g", "ブロッコリー 1/2個", "にんじん 1/2本", "酒 大さじ1", "醤油 大さじ1"],
+            it: ["Petto di pollo 100g", "Broccoli 1/2", "Carota 1/2", "Sake 1 cucchiaio", "Salsa di soia 1 cucchiaio"]
+        },
+        instructions: {
+            ja: [
+                "鶏肉は一口大に切る",
+                "ブロッコリーは小房に分ける",
+                "にんじんは薄切りにする",
+                "蒸し器の水を沸かす",
+                "鶏肉を蒸し器に入れて10分蒸す",
+                "野菜を加えて5分蒸す",
+                "酒と醤油をかけて器に盛り付ける"
+            ],
+            it: [
+                "Tagliare il pollo a pezzi",
+                "Dividere i broccoli in cimette",
+                "Tagliare la carota a fette sottili",
+                "Portare l'acqua del cestello a ebollizione",
+                "Mettere il pollo nel cestello e cuocere per 10 minuti",
+                "Aggiungere le verdure e cuocere per 5 minuti",
+                "Versare sake e salsa di soia sopra e impiattare"
+            ]
+        },
+        tags: ["diabetic-friendly", "low-fat", "high-protein", "japanese-ingredients"]
+    },
+    {
+        id: 228,
+        name: { ja: "大根とツナの味噌汁", it: "Zuppa di Miso con Daikon e Tonno" },
+        description: { ja: "大根とツナを使った具沢山の味噌汁", it: "Zuppa di miso ricca con daikon e tonno" },
+        type: "breakfast",
+        prepTime: 8,
+        cookTime: 12,
+        servings: 2,
+        difficulty: "easy",
+        calories: 90,
+        carbs: 6,
+        protein: 10,
+        fat: 2,
+        fiber: 2,
+        sodium: 620,
+        ingredients: {
+            ja: ["大根 100g", "ツナ缶 1個", "ねぎ 1本", "味噌 大さじ2", "だし汁 400ml"],
+            it: ["Daikon 100g", "Tonno in scatola 1", "Cipollotto 1", "Miso 2 cucchiai", "Brodo dashi 400ml"]
+        },
+        instructions: {
+            ja: [
+                "大根は薄切りにする",
+                "ねぎは小口切りにする",
+                "鍋にだし汁を入れて中火で温める",
+                "大根を加えて8分煮る",
+                "味噌を溶かし入れてツナを加える",
+                "弱火で2分煮て、ねぎを散らす"
+            ],
+            it: [
+                "Tagliare il daikon a fette sottili",
+                "Tagliare il cipollotto a rondelle",
+                "Scaldare il brodo dashi in una pentola a fuoco medio",
+                "Aggiungere il daikon e cuocere per 8 minuti",
+                "Sciogliere il miso e aggiungere il tonno",
+                "Cuocere a fuoco basso per 2 minuti e guarnire con cipollotto"
+            ]
+        },
+        tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"]
+    },
+    {
+        id: 229,
+        name: { ja: "豆腐と野菜の蒸し物", it: "Tofu e Verdure al Vapore" },
+        description: { ja: "豆腐と野菜を蒸したヘルシーな一品", it: "Piatto sano al vapore con tofu e verdure" },
+        type: "dinner",
+        prepTime: 10,
+        cookTime: 10,
+        servings: 2,
+        difficulty: "easy",
+        calories: 100,
+        carbs: 6,
+        protein: 8,
+        fat: 4,
+        fiber: 3,
+        sodium: 350,
+        ingredients: {
+            ja: ["木綿豆腐 1丁", "ブロッコリー 1/2個", "にんじん 1/2本", "醤油 大さじ1", "ごま油 小さじ1"],
+            it: ["Tofu sodo 1", "Broccoli 1/2", "Carota 1/2", "Salsa di soia 1 cucchiaio", "Olio di sesamo 1 cucchiaino"]
+        },
+        instructions: {
+            ja: [
+                "豆腐は一口大に切る",
+                "ブロッコリーは小房に分ける",
+                "にんじんは薄切りにする",
+                "蒸し器の水を沸かす",
+                "豆腐と野菜を蒸し器に入れる",
+                "中火で10分蒸す",
+                "醤油とごま油をかけて器に盛り付ける"
+            ],
+            it: [
+                "Tagliare il tofu a pezzi",
+                "Dividere i broccoli in cimette",
+                "Tagliare la carota a fette sottili",
+                "Portare l'acqua del cestello a ebollizione",
+                "Mettere tofu e verdure nel cestello",
+                "Cuocere a fuoco medio per 10 minuti",
+                "Versare salsa di soia e olio di sesamo sopra e impiattare"
+            ]
+        },
+        tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"]
+    },
+    {
+        id: 230,
+        name: { ja: "鶏ささみと野菜のサラダ", it: "Insalata di Pollo e Verdure" },
+        description: { ja: "鶏ささみと野菜を使ったヘルシーなサラダ", it: "Insalata sana con pollo e verdure" },
+        type: "lunch",
+        prepTime: 15,
+        cookTime: 5,
+        servings: 2,
+        difficulty: "easy",
+        calories: 110,
+        carbs: 6,
+        protein: 18,
+        fat: 2,
+        fiber: 3,
+        sodium: 320,
+        ingredients: {
+            ja: ["鶏ささみ 2本", "きゅうり 1本", "トマト 1個", "ポン酢 大さじ1", "ごま 小さじ1"],
+            it: ["Filetto di pollo 2", "Cetriolo 1", "Pomodoro 1", "Ponzu 1 cucchiaio", "Semi di sesamo 1 cucchiaino"]
+        },
+        instructions: {
+            ja: [
+                "ささみは茹でて手で裂く",
+                "きゅうりは薄切りにする",
+                "トマトは一口大に切る",
+                "ボウルにささみ、きゅうり、トマト、ポン酢を入れて和える",
+                "ごまを散らして器に盛り付ける"
+            ],
+            it: [
+                "Bollire il pollo e sfilacciarlo a mano",
+                "Tagliare il cetriolo a fette sottili",
+                "Tagliare il pomodoro a pezzi",
+                "Mettere pollo, cetriolo, pomodoro e ponzu in una ciotola e mescolare",
+                "Cospargere con semi di sesamo e impiattare"
+            ]
+        },
+        tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"]
     }
 ];
 
