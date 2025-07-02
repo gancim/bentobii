@@ -45,7 +45,8 @@ const translations = {
         'total-recipes': '総レシピ数: {count}',
         'country-all': '世界',
         'country-jp': '日本',
-        'country-it': 'イタリア'
+        'country-it': 'イタリア',
+        'country': '国'
     },
     it: {
         'site-title': 'bentobii',
@@ -93,7 +94,8 @@ const translations = {
         'total-recipes': 'Ricette Totali: {count}',
         'country-all': 'Mondo',
         'country-jp': 'Giappone',
-        'country-it': 'Italia'
+        'country-it': 'Italia',
+        'country': 'Paese'
     }
 };
 

@@ -8,7 +8,7 @@ class RecipeApp {
         this.favorites = JSON.parse(localStorage.getItem('favorites')) || [];
         this.currentFilter = 'all';
         this.searchTerm = '';
-        this.currentLanguage = 'ja';
+        this.currentLanguage = (typeof translationManager !== 'undefined') ? translationManager.currentLanguage : 'ja';
         this.currentCountry = 'ALL';
         this.sortByFavorites = false;
         
@@ -69,9 +69,19 @@ class RecipeApp {
             languageSelector.addEventListener('change', (e) => {
                 if (typeof translationManager !== 'undefined') {
                     translationManager.setLanguage(e.target.value);
-                    this.currentLanguage = e.target.value;
+                    this.currentLanguage = translationManager.currentLanguage;
                     this.renderRecipes(); // Re-render with new language
                     this.renderTotalCount();
+                    // Re-render modal if open
+                    const modal = document.getElementById('recipe-modal');
+                    if (modal && !modal.classList.contains('hidden')) {
+                        const recipeDetail = document.getElementById('recipe-detail');
+                        if (recipeDetail && recipeDetail.dataset.recipeId) {
+                            const recipeId = parseInt(recipeDetail.dataset.recipeId, 10);
+                            const recipe = this.recipes.find(r => r.id === recipeId);
+                            if (recipe) this.showRecipeModal(recipe);
+                        }
+                    }
                 }
             });
         }
@@ -267,6 +277,7 @@ class RecipeApp {
 
         if (!modal || !recipeDetail) return;
 
+        recipeDetail.dataset.recipeId = recipe.id;
         const isFavorite = this.favorites.includes(recipe.id);
         const countryFlag = this.getCountryFlag(recipe.country);
 
