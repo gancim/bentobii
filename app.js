@@ -275,7 +275,7 @@ class RecipeApp {
                 <div class="recipe-detail-header" style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
                     <span class="recipe-detail-icon">${recipe.icon || '🍽️'}</span>
                     <h2 class="recipe-detail-title" style="margin: 0;">
-                        ${countryFlag} ${recipe.name[this.currentLanguage]}
+                        ${recipe.name[this.currentLanguage]}
                     </h2>
                 </div>
                 
@@ -311,6 +311,10 @@ class RecipeApp {
                     <div class="meta-item">
                         <div class="meta-label">${this.translate('fiber')}</div>
                         <div class="meta-value">${recipe.fiber} ${this.translate('grams')}</div>
+                    </div>
+                    <div class="meta-item country-flag-meta">
+                        <div class="meta-label" style="opacity:0;">Flag</div>
+                        <div class="meta-value" style="font-size:1.5rem;">${countryFlag}</div>
                     </div>
                 </div>
 
