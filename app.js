@@ -285,8 +285,9 @@ class RecipeApp {
             <div class="recipe-detail">
                 <div class="recipe-detail-header" style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
                     <span class="recipe-detail-icon">${recipe.icon || '🍽️'}</span>
-                    <h2 class="recipe-detail-title" style="margin: 0;">
+                    <h2 class="recipe-detail-title" style="margin: 0; display: flex; align-items: center; gap: 0.5rem;">
                         ${recipe.name[this.currentLanguage]}
+                        <span class="modal-favorite-toggle" style="cursor:pointer; font-size:1.7rem; user-select:none;">${isFavorite ? '❤️' : '🤍'}</span>
                     </h2>
                 </div>
                 
@@ -329,12 +330,6 @@ class RecipeApp {
                     </div>
                 </div>
 
-                <div class="recipe-actions" style="margin-bottom: 2rem;">
-                    <button class="btn ${isFavorite ? 'btn-secondary' : 'btn-primary'} favorite-btn-modal" data-recipe-id="${recipe.id}">
-                        ${isFavorite ? '❤️' : '🤍'}
-                    </button>
-                </div>
-
                 <div class="recipe-section">
                     <h3>${this.translate('ingredients')}</h3>
                     <ul class="ingredients-list">
@@ -355,10 +350,10 @@ class RecipeApp {
             </div>
         `;
 
-        // Add favorite button event listener for modal
-        const favoriteBtn = recipeDetail.querySelector('.favorite-btn-modal');
-        if (favoriteBtn) {
-            favoriteBtn.addEventListener('click', () => {
+        // Add favorite toggle event listener for modal heart emoji
+        const modalFavoriteToggle = recipeDetail.querySelector('.modal-favorite-toggle');
+        if (modalFavoriteToggle) {
+            modalFavoriteToggle.addEventListener('click', () => {
                 this.toggleFavorite(recipe.id);
                 // Update the modal content
                 this.showRecipeModal(recipe);
