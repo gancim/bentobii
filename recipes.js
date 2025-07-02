@@ -42,7 +42,8 @@ const recipes = [
             ]
         },
         tags: ["diabetic-friendly", "high-protein", "low-carb", "japanese-ingredients"],
-        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23f0f0f0'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='16' fill='%23666'%3E豆腐スクランブル%3C/text%3E%3C/svg%3E"
+        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23f0f0f0'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='16' fill='%23666'%3E豆腐スクランブル%3C/text%3E%3C/svg%3E",
+        country: 'JP'
     },
     {
         id: 2,
@@ -83,7 +84,8 @@ const recipes = [
             ]
         },
         tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"],
-        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23e8f4f8'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='14' fill='%23666'%3E味噌汁%3C/text%3E%3C/svg%3E"
+        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23e8f4f8'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='14' fill='%23666'%3E味噌汁%3C/text%3E%3C/svg%3E",
+        country: 'JP'
     },
     {
         id: 3,
@@ -124,7 +126,8 @@ const recipes = [
             ]
         },
         tags: ["diabetic-friendly", "high-protein", "japanese-ingredients"],
-        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23f5f5dc'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='14' fill='%23666'%3E納豆丼%3C/text%3E%3C/svg%3E"
+        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23f5f5dc'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='14' fill='%23666'%3E納豆丼%3C/text%3E%3C/svg%3E",
+        country: 'JP'
     },
 
     // Lunch Recipes
@@ -169,7 +172,8 @@ const recipes = [
             ]
         },
         tags: ["diabetic-friendly", "high-protein", "low-calorie"],
-        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23e8f5e8'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='14' fill='%23666'%3Eサラダ%3C/text%3E%3C/svg%3E"
+        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23e8f5e8'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='14' fill='%23666'%3Eサラダ%3C/text%3E%3C/svg%3E",
+        country: 'JP'
     },
     {
         id: 5,
@@ -212,7 +216,8 @@ const recipes = [
             ]
         },
         tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"],
-        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23f0e6d2'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='14' fill='%23666'%3Eきのこ炒め%3C/text%3E%3C/svg%3E"
+        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23f0e6d2'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='14' fill='%23666'%3Eきのこ炒め%3C/text%3E%3C/svg%3E",
+        country: 'JP'
     },
     // More lunch recipes
     {
@@ -256,7 +261,8 @@ const recipes = [
             ]
         },
         tags: ["diabetic-friendly", "low-fat", "high-protein"],
-        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23e6f3ff'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='14' fill='%23666'%3E蒸し魚%3C/text%3E%3C/svg%3E"
+        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23e6f3ff'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='14' fill='%23666'%3E蒸し魚%3C/text%3E%3C/svg%3E",
+        country: 'JP'
     },
     {
         id: 7,
@@ -299,7 +305,8 @@ const recipes = [
             ]
         },
         tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"],
-        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23f8f8f8'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='14' fill='%23666'%3E大根煮物%3C/text%3E%3C/svg%3E"
+        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23f8f8f8'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='14' fill='%23666'%3E大根煮物%3C/text%3E%3C/svg%3E",
+        country: 'JP'
     },
 
     // Dinner Recipes
@@ -342,7 +349,8 @@ const recipes = [
             ]
         },
         tags: ["diabetic-friendly", "high-protein", "low-calorie"],
-        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23f5deb3'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='12' fill='%23666'%3E豆腐ハンバーグ%3C/text%3E%3C/svg%3E"
+        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23f5deb3'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='12' fill='%23666'%3E豆腐ハンバーグ%3C/text%3E%3C/svg%3E",
+        country: 'JP'
     },
     {
         id: 9,
@@ -385,7 +393,8 @@ const recipes = [
             ]
         },
         tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"],
-        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23e8f4f8'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='12' fill='%23666'%3E野菜味噌汁%3C/text%3E%3C/svg%3E"
+        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23e8f4f8'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='12' fill='%23666'%3E野菜味噌汁%3C/text%3E%3C/svg%3E",
+        country: 'JP'
     },
     {
         id: 10,
@@ -428,7 +437,8 @@ const recipes = [
             ]
         },
         tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"],
-        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23f0f0f0'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='12' fill='%23666'%3Eこんにゃく%3C/text%3E%3C/svg%3E"
+        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23f0f0f0'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='12' fill='%23666'%3Eこんにゃく%3C/text%3E%3C/svg%3E",
+        country: 'JP'
     },
     // Snack Recipes
     {
@@ -470,7 +480,8 @@ const recipes = [
             ]
         },
         tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"],
-        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23e8f5e8'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='12' fill='%23666'%3Eきゅうり%3C/text%3E%3C/svg%3E"
+        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23e8f5e8'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='12' fill='%23666'%3Eきゅうり%3C/text%3E%3C/svg%3E",
+        country: 'JP'
     },
     {
         id: 12,
@@ -511,7 +522,8 @@ const recipes = [
             ]
         },
         tags: ["diabetic-friendly", "high-protein", "japanese-ingredients"],
-        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23e8f5e8'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='12' fill='%23666'%3E枝豆%3C/text%3E%3C/svg%3E"
+        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23e8f5e8'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='12' fill='%23666'%3E枝豆%3C/text%3E%3C/svg%3E",
+        country: 'JP'
     },
     {
         id: 13,
@@ -538,7 +550,8 @@ const recipes = [
             it: ["Lavare le patate dolci", "Avvolgere nella carta stagnola", "Cuocere in forno per 45 minuti", "Controllare la morbidezza con uno stecchino"]
         },
         tags: ["diabetic-friendly", "low-fat", "japanese-ingredients"],
-        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23f4a460'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='12' fill='%23666'%3E焼き芋%3C/text%3E%3C/svg%3E"
+        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23f4a460'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='12' fill='%23666'%3E焼き芋%3C/text%3E%3C/svg%3E",
+        country: 'JP'
     },
     {
         id: 14,
@@ -577,7 +590,8 @@ const recipes = [
             ]
         },
         tags: ["diabetic-friendly", "high-protein", "low-calorie"],
-        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23f5f5dc'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='12' fill='%23666'%3E胡麻豆腐%3C/text%3E%3C/svg%3E"
+        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23f5f5dc'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='12' fill='%23666'%3E胡麻豆腐%3C/text%3E%3C/svg%3E",
+        country: 'JP'
     },
     {
         id: 15,
@@ -620,7 +634,8 @@ const recipes = [
             ]
         },
         tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"],
-        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23f0e68c'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='12' fill='%23666'%3E海苔巻き%3C/text%3E%3C/svg%3E"
+        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23f0e68c'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='12' fill='%23666'%3E海苔巻き%3C/text%3E%3C/svg%3E",
+        country: 'JP'
     },
     {
         id: 16,
@@ -663,7 +678,8 @@ const recipes = [
             ]
         },
         tags: ["diabetic-friendly", "high-protein", "low-fat"],
-        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23f0e6d2'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='10' fill='%23666'%3E鶏ささみ蒸し%3C/text%3E%3C/svg%3E"
+        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23f0e6d2'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='10' fill='%23666'%3E鶏ささみ蒸し%3C/text%3E%3C/svg%3E",
+        country: 'JP'
     },
     {
         id: 17,
@@ -704,7 +720,8 @@ const recipes = [
             ]
         },
         tags: ["diabetic-friendly", "high-protein", "japanese-ingredients"],
-        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23e6f3ff'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='12' fill='%23666'%3E鯖焼き%3C/text%3E%3C/svg%3E"
+        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23e6f3ff'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='12' fill='%23666'%3E鯖焼き%3C/text%3E%3C/svg%3E",
+        country: 'JP'
     },
     {
         id: 18,
@@ -745,7 +762,8 @@ const recipes = [
             ]
         },
         tags: ["diabetic-friendly", "high-protein", "japanese-ingredients"],
-        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23ffb6c1'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='12' fill='%23666'%3E鮭味噌焼き%3C/text%3E%3C/svg%3E"
+        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23ffb6c1'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='12' fill='%23666'%3E鮭味噌焼き%3C/text%3E%3C/svg%3E",
+        country: 'JP'
     },
     {
         id: 19,
@@ -788,7 +806,8 @@ const recipes = [
             ]
         },
         tags: ["diabetic-friendly", "high-protein", "japanese-ingredients"],
-        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23f0e6d2'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='10' fill='%23666'%3E豚生姜焼き%3C/text%3E%3C/svg%3E"
+        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23f0e6d2'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='10' fill='%23666'%3E豚生姜焼き%3C/text%3E%3C/svg%3E",
+        country: 'JP'
     },
     {
         id: 20,
@@ -831,7 +850,8 @@ const recipes = [
             ]
         },
         tags: ["diabetic-friendly", "high-protein", "japanese-ingredients"],
-        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23fffacd'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='12' fill='%23666'%3E卵焼き%3C/text%3E%3C/svg%3E"
+        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23fffacd'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='12' fill='%23666'%3E卵焼き%3C/text%3E%3C/svg%3E",
+        country: 'JP'
     },
     {
         id: 21,
@@ -870,7 +890,8 @@ const recipes = [
             ]
         },
         tags: ["diabetic-friendly", "high-protein", "japanese-ingredients"],
-        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23f5f5dc'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='12' fill='%23666'%3E納豆ご飯%3C/text%3E%3C/svg%3E"
+        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23f5f5dc'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='12' fill='%23666'%3E納豆ご飯%3C/text%3E%3C/svg%3E",
+        country: 'JP'
     },
     {
         id: 22,
@@ -911,7 +932,8 @@ const recipes = [
             ]
         },
         tags: ["diabetic-friendly", "low-fat", "japanese-ingredients"],
-        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23f5f5dc'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='12' fill='%23666'%3Eおかゆ%3C/text%3E%3C/svg%3E"
+        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23f5f5dc'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='12' fill='%23666'%3Eおかゆ%3C/text%3E%3C/svg%3E",
+        country: 'JP'
     },
     {
         id: 23,
@@ -954,7 +976,8 @@ const recipes = [
             ]
         },
         tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"],
-        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23e8f4f8'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='12' fill='%23666'%3E野菜スープ%3C/text%3E%3C/svg%3E"
+        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23e8f4f8'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='12' fill='%23666'%3E野菜スープ%3C/text%3E%3C/svg%3E",
+        country: 'JP'
     },
     {
         id: 24,
@@ -995,7 +1018,8 @@ const recipes = [
             ]
         },
         tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"],
-        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23e8f4f8'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='12' fill='%23666'%3E味噌汁%3C/text%3E%3C/svg%3E"
+        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23e8f4f8'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='12' fill='%23666'%3E味噌汁%3C/text%3E%3C/svg%3E",
+        country: 'JP'
     },
     {
         id: 25,
@@ -1036,7 +1060,8 @@ const recipes = [
             ]
         },
         tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"],
-        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23e8f5e8'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='12' fill='%23666'%3Eこんにゃくサラダ%3C/text%3E%3C/svg%3E"
+        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23e8f5e8'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='12' fill='%23666'%3Eこんにゃくサラダ%3C/text%3E%3C/svg%3E",
+        country: 'JP'
     },
     {
         id: 26,
@@ -1081,7 +1106,8 @@ const recipes = [
             ]
         },
         tags: ["diabetic-friendly", "low-carb", "high-protein"],
-        image: ""
+        image: "",
+        country: 'JP'
     },
     {
         id: 27,
@@ -1122,7 +1148,8 @@ const recipes = [
             ]
         },
         tags: ["diabetic-friendly", "low-carb", "high-protein", "japanese-ingredients"],
-        image: ""
+        image: "",
+        country: 'JP'
     },
     {
         id: 28,
@@ -1167,7 +1194,8 @@ const recipes = [
             ]
         },
         tags: ["diabetic-friendly", "high-protein", "japanese-ingredients"],
-        image: ""
+        image: "",
+        country: 'JP'
     },
     {
         id: 29,
@@ -1206,7 +1234,8 @@ const recipes = [
             ]
         },
         tags: ["diabetic-friendly", "low-carb"],
-        image: ""
+        image: "",
+        country: 'JP'
     },
     {
         id: 30,
@@ -1247,7 +1276,8 @@ const recipes = [
             ]
         },
         tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"],
-        image: ""
+        image: "",
+        country: 'JP'
     },
     {
         id: 31,
@@ -1286,7 +1316,8 @@ const recipes = [
             ]
         },
         tags: ["diabetic-friendly", "low-calorie"],
-        image: ""
+        image: "",
+        country: 'JP'
     },
     {
         id: 32,
@@ -1325,7 +1356,8 @@ const recipes = [
             ]
         },
         tags: ["diabetic-friendly", "low-carb", "high-protein"],
-        image: ""
+        image: "",
+        country: 'JP'
     },
     {
         id: 33,
@@ -1364,7 +1396,8 @@ const recipes = [
             ]
         },
         tags: ["diabetic-friendly", "low-carb"],
-        image: ""
+        image: "",
+        country: 'JP'
     },
     {
         id: 34,
@@ -1405,7 +1438,8 @@ const recipes = [
             ]
         },
         tags: ["diabetic-friendly", "low-carb", "high-protein"],
-        image: ""
+        image: "",
+        country: 'JP'
     },
     {
         id: 35,
@@ -1450,7 +1484,8 @@ const recipes = [
             ]
         },
         tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"],
-        image: ""
+        image: "",
+        country: 'JP'
     },
     {
         id: 36,
@@ -1486,7 +1521,8 @@ const recipes = [
                 "Tritare cipolla e aglio e soffriggerli nell'olio.", "Aggiungere pomodori, dado e sgombro con il suo liquido e cuocere.", "Cuocere per circa 10 minuti."]
         },
         tags: ["diabetic-friendly", "high-protein"],
-        image: ""
+        image: "",
+        country: 'JP'
     },
     {
         id: 37,
@@ -1527,7 +1563,8 @@ const recipes = [
             ]
         },
         tags: ["diabetic-friendly", "low-calorie"],
-        image: ""
+        image: "",
+        country: 'JP'
     },
     {
         id: 38,
@@ -1570,7 +1607,8 @@ const recipes = [
             ]
         },
         tags: ["diabetic-friendly", "low-carb", "high-protein"],
-        image: ""
+        image: "",
+        country: 'JP'
     },
     {
         id: 39,
@@ -1615,7 +1653,8 @@ const recipes = [
             ]
         },
         tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"],
-        image: ""
+        image: "",
+        country: 'JP'
     },
     {
         id: 40,
@@ -1658,7 +1697,8 @@ const recipes = [
             ]
         },
         tags: ["diabetic-friendly", "low-carb", "high-protein"],
-        image: ""
+        image: "",
+        country: 'JP'
     },
     {
         id: 41,
@@ -1701,7 +1741,8 @@ const recipes = [
             ]
         },
         tags: ["diabetic-friendly", "low-calorie"],
-        image: ""
+        image: "",
+        country: 'JP'
     },
     {
         id: 42,
@@ -1746,7 +1787,8 @@ const recipes = [
             ]
         },
         tags: ["diabetic-friendly", "high-protein"],
-        image: ""
+        image: "",
+        country: 'JP'
     },
     {
         id: 43,
@@ -1789,7 +1831,8 @@ const recipes = [
             ]
         },
         tags: ["diabetic-friendly", "low-carb", "high-protein", "japanese-ingredients"],
-        image: ""
+        image: "",
+        country: 'JP'
     },
     {
         id: 44,
@@ -1834,7 +1877,8 @@ const recipes = [
             ]
         },
         tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"],
-        image: ""
+        image: "",
+        country: 'JP'
     },
     {
         id: 45,
@@ -1879,7 +1923,8 @@ const recipes = [
             ]
         },
         tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"],
-        image: ""
+        image: "",
+        country: 'JP'
     },
     {
         id: 201,
@@ -1920,7 +1965,8 @@ const recipes = [
                 "Impiattare e servire"
             ]
         },
-        tags: ["diabetic-friendly", "low-fat", "high-protein", "japanese-ingredients"]
+        tags: ["diabetic-friendly", "low-fat", "high-protein", "japanese-ingredients"],
+        country: 'JP'
     },
     {
         id: 202,
@@ -1955,7 +2001,8 @@ const recipes = [
                 "Versare brodo dashi e salsa di soia sopra e servire"
             ]
         },
-        tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"]
+        tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"],
+        country: 'JP'
     },
     {
         id: 203,
@@ -1990,7 +2037,8 @@ const recipes = [
                 "Impiattare e guarnire con cipollotto"
             ]
         },
-        tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"]
+        tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"],
+        country: 'JP'
     },
     {
         id: 204,
@@ -2027,7 +2075,8 @@ const recipes = [
                 "Impiattare e servire"
             ]
         },
-        tags: ["diabetic-friendly", "high-protein", "japanese-ingredients"]
+        tags: ["diabetic-friendly", "high-protein", "japanese-ingredients"],
+        country: 'JP'
     },
     {
         id: 205,
@@ -2064,7 +2113,8 @@ const recipes = [
                 "Impiattare e servire"
             ]
         },
-        tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"]
+        tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"],
+        country: 'JP'
     },
     {
         id: 206,
@@ -2101,7 +2151,8 @@ const recipes = [
                 "Impiattare e servire"
             ]
         },
-        tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"]
+        tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"],
+        country: 'JP'
     },
     {
         id: 207,
@@ -2138,7 +2189,8 @@ const recipes = [
                 "Impiattare e servire"
             ]
         },
-        tags: ["diabetic-friendly", "high-fiber", "japanese-ingredients"]
+        tags: ["diabetic-friendly", "high-fiber", "japanese-ingredients"],
+        country: 'JP'
     },
     {
         id: 208,
@@ -2173,7 +2225,8 @@ const recipes = [
                 "Impiattare e servire"
             ]
         },
-        tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"]
+        tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"],
+        country: 'JP'
     },
     {
         id: 209,
@@ -2210,7 +2263,8 @@ const recipes = [
                 "Impiattare e servire"
             ]
         },
-        tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"]
+        tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"],
+        country: 'JP'
     },
     {
         id: 210,
@@ -2247,7 +2301,8 @@ const recipes = [
                 "Impiattare e servire"
             ]
         },
-        tags: ["diabetic-friendly", "low-carb", "japanese-ingredients"]
+        tags: ["diabetic-friendly", "low-carb", "japanese-ingredients"],
+        country: 'JP'
     },
     {
         id: 211,
@@ -2288,7 +2343,8 @@ const recipes = [
                 "Impiattare e servire"
             ]
         },
-        tags: ["diabetic-friendly", "low-fat", "high-protein", "japanese-ingredients"]
+        tags: ["diabetic-friendly", "low-fat", "high-protein", "japanese-ingredients"],
+        country: 'JP'
     },
     {
         id: 212,
@@ -2325,7 +2381,8 @@ const recipes = [
                 "Impiattare e servire"
             ]
         },
-        tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"]
+        tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"],
+        country: 'JP'
     },
     {
         id: 213,
@@ -2364,7 +2421,8 @@ const recipes = [
                 "Impiattare e servire"
             ]
         },
-        tags: ["diabetic-friendly", "low-carb", "high-protein", "japanese-ingredients"]
+        tags: ["diabetic-friendly", "low-carb", "high-protein", "japanese-ingredients"],
+        country: 'JP'
     },
     {
         id: 214,
@@ -2401,7 +2459,8 @@ const recipes = [
                 "Impiattare e servire"
             ]
         },
-        tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"]
+        tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"],
+        country: 'JP'
     },
     {
         id: 215,
@@ -2440,7 +2499,8 @@ const recipes = [
                 "Impiattare e servire"
             ]
         },
-        tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"]
+        tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"],
+        country: 'JP'
     },
     {
         id: 216,
@@ -2481,7 +2541,8 @@ const recipes = [
                 "Impiattare e servire"
             ]
         },
-        tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"]
+        tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"],
+        country: 'JP'
     },
     {
         id: 217,
@@ -2522,7 +2583,8 @@ const recipes = [
                 "Impiattare e servire"
             ]
         },
-        tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"]
+        tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"],
+        country: 'JP'
     },
     {
         id: 218,
@@ -2559,7 +2621,8 @@ const recipes = [
                 "Impiattare e servire"
             ]
         },
-        tags: ["diabetic-friendly", "low-carb", "japanese-ingredients"]
+        tags: ["diabetic-friendly", "low-carb", "japanese-ingredients"],
+        country: 'JP'
     },
     {
         id: 219,
@@ -2598,7 +2661,8 @@ const recipes = [
                 "Servire caldo"
             ]
         },
-        tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"]
+        tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"],
+        country: 'JP'
     },
     {
         id: 220,
@@ -2635,7 +2699,8 @@ const recipes = [
                 "Impiattare e servire"
             ]
         },
-        tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"]
+        tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"],
+        country: 'JP'
     },
     {
         id: 221,
@@ -2676,7 +2741,8 @@ const recipes = [
                 "Impiattare e servire"
             ]
         },
-        tags: ["diabetic-friendly", "low-fat", "high-protein", "japanese-ingredients"]
+        tags: ["diabetic-friendly", "low-fat", "high-protein", "japanese-ingredients"],
+        country: 'JP'
     },
     {
         id: 222,
@@ -2713,7 +2779,8 @@ const recipes = [
                 "Cospargere con semi di sesamo e impiattare"
             ]
         },
-        tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"]
+        tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"],
+        country: 'JP'
     },
     {
         id: 223,
@@ -2754,7 +2821,8 @@ const recipes = [
                 "Cuocere a fuoco basso per 2 minuti e guarnire con cipollotto"
             ]
         },
-        tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"]
+        tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"],
+        country: 'JP'
     },
     {
         id: 224,
@@ -2793,7 +2861,8 @@ const recipes = [
                 "Impiattare e servire"
             ]
         },
-        tags: ["diabetic-friendly", "low-carb", "high-protein", "japanese-ingredients"]
+        tags: ["diabetic-friendly", "low-carb", "high-protein", "japanese-ingredients"],
+        country: 'JP'
     },
     {
         id: 225,
@@ -2830,7 +2899,8 @@ const recipes = [
                 "Impiattare e servire"
             ]
         },
-        tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"]
+        tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"],
+        country: 'JP'
     },
     {
         id: 226,
@@ -2867,7 +2937,8 @@ const recipes = [
                 "Cospargere con semi di sesamo e impiattare"
             ]
         },
-        tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"]
+        tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"],
+        country: 'JP'
     },
     {
         id: 227,
@@ -2908,7 +2979,8 @@ const recipes = [
                 "Versare sake e salsa di soia sopra e impiattare"
             ]
         },
-        tags: ["diabetic-friendly", "low-fat", "high-protein", "japanese-ingredients"]
+        tags: ["diabetic-friendly", "low-fat", "high-protein", "japanese-ingredients"],
+        country: 'JP'
     },
     {
         id: 228,
@@ -2947,7 +3019,8 @@ const recipes = [
                 "Cuocere a fuoco basso per 2 minuti e guarnire con cipollotto"
             ]
         },
-        tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"]
+        tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"],
+        country: 'JP'
     },
     {
         id: 229,
@@ -2988,7 +3061,8 @@ const recipes = [
                 "Versare salsa di soia e olio di sesamo sopra e impiattare"
             ]
         },
-        tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"]
+        tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"],
+        country: 'JP'
     },
     {
         id: 230,
@@ -3025,7 +3099,8 @@ const recipes = [
                 "Cospargere con semi di sesamo e impiattare"
             ]
         },
-        tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"]
+        tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"],
+        country: 'JP'
     }
 ];
 
@@ -3103,7 +3178,8 @@ function generateRecipes() {
                 ]
             },
             tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"],
-            image: `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23e8f5e8'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='12' fill='%23666'%3E${veg.ja}%3C/text%3E%3C/svg%3E`
+            image: `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23e8f5e8'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='12' fill='%23666'%3E${veg.ja}%3C/text%3E%3C/svg%3E`,
+            country: 'JP'
         });
     });
     
@@ -3149,7 +3225,8 @@ function generateRecipes() {
                     it: method.it_instructions
                 },
                 tags: ["diabetic-friendly", "high-protein", "japanese-ingredients"],
-                image: `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23f0e6d2'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='10' fill='%23666'%3E${protein.ja}${method.ja}%3C/text%3E%3C/svg%3E`
+                image: `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23f0e6d2'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='10' fill='%23666'%3E${protein.ja}${method.ja}%3C/text%3E%3C/svg%3E`,
+                country: 'JP'
             });
         });
     });
@@ -3197,7 +3274,8 @@ const additionalRecipes = [
             ]
         },
         tags: ["diabetic-friendly", "high-protein", "low-carb"],
-        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23f5f5dc'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='12' fill='%23666'%3Eおからサラダ%3C/text%3E%3C/svg%3E"
+        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23f5f5dc'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='12' fill='%23666'%3Eおからサラダ%3C/text%3E%3C/svg%3E",
+        country: 'JP'
     }
 ];
 

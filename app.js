@@ -6,6 +6,7 @@ class RecipeApp {
         this.currentFilter = 'all';
         this.searchTerm = '';
         this.currentLanguage = 'ja';
+        this.currentCountry = 'JP';
         this.sortByFavorites = false;
         
         this.init();
@@ -72,6 +73,16 @@ class RecipeApp {
             });
         }
 
+        // Country selector
+        const countrySelector = document.getElementById('country-selector');
+        if (countrySelector) {
+            countrySelector.value = this.currentCountry;
+            countrySelector.addEventListener('change', (e) => {
+                this.currentCountry = e.target.value;
+                this.filterRecipes();
+            });
+        }
+
         // Favorites toggle
         const favoritesToggle = document.getElementById('favorites-toggle');
         if (favoritesToggle) {
@@ -122,6 +133,8 @@ class RecipeApp {
 
     filterRecipes() {
         this.filteredRecipes = this.recipes.filter(recipe => {
+            // Filter by country
+            const countryMatch = !this.currentCountry || recipe.country === this.currentCountry;
             // Filter by meal type
             const typeMatch = this.currentFilter === 'all' || recipe.type === this.currentFilter;
             
@@ -133,7 +146,7 @@ class RecipeApp {
                 ) ||
                 recipe.tags.some(tag => tag.toLowerCase().includes(this.searchTerm));
             
-            return typeMatch && searchMatch;
+            return countryMatch && typeMatch && searchMatch;
         });
 
         if (this.sortByFavorites) {

@@ -42,7 +42,9 @@ const translations = {
         'low-calorie': '低カロリー',
         'japanese-ingredients': '日本の食材使用',
         'no-favorites': 'お気に入りがありません',
-        'total-recipes': '総レシピ数: {count}'
+        'total-recipes': '総レシピ数: {count}',
+        'country-jp': '日本',
+        'country-it': 'イタリア'
     },
     it: {
         'site-title': 'bentobii',
@@ -87,7 +89,9 @@ const translations = {
         'low-calorie': 'Basso contenuto calorico',
         'japanese-ingredients': 'Ingredienti giapponesi',
         'no-favorites': 'Nessun preferito',
-        'total-recipes': 'Ricette Totali: {count}'
+        'total-recipes': 'Ricette Totali: {count}',
+        'country-jp': 'Giappone',
+        'country-it': 'Italia'
     }
 };
 
@@ -112,7 +116,12 @@ class TranslationManager {
         // Update elements with data-i18n attribute
         document.querySelectorAll('[data-i18n]').forEach(element => {
             const key = element.getAttribute('data-i18n');
-            element.textContent = this.translate(key);
+            // If it's an option element, update textContent
+            if (element.tagName === 'OPTION') {
+                element.textContent = this.translate(key);
+            } else {
+                element.textContent = this.translate(key);
+            }
         });
 
         // Update elements with data-i18n-placeholder attribute

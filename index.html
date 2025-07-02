@@ -23,6 +23,11 @@
                             <option value="ja">日本語</option>
                             <option value="it">Italiano</option>
                         </select>
+                        <label for="country-selector" style="display:none;">Country</label>
+                        <select id="country-selector" class="language-selector" style="margin-left: 0.5rem;">
+                            <option value="JP" data-i18n="country-jp">Japan</option>
+                            <!-- Future: <option value="IT" data-i18n="country-it">Italy</option> -->
+                        </select>
                         <button id="favorites-toggle" class="btn-icon" data-i18n-title="favorites">
                             <span class="heart-icon">❤️</span>
                             <span id="favorites-count">0</span>
