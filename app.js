@@ -193,13 +193,13 @@ class RecipeApp {
                 <h3 class="recipe-title">${recipe.name[this.currentLanguage]}</h3>
                 <p class="recipe-description">${recipe.description[this.currentLanguage]}</p>
                 <div class="recipe-meta">
-                    <span>${recipe.prepTime + recipe.cookTime}${this.translate('minutes')}</span>
-                    <span>${recipe.calories}${this.translate('kcal')}</span>
-                    <span>${recipe.servings}${this.translate('servings')}</span>
+                    <span>${recipe.prepTime + recipe.cookTime} ${this.translate('minutes')}</span>
+                    <span>${recipe.calories} ${this.translate('kcal')}</span>
+                    <span>${recipe.servings} ${this.translate('servings')}</span>
                 </div>
                 <div class="recipe-actions">
                     <button class="favorite-btn ${isFavorite ? 'active' : ''}" data-recipe-id="${recipe.id}">
-                        ♥
+                        ${isFavorite ? '❤️' : '🤍'}
                     </button>
                     <button class="btn btn-primary view-recipe-btn" data-recipe-id="${recipe.id}">
                         ${this.translate('view-recipe')}
@@ -215,6 +215,10 @@ class RecipeApp {
         favoriteBtn.addEventListener('click', (e) => {
             e.stopPropagation();
             this.toggleFavorite(recipe.id);
+            // Update the heart icon immediately
+            const isNowFavorite = this.favorites.includes(recipe.id);
+            favoriteBtn.innerHTML = isNowFavorite ? '❤️' : '🤍';
+            favoriteBtn.classList.toggle('active', isNowFavorite);
         });
 
         viewBtn.addEventListener('click', (e) => {
@@ -239,19 +243,19 @@ class RecipeApp {
 
         recipeDetail.innerHTML = `
             <div class="recipe-detail">
-                <div class="recipe-detail-icon-container">
+                <div class="recipe-detail-header" style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
                     <span class="recipe-detail-icon">${recipe.icon || '🍽️'}</span>
+                    <h2 class="recipe-detail-title" style="margin: 0;">${recipe.name[this.currentLanguage]}</h2>
                 </div>
-                <h2 class="recipe-detail-title">${recipe.name[this.currentLanguage]}</h2>
                 
                 <div class="recipe-detail-meta">
                     <div class="meta-item">
                         <div class="meta-label">${this.translate('prep-time')}</div>
-                        <div class="meta-value">${recipe.prepTime}${this.translate('minutes')}</div>
+                        <div class="meta-value">${recipe.prepTime} ${this.translate('minutes')}</div>
                     </div>
                     <div class="meta-item">
                         <div class="meta-label">${this.translate('cook-time')}</div>
-                        <div class="meta-value">${recipe.cookTime}${this.translate('minutes')}</div>
+                        <div class="meta-value">${recipe.cookTime} ${this.translate('minutes')}</div>
                     </div>
                     <div class="meta-item">
                         <div class="meta-label">${this.translate('servings')}</div>
@@ -263,25 +267,25 @@ class RecipeApp {
                     </div>
                     <div class="meta-item">
                         <div class="meta-label">${this.translate('calories')}</div>
-                        <div class="meta-value">${recipe.calories}${this.translate('kcal')}</div>
+                        <div class="meta-value">${recipe.calories} ${this.translate('kcal')}</div>
                     </div>
                     <div class="meta-item">
                         <div class="meta-label">${this.translate('carbs')}</div>
-                        <div class="meta-value">${recipe.carbs}${this.translate('grams')}</div>
+                        <div class="meta-value">${recipe.carbs} ${this.translate('grams')}</div>
                     </div>
                     <div class="meta-item">
                         <div class="meta-label">${this.translate('protein')}</div>
-                        <div class="meta-value">${recipe.protein}${this.translate('grams')}</div>
+                        <div class="meta-value">${recipe.protein} ${this.translate('grams')}</div>
                     </div>
                     <div class="meta-item">
                         <div class="meta-label">${this.translate('fiber')}</div>
-                        <div class="meta-value">${recipe.fiber}${this.translate('grams')}</div>
+                        <div class="meta-value">${recipe.fiber} ${this.translate('grams')}</div>
                     </div>
                 </div>
 
                 <div class="recipe-actions" style="margin-bottom: 2rem;">
                     <button class="btn ${isFavorite ? 'btn-secondary' : 'btn-primary'} favorite-btn-modal" data-recipe-id="${recipe.id}">
-                        ${isFavorite ? this.translate('remove-from-favorites') : this.translate('add-to-favorites')}
+                        ${isFavorite ? '❤️' : '🤍'}
                     </button>
                 </div>
 
@@ -305,7 +309,7 @@ class RecipeApp {
             </div>
         `;
 
-        // Add favorite button event listener
+        // Add favorite button event listener for modal
         const favoriteBtn = recipeDetail.querySelector('.favorite-btn-modal');
         if (favoriteBtn) {
             favoriteBtn.addEventListener('click', () => {
@@ -335,11 +339,8 @@ class RecipeApp {
             this.favorites.push(recipeId);
         }
         localStorage.setItem('favorites', JSON.stringify(this.favorites));
-        
         this.updateFavoriteButtons(recipeId);
         this.updateFavoritesCount();
-
-        // If sorting by favorites, re-render to reflect changes immediately
         if (this.sortByFavorites) {
             this.filterRecipes();
         }
@@ -348,7 +349,6 @@ class RecipeApp {
     updateFavoriteButtons(recipeId) {
         const isFavorite = this.favorites.includes(recipeId);
         const favoriteButtons = document.querySelectorAll(`[data-recipe-id="${recipeId}"]`);
-        
         favoriteButtons.forEach(btn => {
             if (btn.classList.contains('favorite-btn')) {
                 btn.classList.toggle('active', isFavorite);
@@ -377,29 +377,22 @@ class RecipeApp {
         return key;
     }
 
-    // Search suggestions
     getSearchSuggestions(term) {
         const suggestions = new Set();
-        
         this.recipes.forEach(recipe => {
-            // Add ingredient suggestions
             recipe.ingredients[this.currentLanguage].forEach(ingredient => {
                 const lowerIngredient = ingredient.toLowerCase();
                 if (lowerIngredient.includes(term.toLowerCase())) {
                     suggestions.add(ingredient);
                 }
             });
-            
-            // Add recipe name suggestions
             if (recipe.name[this.currentLanguage].toLowerCase().includes(term.toLowerCase())) {
                 suggestions.add(recipe.name[this.currentLanguage]);
             }
         });
-
         return Array.from(suggestions).slice(0, 5);
     }
 
-    // Statistics
     getStatistics() {
         return {
             totalRecipes: this.recipes.length,
@@ -422,33 +415,19 @@ class RecipeApp {
     renderTotalCount() {
         const totalRecipesText = document.getElementById('total-recipes-text');
         if (!totalRecipesText) return;
-
         const count = this.recipes.length;
         let text = this.translate('total-recipes');
         text = text.replace('{count}', count);
-
         totalRecipesText.textContent = text;
     }
 }
 
 // Initialize the app when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    window.recipeApp = new RecipeApp();
-    
-    // Add some console information for debugging
-    console.log('Recipe App initialized with', window.recipeApp.recipes.length, 'recipes');
-    console.log('App statistics:', window.recipeApp.getStatistics());
-});
-
-// Service Worker registration for offline functionality (optional)
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js')
-            .then(registration => {
-                console.log('SW registered: ', registration);
-            })
-            .catch(registrationError => {
-                console.log('SW registration failed: ', registrationError);
-            });
+if (typeof document !== 'undefined') {
+    document.addEventListener('DOMContentLoaded', () => {
+        window.recipeApp = new RecipeApp();
+        // Add some console information for debugging
+        console.log('Recipe App initialized with', window.recipeApp.recipes.length, 'recipes');
+        console.log('App statistics:', window.recipeApp.getStatistics());
     });
-} 
+}
