@@ -9,7 +9,7 @@ class RecipeApp {
         this.currentFilter = 'all';
         this.searchTerm = '';
         this.currentLanguage = 'ja';
-        this.currentCountry = 'JP';
+        this.currentCountry = 'ALL';
         this.sortByFavorites = false;
         
         this.init();
@@ -136,8 +136,8 @@ class RecipeApp {
 
     filterRecipes() {
         this.filteredRecipes = this.recipes.filter(recipe => {
-            // Filter by country
-            const countryMatch = !this.currentCountry || recipe.country === this.currentCountry;
+            // Filter by country - show all if 'ALL' is selected
+            const countryMatch = this.currentCountry === 'ALL' || recipe.country === this.currentCountry;
             // Filter by meal type
             const typeMatch = this.currentFilter === 'all' || recipe.type === this.currentFilter;
             

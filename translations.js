@@ -43,6 +43,7 @@ const translations = {
         'japanese-ingredients': '日本の食材使用',
         'no-favorites': 'お気に入りがありません',
         'total-recipes': '総レシピ数: {count}',
+        'country-all': '世界',
         'country-jp': '日本',
         'country-it': 'イタリア'
     },
@@ -90,6 +91,7 @@ const translations = {
         'japanese-ingredients': 'Ingredienti giapponesi',
         'no-favorites': 'Nessun preferito',
         'total-recipes': 'Ricette Totali: {count}',
+        'country-all': 'Mondo',
         'country-jp': 'Giappone',
         'country-it': 'Italia'
     }
