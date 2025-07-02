@@ -235,6 +235,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    height: 100%;
 }
 
 .recipe-card:hover {
@@ -260,6 +261,10 @@ body {
 }
 
 .recipe-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    height: 100%;
     padding: var(--spacing-lg);
 }
 
@@ -291,8 +296,12 @@ body {
     display: flex;
     gap: 0.5rem;
     align-items: center;
+    margin-top: auto;
     margin-bottom: 0;
-    justify-content: flex-start;
+    justify-content: flex-end;
+    flex-shrink: 0;
+    flex-wrap: nowrap;
+    min-height: 2.5rem;
 }
 
 .favorite-btn {
