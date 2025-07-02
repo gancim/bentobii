@@ -1,6 +1,9 @@
+import { japaneseRecipes } from './recipes.js';
+import { italianRecipes } from './recipes.it.js';
+
 class RecipeApp {
     constructor() {
-        this.recipes = window.recipes || [];
+        this.recipes = [...japaneseRecipes, ...italianRecipes];
         this.filteredRecipes = this.recipes;
         this.favorites = JSON.parse(localStorage.getItem('favorites')) || [];
         this.currentFilter = 'all';
