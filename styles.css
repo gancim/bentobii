@@ -289,9 +289,10 @@ body {
 
 .recipe-actions {
     display: flex;
-    gap: var(--spacing-sm);
+    gap: 0.5rem;
     align-items: center;
-    margin-bottom: 2.5rem;
+    margin-bottom: 0;
+    justify-content: flex-start;
 }
 
 .favorite-btn {
@@ -624,8 +625,6 @@ body {
     }
 
     .small-view-btn {
-        right: 0.7rem;
-        bottom: 0.7rem;
         padding: 0.38rem 0.9rem;
         font-size: 0.85rem;
     }
@@ -707,8 +706,6 @@ body {
     }
 
     .small-view-btn {
-        right: 0.4rem;
-        bottom: 0.4rem;
         padding: 0.28rem 0.7rem;
         font-size: 0.8rem;
     }
@@ -735,13 +732,12 @@ body {
 }
 
 .small-view-btn {
-    position: absolute;
-    right: 1.2rem;
-    bottom: 1.2rem;
+    position: static;
     padding: 0.5rem 1.2rem;
     font-size: 0.95rem;
     min-width: unset;
     border-radius: 999px;
     z-index: 2;
     box-shadow: 0 2px 8px rgba(44, 122, 123, 0.08);
+    margin-left: 0.2rem;
 }

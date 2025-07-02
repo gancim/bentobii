@@ -239,11 +239,11 @@ class RecipeApp {
                     <button class="favorite-btn ${isFavorite ? 'active' : ''}" data-recipe-id="${recipe.id}">
                         ${isFavorite ? '❤️' : '🤍'}
                     </button>
+                    <button class="btn btn-primary view-recipe-btn small-view-btn" data-recipe-id="${recipe.id}">
+                        ${this.translate('view-recipe')}
+                    </button>
                 </div>
             </div>
-            <button class="btn btn-primary view-recipe-btn small-view-btn" data-recipe-id="${recipe.id}">
-                ${this.translate('view-recipe')}
-            </button>
         `;
 
         // Add event listeners
