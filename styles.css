@@ -228,11 +228,29 @@ body {
     overflow: hidden;
     transition: transform 0.2s, box-shadow 0.2s;
     cursor: pointer;
+    position: relative;
 }
 
 .recipe-card:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
+}
+
+.recipe-flag {
+    position: absolute;
+    top: var(--spacing-sm);
+    right: var(--spacing-sm);
+    font-size: 1.5rem;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4px);
 }
 
 .recipe-content {
@@ -513,6 +531,14 @@ body {
         padding: 1px;
     }
 
+    .recipe-flag {
+        width: 32px;
+        height: 32px;
+        font-size: 1.2rem;
+        top: 6px;
+        right: 6px;
+    }
+
     .search-box {
         flex-direction: column;
         gap: var(--spacing-sm);
@@ -610,6 +636,14 @@ body {
         height: 16px;
         font-size: 0.65rem;
         padding: 0;
+    }
+
+    .recipe-flag {
+        width: 28px;
+        height: 28px;
+        font-size: 1rem;
+        top: 4px;
+        right: 4px;
     }
 
     .filter-buttons {

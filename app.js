@@ -214,9 +214,10 @@ class RecipeApp {
         const countryFlag = this.getCountryFlag(recipe.country);
         
         card.innerHTML = `
+            <div class="recipe-flag">${countryFlag}</div>
             <div class="recipe-content">
                 <h3 class="recipe-title">
-                    ${countryFlag} ${recipe.name[this.currentLanguage]}
+                    ${recipe.name[this.currentLanguage]}
                 </h3>
                 <p class="recipe-description">${recipe.description[this.currentLanguage]}</p>
                 <div class="recipe-meta">
