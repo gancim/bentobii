@@ -301,6 +301,7 @@ body {
     flex-shrink: 0;
     flex-wrap: nowrap;
     min-height: 2.5rem;
+    width: 100%;
 }
 
 .favorite-btn {
