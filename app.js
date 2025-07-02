@@ -312,9 +312,9 @@ class RecipeApp {
                         <div class="meta-label">${this.translate('fiber')}</div>
                         <div class="meta-value">${recipe.fiber} ${this.translate('grams')}</div>
                     </div>
-                    <div class="meta-item country-flag-meta">
-                        <div class="meta-label" style="opacity:0;">Flag</div>
-                        <div class="meta-value" style="font-size:1.5rem;">${countryFlag}</div>
+                    <div class="meta-item">
+                        <div class="meta-label">${this.translate('country')}</div>
+                        <div class="meta-value">${countryFlag}</div>
                     </div>
                 </div>
 
