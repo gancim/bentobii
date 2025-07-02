@@ -3283,7 +3283,7 @@ const additionalRecipes = [
 const allRecipes = generateRecipes();
 
 // Final combined recipes database
-window.recipes = [...allRecipes, ...additionalRecipes]; 
+const japaneseRecipes = [...allRecipes, ...additionalRecipes];
 
-// At the end of the file, export the array as 'japaneseRecipes'
-export const japaneseRecipes = recipes;
+// Export the combined recipes
+export { japaneseRecipes };

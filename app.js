@@ -197,16 +197,27 @@ class RecipeApp {
         }, 300);
     }
 
+    getCountryFlag(country) {
+        const flags = {
+            'JP': '🇯🇵',
+            'IT': '🇮🇹'
+        };
+        return flags[country] || '🌍';
+    }
+
     createRecipeCard(recipe) {
         const card = document.createElement('div');
         card.className = 'recipe-card';
         card.dataset.recipeId = recipe.id;
 
         const isFavorite = this.favorites.includes(recipe.id);
+        const countryFlag = this.getCountryFlag(recipe.country);
         
         card.innerHTML = `
             <div class="recipe-content">
-                <h3 class="recipe-title">${recipe.name[this.currentLanguage]}</h3>
+                <h3 class="recipe-title">
+                    ${countryFlag} ${recipe.name[this.currentLanguage]}
+                </h3>
                 <p class="recipe-description">${recipe.description[this.currentLanguage]}</p>
                 <div class="recipe-meta">
                     <span>${recipe.prepTime + recipe.cookTime} ${this.translate('minutes')}</span>
@@ -256,12 +267,15 @@ class RecipeApp {
         if (!modal || !recipeDetail) return;
 
         const isFavorite = this.favorites.includes(recipe.id);
+        const countryFlag = this.getCountryFlag(recipe.country);
 
         recipeDetail.innerHTML = `
             <div class="recipe-detail">
                 <div class="recipe-detail-header" style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
                     <span class="recipe-detail-icon">${recipe.icon || '🍽️'}</span>
-                    <h2 class="recipe-detail-title" style="margin: 0;">${recipe.name[this.currentLanguage]}</h2>
+                    <h2 class="recipe-detail-title" style="margin: 0;">
+                        ${countryFlag} ${recipe.name[this.currentLanguage]}
+                    </h2>
                 </div>
                 
                 <div class="recipe-detail-meta">
