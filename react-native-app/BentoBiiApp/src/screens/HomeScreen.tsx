@@ -115,120 +115,121 @@ export default function HomeScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
-      {/* Header with Logo, Language, and Heart */}
-      <View style={styles.header}>
-        <Image source={require('../../assets/logo.png')} style={styles.logo} resizeMode="contain" />
-        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-          <TouchableOpacity onPress={() => setLangModalVisible(true)} style={styles.langIconBtn}>
-            <Text style={{ fontSize: 20, color: '#2c7a7b' }}>〄</Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => navigation.navigate('Favorites', { language: langKey })}>
-            <Text style={[styles.heart, { color: '#2c7a7b', fontSize: 24 }]}>♥</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
-
-      {/* Language Picker Modal */}
-      <Modal
-        visible={langModalVisible}
-        transparent
-        animationType="fade"
-        onRequestClose={() => setLangModalVisible(false)}
+      <ScrollView
+        keyboardShouldPersistTaps="handled"
+        contentContainerStyle={{ paddingBottom: 32 }}
       >
-        <Pressable style={styles.modalOverlay} onPress={() => setLangModalVisible(false)}>
-          <View style={styles.modalContent}>
-            {LANGUAGES.map(lang => (
-              <TouchableOpacity
-                key={lang.code}
-                style={[styles.modalLangBtn, selectedLang === lang.code && styles.modalLangBtnActive]}
-                onPress={() => handleLanguageChange(lang.code)}
-              >
-                <Text style={[styles.modalLangText, selectedLang === lang.code && styles.modalLangTextActive]}>{lang.label}</Text>
-              </TouchableOpacity>
-            ))}
+        {/* Header with Logo, Language, and Heart */}
+        <View style={styles.header}>
+          <Image source={require('../../assets/logo.png')} style={styles.logo} resizeMode="contain" />
+          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+            <TouchableOpacity onPress={() => setLangModalVisible(true)} style={styles.langIconBtn}>
+              <Text style={{ fontSize: 20, color: '#2c7a7b' }}>〄</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('Favorites', { language: langKey })}>
+              <Text style={[styles.heart, { color: '#2c7a7b', fontSize: 24 }]}>♥</Text>
+            </TouchableOpacity>
           </View>
-        </Pressable>
-      </Modal>
-
-      {/* Search Bar */}
-      <TextInput
-        style={styles.search}
-        placeholder={t('search-ingredients-placeholder', langKey)}
-        placeholderTextColor="#bbb"
-        value={search}
-        onChangeText={setSearch}
-      />
-
-      {/* Country Filter Chips */}
-      <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.countryRow}>
-        {COUNTRIES.map(country => (
-          <TouchableOpacity
-            key={country.code}
-            style={[
-              styles.countryBtn,
-              selectedCountry === country.code && styles.countryBtnActive,
-            ]}
-            onPress={() => setSelectedCountry(country.code)}
-          >
-            <Text style={styles.countryFlag}>{country.flag}</Text>
-            <Text
-              style={[
-                styles.countryBtnText,
-                selectedCountry === country.code && styles.countryBtnTextActive,
-              ]}
-            >
-              {country.name[langKey as keyof typeof country.name] || country.name.en}
-            </Text>
-          </TouchableOpacity>
-        ))}
-      </ScrollView>
-
-      {/* Category Buttons */}
-      <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.catRow}>
-        {CATEGORIES.map(cat => (
-          <TouchableOpacity
-            key={cat}
-            style={[
-              styles.catBtn,
-              selectedCat === cat && styles.catBtnActive,
-            ]}
-            onPress={() => setSelectedCat(cat)}
-          >
-            <Text
-              style={[
-                styles.catBtnText,
-                selectedCat === cat && styles.catBtnTextActive,
-              ]}
-            >
-              {t('category-' + cat.toLowerCase(), langKey)}
-            </Text>
-          </TouchableOpacity>
-        ))}
-      </ScrollView>
-
-      {/* Results Area */}
-      {filteredRecipes.length > 0 ? (
-        <FlatList
-          data={filteredRecipes}
-          keyExtractor={item => item.id.toString()}
-          renderItem={({ item }) => (
-            <RecipeCard recipe={item} language={langKey} onPress={() => navigation.navigate('RecipeDetail', { recipe: item, language: langKey })} />
-          )}
-          contentContainerStyle={{
-            ...styles.recipeList,
-            paddingBottom: 32,
-          }}
-          showsVerticalScrollIndicator={false}
-        />
-      ) : (
-        <View style={styles.emptyState}>
-          <Image 
-            source={require('../../assets/noresults.png')} 
-            style={styles.emptyImage}
-            resizeMode="contain"
-          />
         </View>
-      )}
+
+        {/* Language Picker Modal */}
+        <Modal
+          visible={langModalVisible}
+          transparent
+          animationType="fade"
+          onRequestClose={() => setLangModalVisible(false)}
+        >
+          <Pressable style={styles.modalOverlay} onPress={() => setLangModalVisible(false)}>
+            <View style={styles.modalContent}>
+              {LANGUAGES.map(lang => (
+                <TouchableOpacity
+                  key={lang.code}
+                  style={[styles.modalLangBtn, selectedLang === lang.code && styles.modalLangBtnActive]}
+                  onPress={() => handleLanguageChange(lang.code)}
+                >
+                  <Text style={[styles.modalLangText, selectedLang === lang.code && styles.modalLangTextActive]}>{lang.label}</Text>
+                </TouchableOpacity>
+              ))}
+            </View>
+          </Pressable>
+        </Modal>
+
+        {/* Search Bar */}
+        <TextInput
+          style={styles.search}
+          placeholder={t('search-ingredients-placeholder', langKey)}
+          placeholderTextColor="#bbb"
+          value={search}
+          onChangeText={setSearch}
+        />
+
+        {/* Country Filter Chips */}
+        <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.countryRow}>
+          {COUNTRIES.map(country => (
+            <TouchableOpacity
+              key={country.code}
+              style={[
+                styles.countryBtn,
+                selectedCountry === country.code && styles.countryBtnActive,
+              ]}
+              onPress={() => setSelectedCountry(country.code)}
+            >
+              <Text style={styles.countryFlag}>{country.flag}</Text>
+              <Text
+                style={[
+                  styles.countryBtnText,
+                  selectedCountry === country.code && styles.countryBtnTextActive,
+                ]}
+              >
+                {country.name[langKey as keyof typeof country.name] || country.name.en}
+              </Text>
+            </TouchableOpacity>
+          ))}
+        </ScrollView>
+
+        {/* Category Buttons */}
+        <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.catRow}>
+          {CATEGORIES.map(cat => (
+            <TouchableOpacity
+              key={cat}
+              style={[
+                styles.catBtn,
+                selectedCat === cat && styles.catBtnActive,
+              ]}
+              onPress={() => setSelectedCat(cat)}
+            >
+              <Text
+                style={[
+                  styles.catBtnText,
+                  selectedCat === cat && styles.catBtnTextActive,
+                ]}
+              >
+                {t('category-' + cat.toLowerCase(), langKey)}
+              </Text>
+            </TouchableOpacity>
+          ))}
+        </ScrollView>
+
+        {/* Results Area */}
+        {filteredRecipes.length > 0 ? (
+          filteredRecipes.map(recipe => (
+            <RecipeCard
+              key={recipe.id}
+              recipe={recipe}
+              language={langKey}
+              onPress={() => navigation.navigate('RecipeDetail', { recipe, language: langKey })}
+            />
+          ))
+        ) : (
+          <View style={styles.emptyState}>
+            <Image 
+              source={require('../../assets/noresults.png')} 
+              style={styles.emptyImage}
+              resizeMode="contain"
+            />
+          </View>
+        )}
+      </ScrollView>
     </SafeAreaView>
   );
 }
@@ -281,7 +282,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     // no flexWrap for horizontal scroll
     marginBottom: 14,
-    marginTop: 4,
+    marginTop: 0,
     height: 24,
   },
   catBtn: {
@@ -366,7 +367,7 @@ const styles = StyleSheet.create({
   countryRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 10,
+    marginBottom: 0,
     paddingHorizontal: 4,
     paddingRight: 16,
     height: 36,
