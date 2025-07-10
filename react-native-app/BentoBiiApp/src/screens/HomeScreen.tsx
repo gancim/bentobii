@@ -206,7 +206,7 @@ export default function HomeScreen() {
         ))}
       </ScrollView>
 
-      {/* Recipe List or Empty State */}
+      {/* Results Area */}
       {filteredRecipes.length > 0 ? (
         <FlatList
           data={filteredRecipes}
@@ -214,7 +214,10 @@ export default function HomeScreen() {
           renderItem={({ item }) => (
             <RecipeCard recipe={item} language={langKey} onPress={() => navigation.navigate('RecipeDetail', { recipe: item, language: langKey })} />
           )}
-          contentContainerStyle={styles.recipeList}
+          contentContainerStyle={{
+            ...styles.recipeList,
+            paddingBottom: 32,
+          }}
           showsVerticalScrollIndicator={false}
         />
       ) : (
@@ -275,17 +278,19 @@ const styles = StyleSheet.create({
     color: '#222',
   },
   catRow: {
-    flexGrow: 0,
-    marginBottom: 24,
-    height: 25,
+    flexDirection: 'row',
+    // no flexWrap for horizontal scroll
+    marginBottom: 14,
+    marginTop: 4,
+    height: 24,
   },
   catBtn: {
     backgroundColor: '#f8f9fa',
     borderRadius: 16,
-    paddingVertical: 4,
-    paddingHorizontal: 14,
-    minHeight: 25,
-    marginHorizontal: 4,
+    paddingVertical: 2,
+    paddingHorizontal: 10,
+    minHeight: 20,
+    marginHorizontal: 2,
     alignItems: 'center',
     borderWidth: 0,
   },
@@ -361,25 +366,26 @@ const styles = StyleSheet.create({
   countryRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 18,
+    marginBottom: 10,
     paddingHorizontal: 4,
     paddingRight: 16,
-    height: 48,
+    height: 36,
     overflow: 'visible',
+    // no flexWrap for horizontal scroll
   },
   countryBtn: {
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: '#f8f9fa',
     borderRadius: 20,
-    paddingVertical: 4,
-    paddingHorizontal: 12,
-    marginHorizontal: 4,
+    paddingVertical: 2,
+    paddingHorizontal: 10,
+    marginHorizontal: 2,
     borderWidth: 0,
     minWidth: 80,
     flexShrink: 1,
-    height: 30,
-    maxHeight: 40,
+    height: 28,
+    maxHeight: 32,
     overflow: 'visible',
   },
   countryBtnActive: {
