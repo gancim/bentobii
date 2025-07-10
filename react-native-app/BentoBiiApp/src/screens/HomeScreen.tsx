@@ -27,9 +27,24 @@ const LANGUAGES = [
 ];
 const CATEGORIES = ['All', 'Breakfast', 'Lunch', 'Dinner', 'Snacks'];
 
+const COUNTRIES = [
+  { code: 'All', flag: '🌍', name: { en: 'All Countries', ja: 'すべての国', es: 'Todos los países', it: 'Tutti i paesi', zh: '所有国家', 'zh-TW': '所有國家', hi: 'सभी देश', ar: 'جميع البلدان', pt: 'Todos os países', fr: 'Tous les pays', ru: 'Все страны', de: 'Alle Länder', ko: '모든 국가' } },
+  { code: 'JP', flag: '🇯🇵', name: { en: 'Japan', ja: '日本', es: 'Japón', it: 'Giappone', zh: '日本', 'zh-TW': '日本', hi: 'जापान', ar: 'اليابان', pt: 'Japão', fr: 'Japon', ru: 'Япония', de: 'Japan', ko: '일본' } },
+  { code: 'IT', flag: '🇮🇹', name: { en: 'Italy', ja: 'イタリア', es: 'Italia', it: 'Italia', zh: '意大利', 'zh-TW': '義大利', hi: 'इटली', ar: 'إيطاليا', pt: 'Itália', fr: 'Italie', ru: 'Италия', de: 'Italien', ko: '이탈리아' } },
+  { code: 'IN', flag: '🇮🇳', name: { en: 'India', ja: 'インド', es: 'India', it: 'India', zh: '印度', 'zh-TW': '印度', hi: 'भारत', ar: 'الهند', pt: 'Índia', fr: 'Inde', ru: 'Индия', de: 'Indien', ko: '인도' } },
+  { code: 'MX', flag: '🇲🇽', name: { en: 'Mexico', ja: 'メキシコ', es: 'México', it: 'Messico', zh: '墨西哥', 'zh-TW': '墨西哥', hi: 'मेक्सिको', ar: 'المكسيك', pt: 'México', fr: 'Mexique', ru: 'Мексика', de: 'Mexiko', ko: '멕시코' } },
+  { code: 'TH', flag: '🇹🇭', name: { en: 'Thailand', ja: 'タイ', es: 'Tailandia', it: 'Thailandia', zh: '泰国', 'zh-TW': '泰國', hi: 'थाईलैंड', ar: 'تايلاند', pt: 'Tailândia', fr: 'Thaïlande', ru: 'Таиланд', de: 'Thailand', ko: '태국' } },
+  { code: 'FR', flag: '🇫🇷', name: { en: 'France', ja: 'フランス', es: 'Francia', it: 'Francia', zh: '法国', 'zh-TW': '法國', hi: 'फ्रांस', ar: 'فرنسا', pt: 'França', fr: 'France', ru: 'Франция', de: 'Frankreich', ko: '프랑스' } },
+  { code: 'CN', flag: '🇨🇳', name: { en: 'China', ja: '中国', es: 'China', it: 'Cina', zh: '中国', 'zh-TW': '中國', hi: 'चीन', ar: 'الصين', pt: 'China', fr: 'Chine', ru: 'Китай', de: 'China', ko: '중국' } },
+  { code: 'ES', flag: '🇪🇸', name: { en: 'Spain', ja: 'スペイン', es: 'España', it: 'Spagna', zh: '西班牙', 'zh-TW': '西班牙', hi: 'स्पेन', ar: 'إسبانيا', pt: 'Espanha', fr: 'Espagne', ru: 'Испания', de: 'Spanien', ko: '스페인' } },
+  { code: 'GR', flag: '🇬🇷', name: { en: 'Greece', ja: 'ギリシャ', es: 'Grecia', it: 'Grecia', zh: '希腊', 'zh-TW': '希臘', hi: 'यूनान', ar: 'اليونان', pt: 'Grécia', fr: 'Grèce', ru: 'Греция', de: 'Griechenland', ko: '그리스' } },
+  { code: 'MA', flag: '🇲🇦', name: { en: 'Morocco', ja: 'モロッコ', es: 'Marruecos', it: 'Marocco', zh: '摩洛哥', 'zh-TW': '摩洛哥', hi: 'मोरक्को', ar: 'المغرب', pt: 'Marrocos', fr: 'Maroc', ru: 'Марокко', de: 'Marokko', ko: '모로코' } },
+];
+
 export default function HomeScreen() {
   const [selectedLang, setSelectedLang] = React.useState('ja');
   const [selectedCat, setSelectedCat] = React.useState('All');
+  const [selectedCountry, setSelectedCountry] = React.useState('All');
   const [search, setSearch] = React.useState('');
   const [langModalVisible, setLangModalVisible] = React.useState(false);
   const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
@@ -73,6 +88,13 @@ export default function HomeScreen() {
         fat: r.fat,
       },
     }))
+    .filter((r: any) => {
+      // Country filter
+      if (selectedCountry !== 'All') {
+        return r.country === selectedCountry;
+      }
+      return true;
+    })
     .filter((r: any) => {
       if (selectedCat === 'All') return true;
       return r.type.toLowerCase() === selectedCat.toLowerCase();
@@ -136,6 +158,30 @@ export default function HomeScreen() {
         value={search}
         onChangeText={setSearch}
       />
+
+      {/* Country Filter Chips */}
+      <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.countryRow}>
+        {COUNTRIES.map(country => (
+          <TouchableOpacity
+            key={country.code}
+            style={[
+              styles.countryBtn,
+              selectedCountry === country.code && styles.countryBtnActive,
+            ]}
+            onPress={() => setSelectedCountry(country.code)}
+          >
+            <Text style={styles.countryFlag}>{country.flag}</Text>
+            <Text
+              style={[
+                styles.countryBtnText,
+                selectedCountry === country.code && styles.countryBtnTextActive,
+              ]}
+            >
+              {country.name[langKey as keyof typeof country.name] || country.name.en}
+            </Text>
+          </TouchableOpacity>
+        ))}
+      </ScrollView>
 
       {/* Category Buttons */}
       <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.catRow}>
@@ -311,5 +357,39 @@ const styles = StyleSheet.create({
   modalLangTextActive: {
     color: '#fff',
     fontWeight: 'bold',
+  },
+  countryRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 18,
+    paddingHorizontal: 4,
+  },
+  countryBtn: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#f8f9fa',
+    borderRadius: 20,
+    paddingVertical: 10,
+    paddingHorizontal: 12,
+    marginHorizontal: 4,
+    borderWidth: 0,
+  },
+  countryBtnActive: {
+    backgroundColor: ACCENT,
+    borderColor: ACCENT,
+  },
+  countryFlag: {
+    fontSize: 18,
+    marginRight: 8,
+  },
+  countryBtnText: {
+    color: '#bbb',
+    fontSize: 14,
+    fontWeight: '400',
+  },
+  countryBtnTextActive: {
+    color: '#fff',
+    fontWeight: '400',
+    fontSize: 14,
   },
 }); 
