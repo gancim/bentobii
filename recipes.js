@@ -3286,4 +3286,4 @@ const allRecipes = generateRecipes();
 const japaneseRecipes = [...allRecipes, ...additionalRecipes];
 
 // Export the combined recipes
-export { japaneseRecipes };
+export { japaneseRecipes as recipes };

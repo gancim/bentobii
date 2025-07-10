@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   View,
   Text,
   StyleSheet,
   TouchableOpacity,
-  Dimensions,
 } from 'react-native';
+import { t } from '../translations';
 
 interface Recipe {
   id: number;
@@ -28,11 +28,14 @@ interface RecipeCardProps {
   recipe: Recipe;
   language: string;
   onPress: () => void;
+  isFavorite?: boolean;
+  onToggleFavorite?: () => void;
 }
 
-const { width } = Dimensions.get('window');
-
-const RecipeCard: React.FC<RecipeCardProps> = ({ recipe, language, onPress }) => {
+const RecipeCard: React.FC<RecipeCardProps> = ({ recipe, language, onPress, isFavorite, onToggleFavorite }) => {
+  useEffect(() => {
+    // translations.setLanguage(language); // Removed as per edit hint
+  }, [language]);
   const getCountryFlag = (country: string) => {
     switch (country) {
       case 'JP':
@@ -60,44 +63,51 @@ const RecipeCard: React.FC<RecipeCardProps> = ({ recipe, language, onPress }) =>
   };
 
   return (
-    <TouchableOpacity style={styles.card} onPress={onPress}>
-      <View style={styles.flagContainer}>
-        <Text style={styles.flag}>{getCountryFlag(recipe.country)}</Text>
-      </View>
-      
+    <TouchableOpacity style={styles.card} onPress={onPress} activeOpacity={0.95}>
+      {/* Show heart icon if onToggleFavorite is provided, else show flag */}
+      {onToggleFavorite ? (
+        <TouchableOpacity
+          style={styles.heartIconBtn}
+          onPress={e => {
+            e.stopPropagation();
+            onToggleFavorite && onToggleFavorite();
+          }}
+          activeOpacity={0.7}
+        >
+          <Text style={[styles.heartIcon, { color: isFavorite ? '#2c7a7b' : '#bbb' }] }>
+            {isFavorite ? '♥' : '♡'}
+          </Text>
+        </TouchableOpacity>
+      ) : (
+        <Text style={[styles.flag, styles.flagTopRight]}>{getCountryFlag(recipe.country)}</Text>
+      )}
       <View style={styles.content}>
         <View style={styles.header}>
           <Text style={styles.title}>
             {recipe.name[language as keyof typeof recipe.name]}
           </Text>
-          <Text style={styles.type}>
-            {getTypeLabel(recipe.type)}
-          </Text>
         </View>
-        
-        <Text style={styles.description} numberOfLines={2}>
+        <Text style={styles.description}>
           {recipe.description[language as keyof typeof recipe.description]}
         </Text>
-        
         <View style={styles.meta}>
           <View style={styles.metaItem}>
-            <Text style={styles.metaLabel}>Calories</Text>
+            <Text style={styles.metaLabel}>{t('calories', language)}</Text>
             <Text style={styles.metaValue}>{recipe.nutrition.calories}</Text>
           </View>
           <View style={styles.metaItem}>
-            <Text style={styles.metaLabel}>Protein</Text>
+            <Text style={styles.metaLabel}>{t('protein', language)}</Text>
             <Text style={styles.metaValue}>{recipe.nutrition.protein}g</Text>
           </View>
           <View style={styles.metaItem}>
-            <Text style={styles.metaLabel}>Carbs</Text>
+            <Text style={styles.metaLabel}>{t('carbs', language)}</Text>
             <Text style={styles.metaValue}>{recipe.nutrition.carbs}g</Text>
           </View>
           <View style={styles.metaItem}>
-            <Text style={styles.metaLabel}>Fat</Text>
+            <Text style={styles.metaLabel}>{t('fat', language)}</Text>
             <Text style={styles.metaValue}>{recipe.nutrition.fat}g</Text>
           </View>
         </View>
-        
         <View style={styles.tags}>
           {recipe.tags.slice(0, 3).map((tag, index) => (
             <View key={index} style={styles.tag}>
@@ -125,27 +135,14 @@ const styles = StyleSheet.create({
     elevation: 5,
     position: 'relative',
   },
-  flagContainer: {
+  flag: {
+    fontSize: 20,
+  },
+  flagTopRight: {
     position: 'absolute',
     top: 12,
     right: 12,
-    backgroundColor: 'rgba(255, 255, 255, 0.9)',
-    borderRadius: 20,
-    width: 40,
-    height: 40,
-    justifyContent: 'center',
-    alignItems: 'center',
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.1,
-    shadowRadius: 2,
-    elevation: 3,
-  },
-  flag: {
-    fontSize: 20,
+    zIndex: 1,
   },
   content: {
     padding: 16,
@@ -212,6 +209,19 @@ const styles = StyleSheet.create({
   tagText: {
     fontSize: 11,
     color: '#4a5568',
+  },
+  heartIconBtn: {
+    position: 'absolute',
+    top: 12,
+    right: 12,
+    zIndex: 2,
+    backgroundColor: 'rgba(255,255,255,0.9)',
+    borderRadius: 16,
+    padding: 4,
+  },
+  heartIcon: {
+    fontSize: 22,
+    fontWeight: 'bold',
   },
 });
 

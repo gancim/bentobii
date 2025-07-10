@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
   View,
   Text,
@@ -9,16 +9,19 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { StackNavigationProp } from '@react-navigation/stack';
+import { RouteProp } from '@react-navigation/native';
 import { RootStackParamList } from '../../App';
 import RecipeCard from '../components/RecipeCard';
-import { japaneseRecipes } from '../recipes';
-import { italianRecipes } from '../recipes.it';
+import { japaneseRecipes } from '../recipes.js';
+import { italianRecipes } from '../recipes.it.js';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { t } from '../translations';
 
 type FavoritesScreenNavigationProp = StackNavigationProp<RootStackParamList, 'Favorites'>;
 
 interface FavoritesScreenProps {
   navigation: FavoritesScreenNavigationProp;
+  route: RouteProp<RootStackParamList, 'Favorites'>;
 }
 
 interface Recipe {
@@ -38,10 +41,12 @@ interface Recipe {
   };
 }
 
-const FavoritesScreen: React.FC<FavoritesScreenProps> = ({ navigation }) => {
+const FavoritesScreen: React.FC<FavoritesScreenProps> = ({ navigation, route }) => {
+  const language = route?.params?.language || 'ja';
   const [favoriteRecipes, setFavoriteRecipes] = useState<Recipe[]>([]);
   const [loading, setLoading] = useState(true);
-  const [currentLanguage, setCurrentLanguage] = useState('ja');
+  const [toast, setToast] = useState<string | null>(null);
+  const toastTimeout = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     loadFavorites();
@@ -53,9 +58,17 @@ const FavoritesScreen: React.FC<FavoritesScreenProps> = ({ navigation }) => {
       if (favorites) {
         const favoriteIds = JSON.parse(favorites);
         const allRecipes = [...japaneseRecipes, ...italianRecipes];
-        const favoritesList = allRecipes.filter(recipe => 
-          favoriteIds.includes(recipe.id)
-        );
+        const favoritesList = allRecipes
+          .filter(recipe => favoriteIds.includes(recipe.id))
+          .map(recipe => ({
+            ...recipe,
+            nutrition: recipe.nutrition || {
+              calories: recipe.calories || 0,
+              protein: recipe.protein || 0,
+              carbs: recipe.carbs || 0,
+              fat: recipe.fat || 0,
+            },
+          }));
         setFavoriteRecipes(favoritesList);
       }
     } catch (error) {
@@ -72,33 +85,33 @@ const FavoritesScreen: React.FC<FavoritesScreenProps> = ({ navigation }) => {
         const favoriteIds = JSON.parse(favorites);
         const updatedFavorites = favoriteIds.filter((id: number) => id !== recipeId);
         await AsyncStorage.setItem('favorites', JSON.stringify(updatedFavorites));
-        
         setFavoriteRecipes(prev => prev.filter(recipe => recipe.id !== recipeId));
-        
-        Alert.alert('Removed', 'Recipe removed from favorites');
+        showToast(t('removed-from-favorites', language));
       }
     } catch (error) {
-      Alert.alert('Error', 'Failed to remove from favorites');
+      showToast(t('error', language));
     }
   };
 
+  const showToast = (message: string) => {
+    setToast(message);
+    if (toastTimeout.current) clearTimeout(toastTimeout.current);
+    toastTimeout.current = setTimeout(() => setToast(null), 1500);
+  };
+
   const handleRecipePress = (recipe: Recipe) => {
-    navigation.navigate('RecipeDetail', { recipe });
+    navigation.navigate('RecipeDetail', { recipe, language });
   };
 
   const renderRecipeItem = ({ item }: { item: Recipe }) => (
     <View style={styles.recipeContainer}>
       <RecipeCard
         recipe={item}
-        language={currentLanguage}
+        language={language}
         onPress={() => handleRecipePress(item)}
+        isFavorite={true}
+        onToggleFavorite={() => removeFromFavorites(item.id)}
       />
-      <TouchableOpacity
-        style={styles.removeButton}
-        onPress={() => removeFromFavorites(item.id)}
-      >
-        <Text style={styles.removeButtonText}>Remove</Text>
-      </TouchableOpacity>
     </View>
   );
 
@@ -106,7 +119,7 @@ const FavoritesScreen: React.FC<FavoritesScreenProps> = ({ navigation }) => {
     return (
       <SafeAreaView style={styles.container}>
         <View style={styles.loadingContainer}>
-          <Text style={styles.loadingText}>Loading favorites...</Text>
+          <Text style={styles.loadingText}>{t('loading-favorites', language)}</Text>
         </View>
       </SafeAreaView>
     );
@@ -114,24 +127,29 @@ const FavoritesScreen: React.FC<FavoritesScreenProps> = ({ navigation }) => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.header}>
-        <Text style={styles.title}>Favorites</Text>
-        <Text style={styles.subtitle}>
-          {favoriteRecipes.length} recipe{favoriteRecipes.length !== 1 ? 's' : ''}
+      <View style={styles.customHeader}>
+        <TouchableOpacity onPress={() => navigation.goBack()} style={styles.headerIconBtn}>
+          <Text style={styles.headerIcon}>{'‹'}</Text>
+        </TouchableOpacity>
+        <Text style={styles.headerTitle} numberOfLines={1}>
+          {t('favorites', language)}
         </Text>
+        <View style={{ width: 32 }} />
       </View>
-
+      <Text style={styles.subtitle}>
+        {t('recipes-count', language).replace('{count}', favoriteRecipes.length)}
+      </Text>
       {favoriteRecipes.length === 0 ? (
         <View style={styles.emptyContainer}>
-          <Text style={styles.emptyTitle}>No favorites yet</Text>
+          <Text style={styles.emptyTitle}>{t('no-favorites-yet', language)}</Text>
           <Text style={styles.emptyText}>
-            Start adding recipes to your favorites to see them here
+            {t('start-adding-favorites', language)}
           </Text>
           <TouchableOpacity
             style={styles.backButton}
             onPress={() => navigation.goBack()}
           >
-            <Text style={styles.backButtonText}>Browse Recipes</Text>
+            <Text style={styles.backButtonText}>{t('browse-recipes', language)}</Text>
           </TouchableOpacity>
         </View>
       ) : (
@@ -143,6 +161,11 @@ const FavoritesScreen: React.FC<FavoritesScreenProps> = ({ navigation }) => {
           showsVerticalScrollIndicator={false}
         />
       )}
+      {toast && (
+        <View style={styles.toast} pointerEvents="none">
+          <Text style={styles.toastText}>{toast}</Text>
+        </View>
+      )}
     </SafeAreaView>
   );
 };
@@ -150,22 +173,23 @@ const FavoritesScreen: React.FC<FavoritesScreenProps> = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f7fafc',
-  },
-  header: {
-    backgroundColor: '#2c7a7b',
-    padding: 20,
-    alignItems: 'center',
+    backgroundColor: '#fff',
+    paddingHorizontal: 24,
+    paddingTop: 0,
   },
   title: {
-    fontSize: 24,
+    fontSize: 22,
     fontWeight: 'bold',
-    color: '#fff',
+    color: '#2c7a7b',
+    letterSpacing: 1,
+    textAlign: 'center',
+    marginTop: 24,
+    marginBottom: 2,
   },
   subtitle: {
     fontSize: 14,
-    color: '#fff',
-    marginTop: 4,
+    color: '#bbb',
+    marginBottom: 8,
   },
   loadingContainer: {
     flex: 1,
@@ -181,6 +205,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 40,
+    minHeight: 400,
   },
   emptyTitle: {
     fontSize: 20,
@@ -207,22 +232,56 @@ const styles = StyleSheet.create({
     fontWeight: '500',
   },
   recipeList: {
-    padding: 16,
+    paddingBottom: 32,
   },
   recipeContainer: {
     marginBottom: 16,
   },
-  removeButton: {
-    backgroundColor: '#e53e3e',
-    padding: 8,
-    borderRadius: 6,
-    marginTop: 8,
+  customHeader: {
+    flexDirection: 'row',
     alignItems: 'center',
+    backgroundColor: '#fff',
+    paddingTop: 0,
+    paddingHorizontal: 12,
+    height: 56,
+    marginBottom: 4,
   },
-  removeButtonText: {
+  headerIconBtn: {
+    padding: 8,
+  },
+  headerIcon: {
+    color: '#2c7a7b',
+    fontSize: 24,
+    fontWeight: 'bold',
+  },
+  headerTitle: {
+    flex: 1,
+    color: '#2c7a7b',
+    fontSize: 20,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    marginHorizontal: 8,
+  },
+  toast: {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    bottom: 40,
+    alignItems: 'center',
+    zIndex: 100,
+  },
+  toastText: {
+    backgroundColor: '#2c7a7b',
     color: '#fff',
-    fontSize: 14,
-    fontWeight: '500',
+    paddingHorizontal: 24,
+    paddingVertical: 12,
+    borderRadius: 24,
+    fontSize: 16,
+    overflow: 'hidden',
+    shadowColor: '#000',
+    shadowOpacity: 0.15,
+    shadowRadius: 8,
+    elevation: 4,
   },
 });
 

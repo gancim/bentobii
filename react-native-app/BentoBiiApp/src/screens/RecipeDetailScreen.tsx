@@ -12,6 +12,9 @@ import { StackNavigationProp } from '@react-navigation/stack';
 import { RouteProp } from '@react-navigation/native';
 import { RootStackParamList } from '../../App';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import { useRef } from 'react';
+import { t } from '../translations';
 
 type RecipeDetailScreenNavigationProp = StackNavigationProp<RootStackParamList, 'RecipeDetail'>;
 type RecipeDetailScreenRouteProp = RouteProp<RootStackParamList, 'RecipeDetail'>;
@@ -21,27 +24,12 @@ interface RecipeDetailScreenProps {
   route: RecipeDetailScreenRouteProp;
 }
 
-interface Recipe {
-  id: number;
-  name: { ja: string; it: string };
-  description: { ja: string; it: string };
-  ingredients: { ja: string[]; it: string[] };
-  instructions: { ja: string[]; it: string[] };
-  type: string;
-  country: string;
-  tags: string[];
-  nutrition: {
-    calories: number;
-    protein: number;
-    carbs: number;
-    fat: number;
-  };
-}
-
-const RecipeDetailScreen: React.FC<RecipeDetailScreenProps> = ({ navigation, route }) => {
-  const { recipe } = route.params;
+const RecipeDetailScreen: React.FC<RecipeDetailScreenProps> = ({ navigation: _navigation, route }) => {
+  const { recipe, language } = route.params;
   const [isFavorite, setIsFavorite] = useState(false);
-  const [currentLanguage, setCurrentLanguage] = useState('ja');
+  const currentLanguage = language || 'ja';
+  const [toast, setToast] = useState<string | null>(null);
+  const toastTimeout = useRef<NodeJS.Timeout | null>(null);
 
   const getCountryFlag = (country: string) => {
     switch (country) {
@@ -57,13 +45,13 @@ const RecipeDetailScreen: React.FC<RecipeDetailScreenProps> = ({ navigation, rou
   const getTypeLabel = (type: string) => {
     switch (type) {
       case 'breakfast':
-        return 'Breakfast';
+        return t('breakfast', currentLanguage);
       case 'lunch':
-        return 'Lunch';
+        return t('lunch', currentLanguage);
       case 'dinner':
-        return 'Dinner';
+        return t('dinner', currentLanguage);
       case 'snack':
-        return 'Snack';
+        return t('snack', currentLanguage);
       default:
         return type;
     }
@@ -73,92 +61,86 @@ const RecipeDetailScreen: React.FC<RecipeDetailScreenProps> = ({ navigation, rou
     try {
       const favorites = await AsyncStorage.getItem('favorites');
       let favoritesArray = favorites ? JSON.parse(favorites) : [];
-      
+      let message = '';
       if (isFavorite) {
         favoritesArray = favoritesArray.filter((id: number) => id !== recipe.id);
+        message = t('removed-from-favorites', currentLanguage);
       } else {
         favoritesArray.push(recipe.id);
+        message = t('added-to-favorites', currentLanguage);
       }
-      
       await AsyncStorage.setItem('favorites', JSON.stringify(favoritesArray));
       setIsFavorite(!isFavorite);
-      
-      Alert.alert(
-        isFavorite ? 'Removed from Favorites' : 'Added to Favorites',
-        isFavorite ? 'Recipe removed from your favorites' : 'Recipe added to your favorites'
-      );
+      showToast(message);
     } catch (error) {
-      Alert.alert('Error', 'Failed to update favorites');
+      showToast(t('failed-to-update-favorites', currentLanguage));
     }
+  };
+
+  const showToast = (message: string) => {
+    setToast(message);
+    if (toastTimeout.current) clearTimeout(toastTimeout.current);
+    toastTimeout.current = setTimeout(() => setToast(null), 1500);
   };
 
   return (
     <SafeAreaView style={styles.container}>
+      <View style={styles.customHeader}>
+        <TouchableOpacity onPress={() => _navigation.goBack()} style={styles.headerIconBtn}>
+          <Text style={styles.headerIcon}>{'‹'}</Text>
+        </TouchableOpacity>
+        <Text style={styles.headerTitle} numberOfLines={1}>
+          {recipe.name[currentLanguage as keyof typeof recipe.name]}
+        </Text>
+        <TouchableOpacity style={styles.headerIconBtn} onPress={toggleFavorite}>
+          <Text style={[styles.favoriteIcon, { color: '#2c7a7b', fontSize: 24 }]}> 
+            {isFavorite ? '\u2665' : '\u2661'}
+          </Text>
+        </TouchableOpacity>
+      </View>
       <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
-        {/* Header */}
-        <View style={styles.header}>
-          <View style={styles.titleContainer}>
-            <Text style={styles.flag}>{getCountryFlag(recipe.country)}</Text>
-            <View style={styles.titleContent}>
-              <Text style={styles.title}>
-                {recipe.name[currentLanguage as keyof typeof recipe.name]}
-              </Text>
-              <Text style={styles.type}>{getTypeLabel(recipe.type)}</Text>
-            </View>
-          </View>
-          
-          <TouchableOpacity style={styles.favoriteButton} onPress={toggleFavorite}>
-            <Text style={[styles.favoriteIcon, isFavorite && styles.favoriteActive]}>
-              ❤️
-            </Text>
-          </TouchableOpacity>
-        </View>
-
         {/* Description */}
         <View style={styles.section}>
           <Text style={styles.description}>
             {recipe.description[currentLanguage as keyof typeof recipe.description]}
           </Text>
         </View>
-
         {/* Nutrition Facts */}
         <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Nutrition Facts</Text>
+          <Text style={styles.sectionTitle}>{t('nutrition-facts', currentLanguage)}</Text>
           <View style={styles.nutritionGrid}>
             <View style={styles.nutritionItem}>
               <Text style={styles.nutritionValue}>{recipe.nutrition.calories}</Text>
-              <Text style={styles.nutritionLabel}>Calories</Text>
+              <Text style={styles.nutritionLabel}>{t('calories', currentLanguage)}</Text>
             </View>
             <View style={styles.nutritionItem}>
               <Text style={styles.nutritionValue}>{recipe.nutrition.protein}g</Text>
-              <Text style={styles.nutritionLabel}>Protein</Text>
+              <Text style={styles.nutritionLabel}>{t('protein', currentLanguage)}</Text>
             </View>
             <View style={styles.nutritionItem}>
               <Text style={styles.nutritionValue}>{recipe.nutrition.carbs}g</Text>
-              <Text style={styles.nutritionLabel}>Carbs</Text>
+              <Text style={styles.nutritionLabel}>{t('carbs', currentLanguage)}</Text>
             </View>
             <View style={styles.nutritionItem}>
               <Text style={styles.nutritionValue}>{recipe.nutrition.fat}g</Text>
-              <Text style={styles.nutritionLabel}>Fat</Text>
+              <Text style={styles.nutritionLabel}>{t('fat', currentLanguage)}</Text>
             </View>
           </View>
         </View>
-
         {/* Ingredients */}
         <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Ingredients</Text>
-          {recipe.ingredients[currentLanguage as keyof typeof recipe.ingredients].map((ingredient, index) => (
+          <Text style={styles.sectionTitle}>{t('ingredients', currentLanguage)}</Text>
+          {recipe.ingredients[currentLanguage as keyof typeof recipe.ingredients].map((ingredient: string, index: number) => (
             <View key={index} style={styles.listItem}>
               <Text style={styles.bullet}>•</Text>
               <Text style={styles.listText}>{ingredient}</Text>
             </View>
           ))}
         </View>
-
         {/* Instructions */}
         <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Instructions</Text>
-          {recipe.instructions[currentLanguage as keyof typeof recipe.instructions].map((instruction, index) => (
+          <Text style={styles.sectionTitle}>{t('instructions', currentLanguage)}</Text>
+          {recipe.instructions[currentLanguage as keyof typeof recipe.instructions].map((instruction: string, index: number) => (
             <View key={index} style={styles.instructionItem}>
               <View style={styles.stepNumber}>
                 <Text style={styles.stepNumberText}>{index + 1}</Text>
@@ -167,31 +149,23 @@ const RecipeDetailScreen: React.FC<RecipeDetailScreenProps> = ({ navigation, rou
             </View>
           ))}
         </View>
-
         {/* Tags */}
         <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Tags</Text>
+          <Text style={styles.sectionTitle}>{t('tags', currentLanguage)}</Text>
           <View style={styles.tagsContainer}>
-            {recipe.tags.map((tag, index) => (
+            {recipe.tags.map((tag: string, index: number) => (
               <View key={index} style={styles.tag}>
                 <Text style={styles.tagText}>{tag}</Text>
               </View>
             ))}
           </View>
         </View>
-
-        {/* Language Toggle */}
-        <View style={styles.section}>
-          <TouchableOpacity
-            style={styles.languageButton}
-            onPress={() => setCurrentLanguage(currentLanguage === 'ja' ? 'it' : 'ja')}
-          >
-            <Text style={styles.languageButtonText}>
-              Switch to {currentLanguage === 'ja' ? 'Italiano' : '日本語'}
-            </Text>
-          </TouchableOpacity>
-        </View>
       </ScrollView>
+      {toast && (
+        <View style={styles.toast} pointerEvents="none">
+          <Text style={styles.toastText}>{toast}</Text>
+        </View>
+      )}
     </SafeAreaView>
   );
 };
@@ -203,6 +177,30 @@ const styles = StyleSheet.create({
   },
   scrollView: {
     flex: 1,
+  },
+  customHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#fff',
+    paddingTop: 0,
+    paddingHorizontal: 12,
+    height: 56,
+  },
+  headerIconBtn: {
+    padding: 8,
+  },
+  headerIcon: {
+    color: '#2c7a7b',
+    fontSize: 24,
+    fontWeight: 'bold',
+  },
+  headerTitle: {
+    flex: 1,
+    color: '#2c7a7b',
+    fontSize: 20,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    marginHorizontal: 8,
   },
   header: {
     backgroundColor: '#fff',
@@ -245,10 +243,10 @@ const styles = StyleSheet.create({
   },
   favoriteIcon: {
     fontSize: 24,
-    opacity: 0.5,
+    color: '#2c7a7b',
   },
   favoriteActive: {
-    opacity: 1,
+    color: '#2c7a7b',
   },
   section: {
     backgroundColor: '#fff',
@@ -351,6 +349,27 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 16,
     fontWeight: '500',
+  },
+  toast: {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    bottom: 40,
+    alignItems: 'center',
+    zIndex: 100,
+  },
+  toastText: {
+    backgroundColor: '#2c7a7b',
+    color: '#fff',
+    paddingHorizontal: 24,
+    paddingVertical: 12,
+    borderRadius: 24,
+    fontSize: 16,
+    overflow: 'hidden',
+    shadowColor: '#000',
+    shadowOpacity: 0.15,
+    shadowRadius: 8,
+    elevation: 4,
   },
 });
 
