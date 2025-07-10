@@ -117,7 +117,7 @@ export default function HomeScreen() {
     <SafeAreaView style={styles.container}>
       {/* Header with Logo, Language, and Heart */}
       <View style={styles.header}>
-        <Image source={require('../../logo.png')} style={styles.logo} resizeMode="contain" />
+        <Image source={require('../../assets/logo.png')} style={styles.logo} resizeMode="contain" />
         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
           <TouchableOpacity onPress={() => setLangModalVisible(true)} style={styles.langIconBtn}>
             <Text style={{ fontSize: 20, color: '#2c7a7b' }}>〄</Text>
@@ -220,7 +220,7 @@ export default function HomeScreen() {
       ) : (
         <View style={styles.emptyState}>
           <Image 
-            source={require('../../noresults.png')} 
+            source={require('../../assets/noresults.png')} 
             style={styles.emptyImage}
             resizeMode="contain"
           />
@@ -363,16 +363,24 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginBottom: 18,
     paddingHorizontal: 4,
+    paddingRight: 16,
+    height: 48,
+    overflow: 'visible',
   },
   countryBtn: {
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: '#f8f9fa',
     borderRadius: 20,
-    paddingVertical: 10,
+    paddingVertical: 4,
     paddingHorizontal: 12,
     marginHorizontal: 4,
     borderWidth: 0,
+    minWidth: 80,
+    flexShrink: 1,
+    height: 30,
+    maxHeight: 40,
+    overflow: 'visible',
   },
   countryBtnActive: {
     backgroundColor: ACCENT,

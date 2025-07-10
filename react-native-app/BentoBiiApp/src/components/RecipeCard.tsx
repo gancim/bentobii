@@ -22,6 +22,7 @@ interface Recipe {
     carbs: number;
     fat: number;
   };
+  icon?: string; // Added icon property
 }
 
 interface RecipeCardProps {
@@ -83,6 +84,9 @@ const RecipeCard: React.FC<RecipeCardProps> = ({ recipe, language, onPress, isFa
       )}
       <View style={styles.content}>
         <View style={styles.header}>
+          {recipe.icon && (
+            <Text style={styles.icon}>{recipe.icon}</Text>
+          )}
           <Text style={styles.title}>
             {recipe.name[language as keyof typeof recipe.name]}
           </Text>
@@ -222,6 +226,11 @@ const styles = StyleSheet.create({
   heartIcon: {
     fontSize: 22,
     fontWeight: 'bold',
+  },
+  icon: {
+    fontSize: 20,
+    marginRight: 6,
+    marginTop: 1,
   },
 });
 
