@@ -1,5 +1,5 @@
 // Diabetic-friendly recipes database for weight loss
-const recipes = [
+export const japaneseRecipes = [
     // Breakfast Recipes
     {
         id: 1,
@@ -3104,186 +3104,13 @@ const recipes = [
     }
 ];
 
-// Generate additional recipes programmatically to reach 100+
-function generateRecipes() {
-    const generatedRecipes = [];
-    
-    // Recipe templates for generating variations
-    const vegetables = [
-        {ja: "ブロッコリー", it: "Broccoli"},
-        {ja: "カリフラワー", it: "Cavolfiore"},
-        {ja: "キャベツ", it: "Cavolo"},
-        {ja: "白菜", it: "Cavolo cinese"},
-        {ja: "もやし", it: "Germogli"},
-        {ja: "小松菜", it: "Komatsuna"},
-        {ja: "ほうれん草", it: "Spinaci"},
-        {ja: "チンゲン菜", it: "Bok choy"}
-    ];
-    
-    const proteins = [
-        {ja: "鶏ささみ", it: "Filetto di pollo", calories: 165, protein: 23},
-        {ja: "鯖", it: "Sgombro", calories: 202, protein: 20},
-        {ja: "鮭", it: "Salmone", calories: 154, protein: 22},
-        {ja: "豚ヒレ肉", it: "Filetto di maiale", calories: 130, protein: 22},
-        {ja: "卵", it: "Uova", calories: 155, protein: 13},
-        {ja: "納豆", it: "Natto", calories: 200, protein: 16}
-    ];
-    
-    let currentId = 50;
-    
-    // Generate steamed vegetable variations
-    vegetables.forEach((veg, index) => {
-        const mealTypes = ["breakfast", "lunch", "dinner", "snack"];
-        const mealType = mealTypes[index % mealTypes.length];
-        
-        generatedRecipes.push({
-            id: currentId++,
-            name: { 
-                ja: `${veg.ja}の蒸し物`, 
-                it: `${veg.it} al Vapore` 
-            },
-            description: { 
-                ja: `${veg.ja}を使った健康的な蒸し料理`, 
-                it: `Piatto sano al vapore con ${veg.it}` 
-            },
-            type: mealType,
-            prepTime: 5,
-            cookTime: 10,
-            servings: 2,
-            difficulty: "easy",
-            calories: 35 + (index * 10),
-            carbs: 6 + index,
-            protein: 3 + index,
-            fat: 1,
-            fiber: 3 + index,
-            sodium: 120,
-            ingredients: {
-                ja: [`${veg.ja} 200g`, "塩 少々", "ポン酢 大さじ1"],
-                it: [`${veg.it} 200g`, "Sale q.b.", "Ponzu 1 cucchiaio"]
-            },
-            instructions: {
-                ja: [
-                    `${veg.ja}を食べやすい大きさに切る（一口大）`,
-                    "蒸し器の水を沸かす",
-                    `${veg.ja}を蒸し器に入れ、中火で10分蒸す`,
-                    "竹串で刺して柔らかくなったら火を止める",
-                    "ポン酢をかけて温かいうちに食べる"
-                ],
-                it: [
-                    `Tagliare ${veg.it} a pezzi di una bocconata`,
-                    "Portare l'acqua del cestello a ebollizione",
-                    `Mettere ${veg.it} nel cestello e cuocere a vapore per 10 minuti a fuoco medio`,
-                    "Controllare la cottura con uno stuzzicadenti",
-                    "Servire caldo con ponzu"
-                ]
-            },
-            tags: ["diabetic-friendly", "low-calorie", "japanese-ingredients"],
-            image: `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23e8f5e8'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='12' fill='%23666'%3E${veg.ja}%3C/text%3E%3C/svg%3E`,
-            country: 'JP'
-        });
-    });
-    
-    // Generate protein variations
-    proteins.forEach((protein, index) => {
-        const mealTypes = ["breakfast", "lunch", "dinner"];
-        const cookingMethods = [
-            {ja: "グリル", it: "Grigliato", time: 15, ja_instructions: ["醤油、みりん、生姜で下味をつける", "グリルパンを中火で熱する", "片面7-8分焼く", "裏返して7-8分焼く", "火が通ったら完成"], it_instructions: ["Marinare con salsa di soia, mirin e zenzero", "Scaldare la griglia a fuoco medio", "Cuocere 7-8 minuti per lato", "Girare e cuocere altri 7-8 minuti", "Servire quando ben cotto"]},
-            {ja: "蒸し", it: "Al vapore", time: 20, ja_instructions: ["醤油、みりん、生姜で下味をつける", "蒸し器の水を沸かす", "中火で20分蒸す", "竹串で刺して火が通ったら完成"], it_instructions: ["Marinare con salsa di soia, mirin e zenzero", "Portare l'acqua del cestello a ebollizione", "Cuocere a vapore per 20 minuti a fuoco medio", "Controllare la cottura con uno stuzzicadenti"]},
-            {ja: "煮込み", it: "Brasato", time: 25, ja_instructions: ["醤油、みりん、生姜で下味をつける", "鍋にだし汁300mlを入れて沸かす", "弱火で25分煮込む", "煮汁が少なくなったら完成"], it_instructions: ["Marinare con salsa di soia, mirin e zenzero", "Portare 300ml di brodo dashi a ebollizione", "Cuocere a fuoco basso per 25 minuti", "Servire quando il liquido si è ridotto"]}
-        ];
-        
-        cookingMethods.forEach((method, methodIndex) => {
-            const mealType = mealTypes[methodIndex % mealTypes.length];
-            
-            generatedRecipes.push({
-                id: currentId++,
-                name: { 
-                    ja: `${protein.ja}の${method.ja}`, 
-                    it: `${protein.it} ${method.it}` 
-                },
-                description: { 
-                    ja: `${protein.ja}を使った${method.ja}料理`, 
-                    it: `${protein.it} ${method.it.toLowerCase()} salutare` 
-                },
-                type: mealType,
-                prepTime: 10,
-                cookTime: method.time,
-                servings: 2,
-                difficulty: methodIndex === 2 ? "medium" : "easy",
-                calories: protein.calories,
-                carbs: 5,
-                protein: protein.protein,
-                fat: 8,
-                fiber: 2,
-                sodium: 380,
-                ingredients: {
-                    ja: [`${protein.ja} 150g`, "醤油 大さじ1", "みりん 小さじ1", "生姜 1片"],
-                    it: [`${protein.it} 150g`, "Salsa di soia 1 cucchiaio", "Mirin 1 cucchiaino", "Zenzero 1 pezzo"]
-                },
-                instructions: {
-                    ja: method.ja_instructions,
-                    it: method.it_instructions
-                },
-                tags: ["diabetic-friendly", "high-protein", "japanese-ingredients"],
-                image: `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23f0e6d2'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='10' fill='%23666'%3E${protein.ja}${method.ja}%3C/text%3E%3C/svg%3E`,
-                country: 'JP'
-            });
-        });
-    });
-    
-    return [...recipes, ...generatedRecipes];
-}
 
-// Additional diabetic-friendly recipes
-const additionalRecipes = [
-    {
-        id: 200,
-        name: { ja: "おからサラダ", it: "Insalata di Okara" },
-        description: { ja: "高タンパク質で低糖質のおからサラダ", it: "Insalata di okara ricca di proteine e povera di zuccheri" },
-        type: "lunch",
-        prepTime: 15,
-        cookTime: 0,
-        servings: 3,
-        difficulty: "easy",
-        calories: 140,
-        carbs: 8,
-        protein: 12,
-        fat: 8,
-        fiber: 8,
-        sodium: 420,
-        ingredients: {
-            ja: ["おから 100g", "きゅうり 1本", "人参 1/2本", "ハム 3枚", "マヨネーズ 大さじ2", "酢 小さじ1", "塩こしょう 少々"],
-            it: ["Okara 100g", "Cetriolo 1", "Carota 1/2", "Prosciutto 3 fette", "Maionese 2 cucchiai", "Aceto 1 cucchiaino", "Sale e pepe q.b."]
-        },
-        instructions: {
-            ja: [
-                "きゅうりは薄切り、人参は細切り（千切り）にする",
-                "ハムは細切りにする",
-                "おからをボウルに入れる",
-                "野菜とハムを加えて混ぜる",
-                "マヨネーズ、酢、塩こしょうを加えて和える",
-                "冷蔵庫で30分冷やしてからいただく"
-            ],
-            it: [
-                "Tagliare il cetriolo a fette sottili, la carota a julienne",
-                "Tagliare il prosciutto a striscioline",
-                "Mettere l'okara in una ciotola",
-                "Aggiungere verdure e prosciutto e mescolare",
-                "Aggiungere maionese, aceto, sale e pepe e mescolare",
-                "Raffreddare in frigorifero per 30 minuti prima di servire"
-            ]
-        },
-        tags: ["diabetic-friendly", "high-protein", "low-carb"],
-        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23f5f5dc'/%3E%3Ctext x='150' y='100' text-anchor='middle' dy='.3em' font-family='Arial' font-size='12' fill='%23666'%3Eおからサラダ%3C/text%3E%3C/svg%3E",
-        country: 'JP'
-    }
-];
 
 // Export all recipes - Combine base recipes with generated ones
-const allRecipes = generateRecipes();
+//const allRecipes = generateRecipes();
 
 // Final combined recipes database
-const japaneseRecipes = [...allRecipes, ...additionalRecipes];
+//const japaneseRecipes = [...allRecipes, ...additionalRecipes];
 
 // Export the combined recipes
-export { japaneseRecipes };
+//export { japaneseRecipes };

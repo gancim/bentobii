@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, ScrollView, Image, Modal, Pressable } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { japaneseRecipes } from '../recipes.js';
+// Remove static recipe imports. We'll use dynamic imports below.
 import { FlatList } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
@@ -47,7 +47,83 @@ export default function HomeScreen() {
   const [selectedCountry, setSelectedCountry] = React.useState('All');
   const [search, setSearch] = React.useState('');
   const [langModalVisible, setLangModalVisible] = React.useState(false);
+  const [recipes, setRecipes] = React.useState<any[]>([]);
+  const [loadingRecipes, setLoadingRecipes] = React.useState(false);
+  const recipesCache = React.useRef<{ [key: string]: any[] }>({});
   const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
+
+  // Static import map for Metro compatibility
+  const COUNTRY_IMPORTS: { [key: string]: () => Promise<any> } = {
+    JP: () => import('../recipes/recipes.jp.js'),
+    IT: () => import('../recipes/recipes.it.js'),
+    IN: () => import('../recipes/recipes.in.js'),
+    MX: () => import('../recipes/recipes.mx.js'),
+    TH: () => import('../recipes/recipes.th.js'),
+    FR: () => import('../recipes/recipes.fr.js'),
+    CN: () => import('../recipes/recipes.cn.js'),
+    ES: () => import('../recipes/recipes.es.js'),
+    GR: () => import('../recipes/recipes.gr.js'),
+    MA: () => import('../recipes/recipes.ma.js'),
+  };
+
+  // Load recipes when country changes
+  React.useEffect(() => {
+    let isMounted = true;
+    async function loadRecipes() {
+      setLoadingRecipes(true);
+      let loadedRecipes: any[] = [];
+      if (selectedCountry === 'All') {
+        // Load all countries
+        const allRecipes: any[] = [];
+        await Promise.all(
+          Object.entries(COUNTRY_IMPORTS).map(async ([code, importFn]) => {
+            if (recipesCache.current[code]) {
+              allRecipes.push(...recipesCache.current[code]);
+            } else {
+              try {
+                const mod = await importFn();
+                const arr = Object.values(mod).find(Array.isArray) as any[];
+                if (arr) {
+                  recipesCache.current[code] = arr;
+                  allRecipes.push(...arr);
+                }
+              } catch (e) {
+                // File may be empty or not exist yet
+              }
+            }
+          })
+        );
+        loadedRecipes = allRecipes;
+      } else {
+        // Load only the selected country
+        const importFn = COUNTRY_IMPORTS[selectedCountry];
+        if (importFn) {
+          if (recipesCache.current[selectedCountry]) {
+            loadedRecipes = recipesCache.current[selectedCountry];
+          } else {
+            try {
+              const mod = await importFn();
+              const arr = Object.values(mod).find(Array.isArray) as any[];
+              if (arr) {
+                recipesCache.current[selectedCountry] = arr;
+                loadedRecipes = arr;
+              }
+            } catch (e) {
+              // File may be empty or not exist yet
+            }
+          }
+        }
+      }
+      if (isMounted) {
+        setRecipes(loadedRecipes);
+        setLoadingRecipes(false);
+      }
+    }
+    loadRecipes();
+    return () => {
+      isMounted = false;
+    };
+  }, [selectedCountry]);
 
   // Load saved language on component mount
   React.useEffect(() => {
@@ -77,8 +153,8 @@ export default function HomeScreen() {
 
   const langKey = selectedLang;
 
-  // Show all recipes for debugging, normalizing nutrition
-  const filteredRecipes = japaneseRecipes
+  // Filter loaded recipes
+  const filteredRecipes = recipes
     .map((r: any) => ({
       ...r,
       nutrition: r.nutrition || {
@@ -89,15 +165,8 @@ export default function HomeScreen() {
       },
     }))
     .filter((r: any) => {
-      // Country filter
-      if (selectedCountry !== 'All') {
-        return r.country === selectedCountry;
-      }
-      return true;
-    })
-    .filter((r: any) => {
       if (selectedCat === 'All') return true;
-      return r.type.toLowerCase() === selectedCat.toLowerCase();
+      return r.type?.toLowerCase() === selectedCat.toLowerCase();
     })
     .filter((r: any) => {
       if (!search.trim()) return true;
@@ -155,13 +224,24 @@ export default function HomeScreen() {
         </Modal>
 
         {/* Search Bar */}
-        <TextInput
-          style={styles.search}
-          placeholder={t('search-ingredients-placeholder', langKey)}
-          placeholderTextColor="#bbb"
-          value={search}
-          onChangeText={setSearch}
-        />
+        <View style={{ position: 'relative', justifyContent: 'center' }}>
+          <TextInput
+            style={styles.search}
+            placeholder={t('search-ingredients-placeholder', langKey)}
+            placeholderTextColor="#bbb"
+            value={search}
+            onChangeText={setSearch}
+          />
+          {search.length > 0 && (
+            <TouchableOpacity
+              onPress={() => setSearch('')}
+              style={{ position: 'absolute', right: 16, top: -15, bottom: 0, justifyContent: 'center', zIndex: 2 }}
+              hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+            >
+              <Text style={{ fontSize: 18, color: '#bbb' }}>✕</Text>
+            </TouchableOpacity>
+          )}
+        </View>
 
         {/* Country Filter Chips */}
         <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.countryRow}>
@@ -211,7 +291,11 @@ export default function HomeScreen() {
         </ScrollView>
 
         {/* Results Area */}
-        {filteredRecipes.length > 0 ? (
+        {loadingRecipes ? (
+          <View style={styles.emptyState}>
+            <Text style={styles.emptyText}>{t('loading', langKey) || 'Loading...'}</Text>
+          </View>
+        ) : filteredRecipes.length > 0 ? (
           filteredRecipes.map(recipe => (
             <RecipeCard
               key={recipe.id}

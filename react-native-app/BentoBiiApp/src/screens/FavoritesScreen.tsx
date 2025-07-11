@@ -12,8 +12,7 @@ import { StackNavigationProp } from '@react-navigation/stack';
 import { RouteProp } from '@react-navigation/native';
 import { RootStackParamList } from '../../App';
 import RecipeCard from '../components/RecipeCard';
-import { japaneseRecipes } from '../recipes.js';
-import { italianRecipes } from '../recipes.it.js';
+// Remove static recipe imports. We'll use dynamic imports below.
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { t } from '../translations';
 
@@ -47,17 +46,54 @@ const FavoritesScreen: React.FC<FavoritesScreenProps> = ({ navigation, route }) 
   const [loading, setLoading] = useState(true);
   const [toast, setToast] = useState<string | null>(null);
   const toastTimeout = useRef<NodeJS.Timeout | null>(null);
+  const recipesCache = useRef<{ [key: string]: any[] }>({});
+
+  // Static import map for Metro compatibility
+  const COUNTRY_IMPORTS: { [key: string]: () => Promise<any> } = {
+    IT: () => import('../recipes/recipes.it.js'),
+    IN: () => import('../recipes/recipes.in.js'),
+    MX: () => import('../recipes/recipes.mx.js'),
+    TH: () => import('../recipes/recipes.th.js'),
+    FR: () => import('../recipes/recipes.fr.js'),
+    CN: () => import('../recipes/recipes.cn.js'),
+    ES: () => import('../recipes/recipes.es.js'),
+    GR: () => import('../recipes/recipes.gr.js'),
+    MA: () => import('../recipes/recipes.ma.js'),
+  };
 
   useEffect(() => {
     loadFavorites();
+    return () => {
+      if (toastTimeout.current) clearTimeout(toastTimeout.current);
+    };
   }, []);
 
   const loadFavorites = async () => {
+    setLoading(true);
     try {
       const favorites = await AsyncStorage.getItem('favorites');
       if (favorites) {
         const favoriteIds = JSON.parse(favorites);
-        const allRecipes = [...japaneseRecipes, ...italianRecipes];
+        // Dynamically load all country recipe files
+        const allRecipes: any[] = [];
+        await Promise.all(
+          Object.entries(COUNTRY_IMPORTS).map(async ([code, importFn]) => {
+            if (recipesCache.current[code]) {
+              allRecipes.push(...recipesCache.current[code]);
+            } else {
+              try {
+                const mod = await importFn();
+                const arr = Object.values(mod).find(Array.isArray) as any[];
+                if (arr) {
+                  recipesCache.current[code] = arr;
+                  allRecipes.push(...arr);
+                }
+              } catch (e) {
+                // File may be empty or not exist yet
+              }
+            }
+          })
+        );
         const favoritesList = allRecipes
           .filter(recipe => favoriteIds.includes(recipe.id))
           .map(recipe => ({
@@ -70,6 +106,8 @@ const FavoritesScreen: React.FC<FavoritesScreenProps> = ({ navigation, route }) 
             },
           }));
         setFavoriteRecipes(favoritesList);
+      } else {
+        setFavoriteRecipes([]);
       }
     } catch (error) {
       Alert.alert('Error', 'Failed to load favorites');

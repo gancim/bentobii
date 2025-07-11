@@ -31,6 +31,12 @@ const RecipeDetailScreen: React.FC<RecipeDetailScreenProps> = ({ navigation: _na
   const [toast, setToast] = useState<string | null>(null);
   const toastTimeout = useRef<NodeJS.Timeout | null>(null);
 
+  React.useEffect(() => {
+    return () => {
+      if (toastTimeout.current) clearTimeout(toastTimeout.current);
+    };
+  }, []);
+
   const getCountryFlag = (country: string) => {
     switch (country) {
       case 'JP':
