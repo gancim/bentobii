@@ -50,6 +50,7 @@ const FavoritesScreen: React.FC<FavoritesScreenProps> = ({ navigation, route }) 
 
   // Static import map for Metro compatibility
   const COUNTRY_IMPORTS: { [key: string]: () => Promise<any> } = {
+    JP: () => import('../recipes/recipes.jp.js'),
     IT: () => import('../recipes/recipes.it.js'),
     IN: () => import('../recipes/recipes.in.js'),
     MX: () => import('../recipes/recipes.mx.js'),
@@ -73,7 +74,8 @@ const FavoritesScreen: React.FC<FavoritesScreenProps> = ({ navigation, route }) 
     try {
       const favorites = await AsyncStorage.getItem('favorites');
       if (favorites) {
-        const favoriteIds = JSON.parse(favorites);
+        const favoriteIds = Array.from(new Set(JSON.parse(favorites).map(Number)));
+        console.log('Favorite IDs loaded from AsyncStorage:', favoriteIds);
         // Dynamically load all country recipe files
         const allRecipes: any[] = [];
         await Promise.all(
@@ -94,6 +96,7 @@ const FavoritesScreen: React.FC<FavoritesScreenProps> = ({ navigation, route }) 
             }
           })
         );
+        console.log('All loaded recipes:', allRecipes);
         const favoritesList = allRecipes
           .filter(recipe => favoriteIds.includes(recipe.id))
           .map(recipe => ({
@@ -105,6 +108,7 @@ const FavoritesScreen: React.FC<FavoritesScreenProps> = ({ navigation, route }) 
               fat: recipe.fat || 0,
             },
           }));
+        console.log('Favorites list after filtering:', favoritesList);
         setFavoriteRecipes(favoritesList);
       } else {
         setFavoriteRecipes([]);

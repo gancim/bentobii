@@ -1,14 +1,23 @@
-import React from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, ScrollView, Image, Modal, Pressable } from 'react-native';
+import React, { useState, useEffect, useRef } from 'react';
+import {
+  View,
+  Text,
+  StyleSheet,
+  ScrollView,
+  TouchableOpacity,
+  TextInput,
+  Modal,
+  Pressable,
+  Image,
+} from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-// Remove static recipe imports. We'll use dynamic imports below.
-import { FlatList } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
+import { RouteProp } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 import { RootStackParamList } from '../../App';
+import RecipeCard from '../components/RecipeCard';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { t } from '../translations';
-import RecipeCard from '../components/RecipeCard';
 
 const LANGUAGES = [
   { label: 'English', code: 'en' },
@@ -42,14 +51,18 @@ const COUNTRIES = [
 ];
 
 export default function HomeScreen() {
-  const [selectedLang, setSelectedLang] = React.useState('ja');
-  const [selectedCat, setSelectedCat] = React.useState('All');
-  const [selectedCountry, setSelectedCountry] = React.useState('All');
-  const [search, setSearch] = React.useState('');
-  const [langModalVisible, setLangModalVisible] = React.useState(false);
-  const [recipes, setRecipes] = React.useState<any[]>([]);
-  const [loadingRecipes, setLoadingRecipes] = React.useState(false);
-  const recipesCache = React.useRef<{ [key: string]: any[] }>({});
+  const [recipes, setRecipes] = useState<any[]>([]);
+  const [filteredRecipes, setFilteredRecipes] = useState<any[]>([]);
+  const [loadingRecipes, setLoadingRecipes] = useState(true);
+  const [search, setSearch] = useState('');
+  const [selectedCountry, setSelectedCountry] = useState('All');
+  const [selectedCat, setSelectedCat] = useState('All');
+  const [langModalVisible, setLangModalVisible] = useState(false);
+  const [selectedLang, setSelectedLang] = useState('ja');
+  const [favorites, setFavorites] = useState<number[]>([]);
+  const [toast, setToast] = useState<string | null>(null);
+  const recipesCache = useRef<{ [key: string]: any[] }>({});
+  const toastTimeout = useRef<NodeJS.Timeout | null>(null);
   const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
 
   // Static import map for Metro compatibility
@@ -67,7 +80,7 @@ export default function HomeScreen() {
   };
 
   // Load recipes when country changes
-  React.useEffect(() => {
+  useEffect(() => {
     let isMounted = true;
     async function loadRecipes() {
       setLoadingRecipes(true);
@@ -126,7 +139,7 @@ export default function HomeScreen() {
   }, [selectedCountry]);
 
   // Load saved language on component mount
-  React.useEffect(() => {
+  useEffect(() => {
     const loadSavedLanguage = async () => {
       try {
         const savedLang = await AsyncStorage.getItem('selectedLanguage');
@@ -140,6 +153,27 @@ export default function HomeScreen() {
     loadSavedLanguage();
   }, []);
 
+  // Load saved favorites on component mount
+  useEffect(() => {
+    const loadFavorites = async () => {
+      try {
+        const favoritesData = await AsyncStorage.getItem('favorites');
+        if (favoritesData) {
+          const favoriteIds = Array.from(new Set(JSON.parse(favoritesData).map((id: any) => Number(id))));
+          setFavorites(favoriteIds);
+          console.log('Favorites loaded:', favoriteIds);
+        }
+      } catch (error) {
+        console.error('Error loading favorites:', error);
+      }
+    };
+    loadFavorites();
+    
+    return () => {
+      if (toastTimeout.current) clearTimeout(toastTimeout.current);
+    };
+  }, []);
+
   // Save language when it changes
   const handleLanguageChange = async (langCode: string) => {
     setSelectedLang(langCode);
@@ -151,36 +185,68 @@ export default function HomeScreen() {
     }
   };
 
+  const showToast = (message: string) => {
+    setToast(message);
+    if (toastTimeout.current) clearTimeout(toastTimeout.current);
+    toastTimeout.current = setTimeout(() => setToast(null), 1500);
+  };
+
+  const toggleFavorite = async (recipeId: number) => {
+    try {
+      let newFavorites = [...favorites];
+      let message = '';
+      
+      if (newFavorites.includes(recipeId)) {
+        newFavorites = newFavorites.filter(id => id !== recipeId);
+        message = t('removed-from-favorites', langKey);
+      } else {
+        newFavorites.push(recipeId);
+        message = t('added-to-favorites', langKey);
+      }
+      
+      setFavorites(newFavorites);
+      await AsyncStorage.setItem('favorites', JSON.stringify(newFavorites));
+      console.log('Favorites updated:', newFavorites);
+      showToast(message);
+    } catch (error) {
+      console.error('Error updating favorites:', error);
+      showToast(t('error', langKey));
+    }
+  };
+
   const langKey = selectedLang;
 
   // Filter loaded recipes
-  const filteredRecipes = recipes
-    .map((r: any) => ({
-      ...r,
-      nutrition: r.nutrition || {
-        calories: r.calories,
-        protein: r.protein,
-        carbs: r.carbs,
-        fat: r.fat,
-      },
-    }))
-    .filter((r: any) => {
-      if (selectedCat === 'All') return true;
-      return r.type?.toLowerCase() === selectedCat.toLowerCase();
-    })
-    .filter((r: any) => {
-      if (!search.trim()) return true;
-      const lang = langKey;
-      const searchLower = search.toLowerCase();
-      const name = r.name?.[lang]?.toLowerCase() || '';
-      const desc = r.description?.[lang]?.toLowerCase() || '';
-      const ingredients = (r.ingredients?.[lang] || []).join(' ').toLowerCase();
-      return (
-        name.includes(searchLower) ||
-        desc.includes(searchLower) ||
-        ingredients.includes(searchLower)
-      );
-    });
+  useEffect(() => {
+    const filtered = recipes
+      .map((r: any) => ({
+        ...r,
+        nutrition: r.nutrition || {
+          calories: r.calories,
+          protein: r.protein,
+          carbs: r.carbs,
+          fat: r.fat,
+        },
+      }))
+      .filter((r: any) => {
+        if (selectedCat === 'All') return true;
+        return r.type?.toLowerCase() === selectedCat.toLowerCase();
+      })
+      .filter((r: any) => {
+        if (!search.trim()) return true;
+        const lang = langKey;
+        const searchLower = search.toLowerCase();
+        const name = r.name?.[lang]?.toLowerCase() || '';
+        const desc = r.description?.[lang]?.toLowerCase() || '';
+        const ingredients = (r.ingredients?.[lang] || []).join(' ').toLowerCase();
+        return (
+          name.includes(searchLower) ||
+          desc.includes(searchLower) ||
+          ingredients.includes(searchLower)
+        );
+      });
+    setFilteredRecipes(filtered);
+  }, [recipes, selectedCat, search, langKey]);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -302,6 +368,8 @@ export default function HomeScreen() {
               recipe={recipe}
               language={langKey}
               onPress={() => navigation.navigate('RecipeDetail', { recipe, language: langKey })}
+              isFavorite={favorites.includes(recipe.id)}
+              onToggleFavorite={() => toggleFavorite(recipe.id)}
             />
           ))
         ) : (
@@ -314,6 +382,11 @@ export default function HomeScreen() {
           </View>
         )}
       </ScrollView>
+      {toast && (
+        <View style={styles.toast} pointerEvents="none">
+          <Text style={styles.toastText}>{toast}</Text>
+        </View>
+      )}
     </SafeAreaView>
   );
 }
@@ -490,5 +563,26 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontWeight: '400',
     fontSize: 14,
+  },
+  toast: {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    bottom: 40,
+    alignItems: 'center',
+    zIndex: 100,
+  },
+  toastText: {
+    backgroundColor: '#2c7a7b',
+    color: '#fff',
+    paddingHorizontal: 24,
+    paddingVertical: 12,
+    borderRadius: 24,
+    fontSize: 16,
+    overflow: 'hidden',
+    shadowColor: '#000',
+    shadowOpacity: 0.15,
+    shadowRadius: 8,
+    elevation: 4,
   },
 }); 

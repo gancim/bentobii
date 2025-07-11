@@ -43,6 +43,22 @@ const RecipeCard: React.FC<RecipeCardProps> = ({ recipe, language, onPress, isFa
         return '🇯🇵';
       case 'IT':
         return '🇮🇹';
+      case 'FR':
+        return '🇫🇷';
+      case 'CN':
+        return '🇨🇳';
+      case 'ES':
+        return '🇪🇸';
+      case 'GR':
+        return '🇬🇷';
+      case 'MA':
+        return '🇲🇦';
+      case 'IN':
+        return '🇮🇳';
+      case 'MX':
+        return '🇲🇽';
+      case 'TH':
+        return '🇹🇭';
       default:
         return '🌍';
     }
@@ -65,8 +81,11 @@ const RecipeCard: React.FC<RecipeCardProps> = ({ recipe, language, onPress, isFa
 
   return (
     <TouchableOpacity style={styles.card} onPress={onPress} activeOpacity={0.95}>
-      {/* Show heart icon if onToggleFavorite is provided, else show flag */}
-      {onToggleFavorite ? (
+      {/* Always show country flag in bottom-right */}
+      <Text style={[styles.flag, styles.flagBottomRight]}>{getCountryFlag(recipe.country)}</Text>
+      
+      {/* Show heart icon for favoriting if onToggleFavorite is provided */}
+      {onToggleFavorite && (
         <TouchableOpacity
           style={styles.heartIconBtn}
           onPress={e => {
@@ -79,8 +98,6 @@ const RecipeCard: React.FC<RecipeCardProps> = ({ recipe, language, onPress, isFa
             {isFavorite ? '♥' : '♡'}
           </Text>
         </TouchableOpacity>
-      ) : (
-        <Text style={[styles.flag, styles.flagTopRight]}>{getCountryFlag(recipe.country)}</Text>
       )}
       <View style={styles.content}>
         <View style={styles.header}>
@@ -147,6 +164,14 @@ const styles = StyleSheet.create({
     top: 12,
     right: 12,
     zIndex: 1,
+  },
+  flagBottomRight: {
+    position: 'absolute',
+    bottom: 5,
+    right: 15,
+    zIndex: 1,
+    fontSize: 10, // 20% bigger (7 * 1.2 = 8.4)
+    opacity: 0.8, // Slightly transparent for subtlety
   },
   content: {
     padding: 16,
@@ -217,7 +242,7 @@ const styles = StyleSheet.create({
   heartIconBtn: {
     position: 'absolute',
     top: 12,
-    right: 12,
+    right: 12, // Back to top-right since flag is now bottom-right
     zIndex: 2,
     backgroundColor: 'rgba(255,255,255,0.9)',
     borderRadius: 16,

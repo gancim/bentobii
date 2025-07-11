@@ -32,10 +32,25 @@ const RecipeDetailScreen: React.FC<RecipeDetailScreenProps> = ({ navigation: _na
   const toastTimeout = useRef<NodeJS.Timeout | null>(null);
 
   React.useEffect(() => {
+    // Load favorite status when component mounts
+    const loadFavoriteStatus = async () => {
+      try {
+        const favorites = await AsyncStorage.getItem('favorites');
+        if (favorites) {
+          const favoritesArray = JSON.parse(favorites).map(Number);
+          setIsFavorite(favoritesArray.includes(Number(recipe.id)));
+        }
+      } catch (error) {
+        console.error('Error loading favorite status:', error);
+      }
+    };
+    
+    loadFavoriteStatus();
+    
     return () => {
       if (toastTimeout.current) clearTimeout(toastTimeout.current);
     };
-  }, []);
+  }, [recipe.id]);
 
   const getCountryFlag = (country: string) => {
     switch (country) {
@@ -43,6 +58,22 @@ const RecipeDetailScreen: React.FC<RecipeDetailScreenProps> = ({ navigation: _na
         return '🇯🇵';
       case 'IT':
         return '🇮🇹';
+      case 'FR':
+        return '🇫🇷';
+      case 'CN':
+        return '🇨🇳';
+      case 'ES':
+        return '🇪🇸';
+      case 'GR':
+        return '🇬🇷';
+      case 'MA':
+        return '🇲🇦';
+      case 'IN':
+        return '🇮🇳';
+      case 'MX':
+        return '🇲🇽';
+      case 'TH':
+        return '🇹🇭';
       default:
         return '🌍';
     }
@@ -66,16 +97,22 @@ const RecipeDetailScreen: React.FC<RecipeDetailScreenProps> = ({ navigation: _na
   const toggleFavorite = async () => {
     try {
       const favorites = await AsyncStorage.getItem('favorites');
-      let favoritesArray = favorites ? JSON.parse(favorites) : [];
+      let favoritesArray = favorites ? JSON.parse(favorites).map(Number) : [];
       let message = '';
       if (isFavorite) {
-        favoritesArray = favoritesArray.filter((id: number) => id !== recipe.id);
+        favoritesArray = favoritesArray.filter((id: number) => id !== Number(recipe.id));
         message = t('removed-from-favorites', currentLanguage);
+        console.log('Removing from favorites:', recipe.id, favoritesArray);
       } else {
-        favoritesArray.push(recipe.id);
+        if (!favoritesArray.includes(Number(recipe.id))) {
+          favoritesArray.push(Number(recipe.id));
+        }
         message = t('added-to-favorites', currentLanguage);
+        console.log('Adding to favorites:', recipe.id, favoritesArray);
       }
       await AsyncStorage.setItem('favorites', JSON.stringify(favoritesArray));
+      const updated = await AsyncStorage.getItem('favorites');
+      console.log('Favorites in AsyncStorage after update:', updated);
       setIsFavorite(!isFavorite);
       showToast(message);
     } catch (error) {
@@ -98,11 +135,14 @@ const RecipeDetailScreen: React.FC<RecipeDetailScreenProps> = ({ navigation: _na
         <Text style={styles.headerTitle} numberOfLines={1}>
           {recipe.name[currentLanguage as keyof typeof recipe.name]}
         </Text>
-        <TouchableOpacity style={styles.headerIconBtn} onPress={toggleFavorite}>
-          <Text style={[styles.favoriteIcon, { color: '#2c7a7b', fontSize: 24 }]}> 
-            {isFavorite ? '\u2665' : '\u2661'}
-          </Text>
-        </TouchableOpacity>
+        <View style={styles.headerRightContainer}>
+          <Text style={styles.headerFlag}>{getCountryFlag(recipe.country)}</Text>
+          <TouchableOpacity style={styles.headerIconBtn} onPress={toggleFavorite}>
+            <Text style={[styles.favoriteIcon, { color: '#2c7a7b', fontSize: 24 }]}> 
+              {isFavorite ? '\u2665' : '\u2661'}
+            </Text>
+          </TouchableOpacity>
+        </View>
       </View>
       <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
         {/* Description */}
@@ -207,6 +247,14 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     marginHorizontal: 8,
+  },
+  headerRightContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  headerFlag: {
+    fontSize: 16,
+    marginRight: 8,
   },
   header: {
     backgroundColor: '#fff',
